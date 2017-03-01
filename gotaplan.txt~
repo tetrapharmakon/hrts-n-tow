@@ -1,0 +1,28 @@
+- TS(C) come poset con azione di Z e morfismi Z-equivarianti J --> TS(C), con J un poset con azione di Z
+
+- casi particolari: J=Z con l'azione standard e J un insieme finito con azione banale
+ok
+
+- FS esatti e sottocategorie (co)riflessive stabil
+
+- limitatezza e boundedness rispetto a una famiglia J --> FS di sistemi di fattorizzazione
+ok
+
+- torri (nel caso limitato)
+
+- di nuovo i due casi particolari Z e insieme finito
+
+(con riconoscimento delle strutture classiche "cuore" e sod)
+
+- abelianita' del cuore
+bene
+
+bene 
+fine? 
+
+mi sembra ben focalizzato. proponi aggiunte?
+se c'è \tow(C) io sono a posto 
+
+No, resta fuori solo la faccenda della postnificabilità. Ma confido anche io che apparirà banale o scorrelata in corso d'opera.
+
+\tow(C) per ora lo metterei in un lungo remark (o una sottosezione se troppo lungo). cioe' con questo articolo punterei a riorganizzare in modo unificato ed efficiente l'esistente piu' che a introdurre nozioni nuove. dico questo perche' mi sembra che anche esperti come dbz abbiano le idee abbastanza confuse, al punto da non accorgersi che sod sono particolari famiglie di t-strutture
