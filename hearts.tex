@@ -278,7 +278,6 @@ Then $\tee$ is said to be
 \[
 \label{limited}
 \begin{kodi}
-% \node[red] {\bf !!!there is a missing diagram here!!!};
 \obj{
 	F & X & 0 \\
 	|(0')| 0 & Y & C \\
@@ -317,7 +316,6 @@ Now we can return to the proof of the initial result, implicitly invoking Lemma 
 Conversely, if $\tee$ is bounded, we have that each object $X$ lies in $\E[u_X]\cap \M[v_X]$; so if we consider the following diagram of pullout squares
 \[
 \begin{kodi}
-% \node[red] {\bf !!!there is a missing diagram here!!!};
 \obj{
 	Y[-1] & 0 & \\
 	F & X & |(0')| 0 \\
@@ -351,7 +349,6 @@ Let $i,j$ be elements in $J$ and let $X$ be an object in $\C_{\geq j}$ (see Defi
 Since $X$ is in $\C_{\geq j}$, $0\to X\xrightarrow{f} Y$ is the $(\E_j,\M_j)$-factorization of $0\to Y$ (in particular, $X\cong S_jY$ if $S_j$ denotes the coreflection of $\C$ on $\C_{\ge j}$. Since the factorization system $\fF_j$ is normal, hence semi-right-exact, we have the following pullout diagram:
 \[
 \begin{kodi}
-% \node[red] {\bf !!!there is a missing diagram here!!!};
 \obj{
 	X & Y \\
 	0 & |(cofib)| \cofib(f) \\
@@ -380,7 +377,6 @@ Let $i\leq j$ be elements in $J$ and let $f\colon X\to Y$ be a morphism in $\C$.
 Since $X$ is in $\C_{\geq j}$, the morphism $0\to X$ is in $\E_j$, and so (reasoning up to equivalence) to show that $0\to X\to Y$ is the $(\E_j,\M_j)$-factorization of $0\to Y$ we are reduced to showing that $f\colon X\to Y$ is in $\M_j$. Since $\cofib(f)$ is in $\C_{[i,j)}$, we have in particular that $\cofib(f)\to 0$ is in $\M_j$ and so $0\to \cofib(f)$ is in $\M_j$ by the Sator lemma. Then we have a homotopy pullback diagram
 \[
 \begin{kodi}
-% \node[red] {\bf !!!there is a missing diagram here!!!};
 \obj{
 	X & 0 \\
 	Y &|(cofib)| \cofib(f) \\
@@ -393,7 +389,6 @@ and so $f$ is in $\M_j$ by the fact that $\M_j$ is closed under pullbacks.
 To show that also $f\in \E_i$ let $0\to X\to T\to Y$ be the ternary factorization of $f$. We can consider the diagram
 \[
 \begin{kodi}
-% \node[red] {\bf !!!there is a missing diagram here!!!};
 \obj{
 0 \\
 X &|(0')|0 \\
@@ -433,7 +428,6 @@ We split the proof in two parts: existence and uniqueness of the tower;
 \item Consider the pullout diagram
 \[
 \begin{kodi}
-% \node[red] {\bf !!!there is a missing diagram here!!!};
 \obj{
 	X & 0 \\
 	Y &|(cofib)| \cofib(f) \\
@@ -448,7 +442,6 @@ By Corollary \refbf{cor:perPostnikov}, the $k$-fold factorization
 of the initial morphism $0\to \cofib(f)$ is such that $\cofib(\varphi_{i_j})\in \C_{[i_{j-1},i_j)}$. Pulling back this factorization along $Y\to \cofib(f)$ we obtain a factorization
 \[
 \begin{kodi}
-% \node[red] {\bf !!!there is a missing diagram here!!!};
 \obj{
 	X & 0 \\
 	|(zik)| Z_{i_k} & |(aik)| A_{i_k} \\
@@ -465,7 +458,6 @@ of the initial morphism $0\to \cofib(f)$ is such that $\cofib(\varphi_{i_j})\in 
 of $f$, and the pasting of pullout diagrams
 \[
 \begin{kodi}
-% \node[red] {\bf !!!there is a missing diagram here!!!};
 \obj{
 |(zij)| Z_{i_j}       & |(aij)| A_{i_j}       & 0 \\
 |(zij1)| Z_{i_{j-1}} & |(aij1)| A_{i_{j-1}} & |(cof)| \cofib(\varphi_{j}) \\
@@ -634,7 +626,6 @@ Since $\cofib(f)[-1]\cong \fib{f}$, one can equivalently define $\coker(f)$ by d
 By normality of the factorization system we therefore have the homotopy commutative diagram 
 \[
 \begin{kodi}
-% \node[red] {\bf !!!there is a missing diagram here!!!};
 \obj{
 	0  &|(ker)| \ker(f) &[5em] |(fib)| \fib(f)\\
 	&|(0')| 0 &|(coker)| \coker(f)[-1]\\
@@ -657,7 +648,6 @@ The proof for $\coker(f)$ is perfectly dual.
 By definition of $\ker(f)$ and $\coker(f)$, the defining diagram of $\fib(f)$ and $\cofib(f)$ can be enlarged as
 \[
 \begin{kodi}
-% \node[red] {\bf !!!there is a missing diagram here!!!};
 \obj{
 0 & |(ker)| \ker(f) & |(fib)| \fib(f) & X & |(01)| 0 \\
 & &|(02)| 0 & Y & |(cofib)| \cofib(f) & |(coker)| \coker(f) & |(03)| 0\\	
@@ -709,17 +699,18 @@ is a pushout diagram in $\C^\heart$.
 For $f\colon X\to Y$ a morphism in $\C$, there is a homotopy commutative diagram where all squares are homotopy pullouts:
 \[
 \begin{kodi}
-\node[red] {\bf !!!there is a missing diagram here!!!};
-% \lattice[mesh={4em}{6em}]{
-% (ker):\ker(f); & (fib):\fib(f); & X; & 0; \\
-% (01):0; &(coker-1):\coker(f)[-1]; & (Z):Z_f; &(ker1):\ker(f)[1]; & (02):0; \\
-% & (03):0; & Y; & (cofib):\cofib(f); & (coker):\coker(f); \\
-% };
-% \mor ker -> fib -> X -> 0 {\E[1]}:-> ker1 -> 02 {\M[1]}:-> coker;
-% \mor ker {\E}:-> 01 -> coker-1 -> Z -> ker1 {\M[1]}:-> cofib -> coker;
-% \mor fib {\E}:-> coker-1 {\M}:-> 03 -> Y -> cofib;
-% \mor[swap] X {\E}:-> Z {\M[1]}:-> Y;
-% \mor X {near start}:f:dashed,r> Y; \mor ker k_f:r> X; \mor[swap] Y c_F:L> coker;
+\obj{
+|(ker)| \ker(f) &|(fib)| \fib(f) & X & 0 \\
+|(01)| 0 &|(coker-1)| \coker(f)[-1] & |(Z)| Z_f &|(ker1)| \ker(f)[1] &|(02)| 0 \\
+& |(03)| 0 & Y & |(cofib)| \cofib(f) & |(coker)| \coker(f) \\
+};
+\mor ker -> fib -> X -> 0 {{\E[1]}}:-> ker1 -> 02 {{\M[1]}}:-> coker;
+\mor ker {\E}:-> 01 -> coker-1 -> Z -> ker1 {{\M[1]}}:-> cofib -> coker;
+\mor fib {\E}:-> coker-1 {\M}:-> 03 -> Y -> cofib;
+\mor[swap] X {\E}:-> Z {{\M[1]}}:-> Y;
+\mor X f:{near start},dashed,{bend left},-> Y; 
+\mor ker k_f:{bend left},-> X; 
+\mor[swap] Y c_F:{bend right},-> coker;
 \end{kodi}\]
 uniquely determining an object $Z_f\in \C^\heart$.
 \end{lemma}
@@ -1081,38 +1072,36 @@ The situation is best depicted in the following picture giving the factorization
 \end{figure}
 Even if the result can also be obtained from a direct argument, as a consequence of the following general fact about ternary FS:
 \begin{lemma}[Tilting of factorizations]\label{tilted.FS}
-Let $\tee\colon \Z\to \ts(\C)$ be a $\Z$\hyp{}family of normal torsion theories on a stable $\infty$\hyp{}category $\C$, having values $\tee_i = (\E_i, \M_i)$ for $i\in\Z$ (here, we will only consider the values $\tee_0, \tee_1 = \tee_0[1]$); let $(\LL,\mathcal{R})$ be a torsion theory on the heart $\C^\heart = \C_{[0,1)}$ such that $\E_1\subseteq \LL \subseteq \E_0$ (equivalently, $\M_0 \subseteq \R \subseteq \M_1$). Then, the factorization $(e_{\tilt},m_{\tilt})$
+Let $\tee\colon \Z\to \ts(\C)$ be a $\Z$\hyp{}family of normal torsion theories on a stable $\infty$\hyp{}category $\C$, having values $\tee_i = (\E_i, \M_i)$ for $i\in\Z$ (here, we will only consider the values $\tee_0, \tee_1 = \tee_0[1]$); let $(\LL,\mathcal{R})$ be a torsion theory on the heart $\C^\heart = \C_{[0,1)}$ such that $\E_1\subseteq \LL \subseteq \E_0$ (equivalently, $\M_0 \subseteq \R \subseteq \M_1$). Then, the factorization $(e_{\mintilt},m_{\mintilt})$
 \[
 \begin{kodi}
-\node[red] {\bf !!!there is a missing diagram here!!!};
-% \lattice[mesh]{
-% \obj X; & \obj A; && \obj B; & \obj Y; \\
-% && \obj S; &&\\	
-% };
-% \mor X e_1:-> A {e_0 \cdot m_1}:-> B m_0:-> Y;
-% \mor[swap] A l:-> S r:-> B;
-% \mor[dashed, L>,swap] X e_{\tilt}:-> S m_{\tilt}:-> Y;
+\obj{
+X & A && B & Y \\
+&& S &&\\	
+};
+\mor X e_1:-> A {e_0 \cdot m_1}:-> B m_0:-> Y;
+\mor[swap] A l:-> S r:-> B;
+\mor[dashed, bend right,swap] X {e_{\mintilt}}:-> S {m_{\mintilt}}:-> Y;
 \end{kodi}
 \]
 of a morphism $f\colon X\to Y$ in $\C$, obtained from the synergy of the ternary factorization induced by $\tee_0 \preceq \tee_1$, plus the $(\mathcal{L},\mathcal{R})$\hyp{}factorization of its middle part $A\to B \in \E_0\cap \M_1$, defines a factorization system on $\C$, called the \emph{tilting} of $\tee$ (confused with its $0$\hyp{}value $\tee_0$, in view of Remark \refbf{trivial.but.useful2}) by $(\LL, \fR)$, and denoted $\tee\tilt (\LL,\fR)$.
 \end{lemma}
 \begin{proof}
-We have to show that the rule outlined above constitutes a factorization system; the stretagy is to summon \cite[\athm \textbf{A}]{Korostenski199357} again (see the proof of the ``Rosetta stone'' in \cite{Fiorenza2014}).%;
-% there is, however, also a direct proof of this fact, appealing the ``$\semicol$'' notation: it's easy to see that (in the notation of the statement) $\E_1\perp \fR\semicol\M_0$ and $\LL\perp \fR\semicol\M_0$. 
+We have to show that the rule outlined above constitutes a factorization system; the stretagy is to summon \cite[\athm \textbf{A}]{Korostenski199357} again (see the proof of the ``Rosetta stone'' in \cite{Fiorenza2014}).
+
 Now, this allows us to conclude since given a lifting problem
 \[
 \begin{kodi}
-\node[red] {\bf !!!there is a missing diagram here!!!};
-% \lattice[mesh]{
-% \obj X; & \obj A; \\
-% \obj Y; & \obj B; \\	
-% \obj Z; & \obj C; \\
-% };
-% \mor X u:-> A r:-> B m_0:-> C;
-% \mor[swap] X e_1:-> Y l:-> Z v:-> C;
-% \mor[dashed] Y x:-> C;
-% \mor[dashed] Y y:-> A;
-% \mor[dashed] Z z:-> A;
+\obj{
+X & A \\
+Y & B \\	
+Z & C \\
+};
+\mor X u:-> A r:-> B m_0:-> C;
+\mor[swap] X e_1:-> Y l:-> Z v:-> C;
+\mor[dashed] Y x:-> C;
+\mor[dashed] Y y:-> A;
+\mor[dashed] Z z:-> A;
 \end{kodi}
 \]
 the arrows $x,y,z$ obtained respectively as composition $v\circ l$, and as solutions to suitable lifting problems, give the desired orthogonality.
@@ -1125,9 +1114,8 @@ the arrows $x,y,z$ obtained respectively as composition $v\circ l$, and as solut
 \begin{minipage}{.5\textwidth}
 Todo:
 
-ridisegnare i diagrammi
-
-mettere a posto le crossref (che ora puntano alla tesi)
+$\bullet$ mettere a posto le crossref 
+(che al momento puntano alla tesi)
 
 
 \end{minipage}}
