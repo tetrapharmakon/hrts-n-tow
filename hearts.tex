@@ -1018,7 +1018,7 @@ where $h_\tee\colon \C \to \C^{\heart,\tee}$ is the canonical functor of project
 The idea behind the definition of tilting is to have a way to factor morphisms ``until the upper half\hyp{}plane'', and below the horizontal line $Y=1$;\footnote{The $Y$ axis is oriented downwards: see Figure \refbf{tilting.fac} below.} specifying a (normal) torsion theory on $\C^{\heart, \tee}$ amounts to specifying a factorization on the objects of the strip $[0,1)$.
 \end{remark}
 \begin{proposition}
-Let $\bT$ be a (normal) torsion theory on $\C^{\heart,\tee}$, and let $\mathbb{S}$ another (normal) torsion theory on $\C^{\heart, \tee\tilt \bT}$.  Now, the tilting operation ``behaves like an action'', namely
+Let $\bT$ be a (normal) torsion theory on $\C^{\heart,\tee}$, and let $\mathbb{S}$ another (normal) torsion theory on $\C^{\heart, \tee\;\tilt\; \bT}$.  Now, the tilting operation ``behaves like an action'', namely
 \begin{itemize}
 \item $(\tee\tilt \bT)\tilt \mathbb{S} = \tee \tilt (\bT \star \mathbb{S})$, for an operation $\star$ between (normal) torsion theories on the heart; 
 \item $\tee \tilt \bT_{\tee} = \tee$, if $\bT_\tee$ is the factorization system induced by $\tee$ on its heart.
@@ -1045,28 +1045,27 @@ There is a bijective correspondence between tiltings of $\fF$ by (normal) torsio
 \end{proposition}
 The situation is best depicted in the following picture giving the factorization rule; this also yields orthogonality of the two classes so determined.
 \begin{figure}[h]
-\begin{tikzpicture}
-\node[red] {\bf !!!There is a missing figure!!!};
-% \begin{scope}
-% \clip (0,-3cm) rectangle (10,3cm);
-% \draw[line width=6cm,lightgray] (0,0) -- (10,0);
-% \draw[line width=2.5cm,gray!90!white] (0,0) -- (10,0);
-% \end{scope}
-% \draw[thick,yshift=1.25cm] (0,0) -- (10,0) node[right] {$0$};
-% \draw (10,-1.25) node[right] {$1$};
-% \node[above] (X) at (7.5,2.5) {$X$};
-% \node[below] (Y) at (7.5,-2.5) {$Y$};
-% \node[left,shape=circle,fill=gray!90!white,inner sep=.2em,outer sep=.2em]  (A) at (1.5,1.25) {$A$};
-% \node[right] (B) at (4.5,0) {$B$};
-% \node[left,shape=circle,fill=gray!90!white,inner sep=.2em,outer sep=.2em] (C) at (2.5,-1.25) {$C$};
-% \mor X f:r> Y;
-% \draw[->] (X) -- (A);
-% \draw[->] (A) -- (B);
-% \draw[->] (B) -- (C);
-% \draw[->] (C) -- (Y);
-% \draw[->,dashed,thick] (X.210) to [bend right] (B);
-% \draw[->,dashed,thick] (B) to [bend right] (Y.140);
-\end{tikzpicture}
+\begin{kodi}
+\begin{scope}
+\clip (0,-3cm) rectangle (10,3cm);
+\draw[line width=6cm,lightgray] (0,0) -- (10,0);
+\draw[line width=2.5cm,gray!90!white] (0,0) -- (10,0);
+\end{scope}
+\draw[thick,yshift=1.25cm] (0,0) -- (10,0) node[right] {$0$};
+\draw (10,-1.25) node[right] {$1$};
+\node[above] (X) at (7.5,2.5) {$X$};
+\node[below] (Y) at (7.5,-2.5) {$Y$};
+\node[left,shape=circle,fill=gray!90!white,inner sep=.2em,outer sep=.2em]  (A) at (1.5,1.25) {$A$};
+\node[right] (B) at (4.5,0) {$B$};
+\node[left,shape=circle,fill=gray!90!white,inner sep=.2em,outer sep=.2em] (C) at (2.5,-1.25) {$C$};
+\mor X f:{bend left},-> Y;
+\draw[->] (X) -- (A);
+\draw[->] (A) -- (B);
+\draw[->] (B) -- (C);
+\draw[->] (C) -- (Y);
+\draw[->,dashed,thick] (X.210) to [bend right] (B);
+\draw[->,dashed,thick] (B) to [bend right] (Y.140);
+\end{kodi}
 \caption{Tilting factorization of $f$.}
 \label{tilting.fac}
 \end{figure}
