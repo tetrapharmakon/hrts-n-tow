@@ -571,6 +571,8 @@ INPUT /texlive/2016/texmf-dist/fonts/tfm/public/pigpen/pigpen.tfm
 INPUT /texlive/2016/texmf-dist/fonts/tfm/public/lm/ec-lmss10.tfm
 INPUT hearts.bbl
 INPUT hearts.bbl
+INPUT /texlive/2016/texmf-dist/fonts/tfm/public/lm/ec-lmr7.tfm
+INPUT /texlive/2016/texmf-dist/fonts/tfm/public/lm/ec-lmr5.tfm
 INPUT /texlive/2016/texmf-dist/fonts/tfm/public/lm/ec-lmcsc10.tfm
 INPUT /texlive/2016/texmf-dist/tex/latex/lm/ts1lmr.fd
 INPUT /texlive/2016/texmf-dist/tex/latex/lm/ts1lmr.fd
@@ -619,6 +621,7 @@ INPUT /texlive/2016/texmf-dist/fonts/type1/public/lm/lmsy8.pfb
 INPUT /texlive/2016/texmf-dist/fonts/type1/public/lm/lmsy9.pfb
 INPUT /texlive/2016/texmf-dist/fonts/type1/public/lm/lmtt10.pfb
 INPUT /texlive/2016/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb
+INPUT /texlive/2016/texmf-dist/fonts/type1/public/amsfonts/symbols/msam7.pfb
 INPUT /texlive/2016/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb
 INPUT /texlive/2016/texmf-dist/fonts/type1/public/pigpen/pigpen.pfa
 INPUT /texlive/2016/texmf-dist/fonts/type1/public/xypic/xycmat10.pfb

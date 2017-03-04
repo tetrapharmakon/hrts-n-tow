@@ -8,6 +8,7 @@
 \newcommand{\pushout}[2]{\node  at ($(#1)!.8!(#2)$) {$\ulcorner$}}
 \newcommand{\pullout}[2]{\pullback{#1}{#2}; \pushout{#1}{#2}}
 
+\newcommand{\msg}[1]{\[\tikz \node {#1};\]}
 % \usepackage[usenames,dvipsnames]{xcolor}
   \definecolor{semilightgray}{rgb}{0.65, 0.65, 0.65}
   \def\gray#1{\textcolor{semilightgray}{#1}}
@@ -403,7 +404,8 @@ Y &|(cofib)| \cofib(f) & V &|(0''')| 0 \\
 where all the squares are pullouts, and where we have used the Sator lemma, the fact that the classes $\E$ are closed for pushouts while the classes $\M$ are closed for pullbacks, and the 3-for-2 property for both classes. 
 
 \end{proof}
-\begin{lemma}\label{perPostnikov} Let $Y$ an object in $\C$ and let $i_1\leq i_2\leq\cdots\leq i_k$ be an ascending chain in $J$. If a factorization 
+\begin{lemma}\label{perPostnikov} 
+Let $Y$ an object in $\C$ and let $i_1\leq i_2\leq\cdots\leq i_k$ be an ascending chain in $J$. If a factorization 
 \[
 0 \xto{f_{k+1}} Y_{i_k} \xto{f_k}Y_{i_{k-1}}\to\dots\to Y_{i_{2}} \xto{f_2} Y_{i_1} \xto{f_1} Y,
 \]
@@ -420,7 +422,8 @@ X \xto{f_{k+1}} Z_{i_k} \xto{f_k}Z_{i_{k-1}}\to\dots\to Z_{i_{2}} \xto{f_2} Z_{i
 of $f$ is a \emph{tower} of $f$ relative to the chain $\{i_j\} = \{i_1\leq i_2\leq\cdots \leq i_k\}$ if for any $j=1,\dots,k+1$ one has
 $\cofib(f_j)\in \C_{[i_{j-1},i_j)}$ (with $i_{k+1}=+\infty$ and $i_0=-\infty$).
 \end{definition}
-\begin{proposition}\label{prop:perPostnikov} Let $f\colon X\to Y$ be a morphism in $\C$ and let $i_1\leq i_2\leq\cdots \leq i_k$ be an ascending chain in $J$. Then a tower for $f$ relative to $\{i_j\}$, denoted $\rook_{\{i_j\}}(f)$, exists and it is unique up to isomorphisms.
+\begin{proposition}\label{prop:perPostnikov} 
+Let $f\colon X\to Y$ be a morphism in $\C$ and let $i_1\leq i_2\leq\cdots \leq i_k$ be an ascending chain in $J$. Then a tower for $f$ relative to $\{i_j\}$, denoted $\rook_{\{i_j\}}(f)$, exists and it is unique up to isomorphisms.
 \end{proposition}
 \begin{proof}
 We split the proof in two parts: existence and uniqueness of the tower;
@@ -1115,8 +1118,59 @@ Todo:
 
 $\bullet$ mettere a posto le crossref 
 (che al momento puntano alla tesi)
-
-
 \end{minipage}}
 \end{center}
+
+\hrulefill
+
+\msg{Metto qui della roba in attesa di trovargli una sistemazione.}
+
+\begin{definition}[Towers]
+Let $\mathbb{N}^\rhd$ be the (nerve of the) category $\{0\le 1\le \cdots \le \infty\}$. We define
+\begin{itemize}
+	\item A \emph{(Postnikov) tower} in $\H$ to be a functor $(\mathbb{N}^\rhd)^\opp \to \H$: $X_0\leftarrow \cdots \leftarrow X_\infty$ (such that $X_k \cong \tau_{\le k}(X_\infty)$);
+	\item A \emph{(Postnikov) pretower} in $\H$ to be a functor $\mathbb{N}^\opp \to \H$: $X_0\leftarrow \cdots$ (such that $X_n\cong \tau_{\le n}(X_{n+1})$)
+\end{itemize}
+We denote $\varphi \colon \text{Post}^+(\H) \hookrightarrow \text{Post}(\H)$ the inclusion of Postnikov towers into Postnikov pretowers. We say that \emph{Postnikov towers are convergent} in $\H$ if $\varphi$ is an equivalence, whose inverse is given by taking the limit $\varprojlim (X_0\leftarrow X_1\leftarrow \cdots)$.
+\end{definition}
+Let $\cate{W}\subseteq \H \times \mathbb{N}^\rhd$ be the category of all pairs $(C,n)$ where $C\in\H_{\le n}$ is a $n$-truncated object. Then (since this is the category of elements of $n\mapsto \H_{\le n}$) there exists a cocartesian fibration $p \colon \cate{W} \to \mathbb{N}^\rhd$ such that $p^\leftarrow(n) = \H_{\le n}$; this fibration classifies a tower of functors
+\[
+\H_{\le 0} \leftarrow \H_{\le 1}\leftarrow \cdots \leftarrow \H
+\]
+Postnikov towers are then identified with cocartesian sections of $p$, and Postnikov pretowers with the cocartesian sections of $\tilde p$:
+\[
+\begin{kodi}
+\obj[rectangular={8em}{4em}]{
+|(pull)| \cate{W}\times_{(\mathbb{N}^\rhd)^\opp}\mathbb{N}^\opp &|(W)|    \cate{W} \\
+|(Nop)|  \mathbb{N}^\opp                                        &|(Nop')| (\mathbb{N}^\rhd)^\opp\\};
+\mor pull -> W p:-> Nop';
+\mor * {\tilde p}:swap,-> Nop -> *; 
+\end{kodi}
+\]
+Now, Postnikov towers are convergent if and only if there is a limit diagram
+\[
+\H \cong \varprojlim\big( \H_{\le 0} \leftarrow \H_{\le 1}\leftarrow \cdots \big)
+\]
+in such a way that $\H(X,Y)\cong \varprojlim_n \H_{\le n}(\tau_{\le n}X, \tau_{\le n}Y)$.
+
+\hrulefill
+
+Al momento mancano:
+\begin{itemize}
+	\item Una definizione convincente e sufficientemente bella di FS infinitario; attualmente \ref{k.fold.fact} si comporta male quando $k$ è infinito.
+	\item Una costruzione dei due FS canonici sull'infty-topos degli spazi e degli spettri -- il primo e' quello degli n-connessi/n-troncati, e il secondo e' il morfismo $\Z \to \ts(\cate{Sp})$ che manda 0 nella t-struttura canonica $(T_{\le}, T_{>})$ (gruppi nulli nei negativi/positivi)-- che dimostri o confuti questo fatto:
+	\begin{quote}
+		Il funtore di stabilizzazione che manda spazi in $\cate{Sp}$ manda (n-connessi, n-troncati) in $(T_{\le}, T_{>})$.
+	\end{quote}
+\end{itemize}
+
+Ciò è parte della seguente congettura: 
+\begin{itemize}
+	\item certi FS decenti (tutto da capire cosa significa decente) su spazi generano NTT; esempio: quello che ho scritto sopra.
+	\item Analogamente certi FS esatti (=classe sinistra chiusa per limiti, destra per colimiti) generano SODs (ovvero esattamente t-strutture stabili, con classi chiuse per shift ambolati). \cite[3.2.1]{tstructures}.
+\end{itemize}
+In effetti ogni t-struttura generata mediante \cite[3.2.1]{tstructures} e' segretamente una SOD; ancora, chi puo' essere la categoria non stabile che ha per stabilizzazione complessi di catene? Da lì forse esce un terzo esempio con la $p$-localizzazione: congetturo siano i moduli (con una opportuna teoria della torsione in senso classico; questa teoria della torsione si conserva passando a $\Ch(R)$ e la fa diventare una categoria modello abeliana\footnote{Una \emph{categoria modello abeliana} è una categoria modello $\A$ tale che le cofibrazioni sono tutti e soli i mono con cokernel cofibrante, e dualmente le fibrazioni sono tutte e soli gli epi con nucleo fibrante; data una categoria modello abeliana $\A$, $\A^\opp$ ha due torsion theory: una per cui $0/\E = $oggetti tali che $0\to X$ è una cofibrazione aciclica, e un'altra per cui $0/\E' = $oggetti tali che $0\to X'$ è una cofibrazione. Viceversa, data una categoria abeliana $\A$ con una coppia di teorie della torsione $(\mathcal{X}, \mathcal{Y}),(\mathcal{X}', \mathcal{Y}')$ su $\A^\opp$, esiste una sola struttura modello tale che $\mathcal X$ siano gli oggetti cofibranti aciclici, e $\mathcal{X}'$ siano i cofibranti.}).
+
+Sono motivato in cio' dal seguente fatto: Ch(R) eredita la sua struttura di cat modello stabile da una teoria della torsione su Mod(R)
+quindi teorie della torsione su categorie modello abeliane (=FS abeliani for short) diventano NTT (=t-strutture) nelle loro stabilizzazioni
 \end{document}

@@ -5,45 +5,45 @@ The style file: amsalpha.bst
 Database file #1: allofthem.bib
 Warning--missing pages in Fiorenza2014
 Warning--missing booktitle in Joy
-You've used 15 entries,
+You've used 16 entries,
             2624 wiz_defined-function locations,
-            679 strings with 6657 characters,
-and the built_in function-call counts, 5394 in all, are:
-= -- 486
-> -- 215
-< -- 10
-+ -- 69
-- -- 67
-* -- 465
-:= -- 866
-add.period$ -- 15
-call.type$ -- 15
-change.case$ -- 85
-chr.to.int$ -- 15
-cite$ -- 17
-duplicate$ -- 234
-empty$ -- 446
-format.name$ -- 90
-if$ -- 1080
+            685 strings with 6824 characters,
+and the built_in function-call counts, 5661 in all, are:
+= -- 511
+> -- 223
+< -- 11
++ -- 71
+- -- 69
+* -- 482
+:= -- 912
+add.period$ -- 16
+call.type$ -- 16
+change.case$ -- 90
+chr.to.int$ -- 16
+cite$ -- 18
+duplicate$ -- 250
+empty$ -- 468
+format.name$ -- 94
+if$ -- 1133
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 32
-newline$ -- 55
-num.names$ -- 45
-pop$ -- 86
+missing$ -- 33
+newline$ -- 58
+num.names$ -- 48
+pop$ -- 92
 preamble$ -- 1
-purify$ -- 100
+purify$ -- 106
 quote$ -- 0
-skip$ -- 171
+skip$ -- 181
 stack$ -- 0
-substring$ -- 315
-swap$ -- 35
-text.length$ -- 10
-text.prefix$ -- 8
+substring$ -- 322
+swap$ -- 36
+text.length$ -- 11
+text.prefix$ -- 9
 top$ -- 0
-type$ -- 108
+type$ -- 116
 warning$ -- 2
-while$ -- 54
-width$ -- 18
-write$ -- 178
+while$ -- 56
+width$ -- 19
+write$ -- 190
 (There were 2 warnings)

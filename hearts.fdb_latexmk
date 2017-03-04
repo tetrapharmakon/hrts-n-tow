@@ -1,12 +1,12 @@
 # Fdb version 3
-["bibtex hearts"] 1488387194 "hearts.aux" "hearts.bbl" "hearts" 1488387215
+["bibtex hearts"] 1488645865 "hearts.aux" "hearts.bbl" "hearts" 1488645898
   "/texlive/2016/texmf-dist/bibtex/bst/amscls/amsalpha.bst" 1252602681 29978 76822b3d94e27e00dcc6ee8391cdceaf ""
-  "allofthem.bib" 1485946949 119121 6a4e4fafba72e28022be5b769c32f633 ""
-  "hearts.aux" 1488387214 7382 f218568289a5952e3578b31172028ede ""
+  "allofthem.bib" 1488644405 120233 a68649f19256ce121e5f6775a579df88 ""
+  "hearts.aux" 1488645898 7513 48e2bf9a6fad7de69d8351d7d71a44d6 ""
   (generated)
-  "hearts.blg"
   "hearts.bbl"
-["pdflatex"] 1488387211 "hearts.tex" "hearts.pdf" "hearts" 1488387215
+  "hearts.blg"
+["pdflatex"] 1488645895 "hearts.tex" "hearts.pdf" "hearts" 1488645898
   "/home/fouche/texmf/tex/generic/kodi/tikzlibrarykodi.bapto.code.tex" 1487787485 2855 994d80153505269d75f89c8040304bea ""
   "/home/fouche/texmf/tex/generic/kodi/tikzlibrarykodi.code.tex" 1487787485 3406 1f3867a65e31a6ba4b485ed8f2e367f1 ""
   "/home/fouche/texmf/tex/generic/kodi/tikzlibrarykodi.diorthono.code.tex" 1487787485 4285 36fc5ec4fc2c6bf3cd619c8fcfc43676 ""
@@ -58,7 +58,9 @@
   "/texlive/2016/texmf-dist/fonts/tfm/public/lm/ec-lmcsc10.tfm" 1254269338 11276 116dd5bea6621ce4a1999f96d876084c ""
   "/texlive/2016/texmf-dist/fonts/tfm/public/lm/ec-lmr10.tfm" 1254269338 12056 7e13df7fe4cbce21b072ba7c4f4deb6e ""
   "/texlive/2016/texmf-dist/fonts/tfm/public/lm/ec-lmr12.tfm" 1254269338 12092 7b1546e2d096cfd5dcbd4049b0b1ec2e ""
+  "/texlive/2016/texmf-dist/fonts/tfm/public/lm/ec-lmr5.tfm" 1254269338 12020 46464c854bf317de2a7a0bbe4a1160ca ""
   "/texlive/2016/texmf-dist/fonts/tfm/public/lm/ec-lmr6.tfm" 1254269338 12048 c1068d0f4772be9b0ec447692e1d6d82 ""
+  "/texlive/2016/texmf-dist/fonts/tfm/public/lm/ec-lmr7.tfm" 1254269338 12064 09aa3eeac96bf141d673bb1b0385ce55 ""
   "/texlive/2016/texmf-dist/fonts/tfm/public/lm/ec-lmr8.tfm" 1254269338 12064 a35db870f0b76c338d749c56dc030ef5 ""
   "/texlive/2016/texmf-dist/fonts/tfm/public/lm/ec-lmr9.tfm" 1254269338 12084 b7f5e4c003de6f57f07c7e9fee73a37c ""
   "/texlive/2016/texmf-dist/fonts/tfm/public/lm/ec-lmri10.tfm" 1254269338 17148 9556e1b5f936b77a796f68d2d559ba99 ""
@@ -122,6 +124,7 @@
   "/texlive/2016/texmf-dist/fonts/type1/arphic/bsmiu/bsmiu71.pfb" 1198435261 118298 c06098b4180b6a0fbb0a9ab7bf08e2ea ""
   "/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb" 1336858727 21098 d4aee7c0aac232caac5688b586b9363c ""
   "/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb" 1248133631 31764 459c573c03a4949a528c2cc7f557e217 ""
+  "/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/symbols/msam7.pfb" 1248133631 33366 60462f3d16c3d0f024f1f856e64b09cd ""
   "/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb" 1248133631 34694 ad62b13721ee8eda1dcc8993c8bd7041 ""
   "/texlive/2016/texmf-dist/fonts/type1/public/lm/lmb10.pfb" 1255129361 123030 912fb98db98ec261bbe321b3e37da726 ""
   "/texlive/2016/texmf-dist/fonts/type1/public/lm/lmbx12.pfb" 1255129361 116908 1fca96723793882c2e0160350c192fc8 ""
@@ -378,13 +381,13 @@
   "/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1487517137 2048560 af449ee6a453b60ef672891ced42e137 ""
   "/texlive/2016/texmf-var/web2c/pdftex/pdflatex.fmt" 1487517175 3869206 5e5347ddcb1066ca3833552c46f0b4d6 ""
   "/texlive/2016/texmf.cnf" 1487517117 455 5b996dcaa0eb4ef14a83b026bc0a008c ""
-  "hearts.aux" 1488387214 7382 f218568289a5952e3578b31172028ede ""
-  "hearts.bbl" 1488387194 3287 a847e50a73be2da9e74aab10eb9d3871 "bibtex hearts"
-  "hearts.out" 1488387214 393 c4870c666571ac83bc94034cde6db217 ""
-  "hearts.tex" 1488387209 82807 393ca04cff787c6f72c50d8116a7d44d ""
-  "preambolo.tex" 1488386608 5091 c860728b112ca994ad3d963c975e5637 ""
+  "hearts.aux" 1488645898 7513 48e2bf9a6fad7de69d8351d7d71a44d6 ""
+  "hearts.bbl" 1488645865 3507 5cbe9af94618dea7b31fa150f40b30ab "bibtex hearts"
+  "hearts.out" 1488645898 393 c4870c666571ac83bc94034cde6db217 ""
+  "hearts.tex" 1488645893 87483 d66001eaf93bbea1eb7dcb58d6bc6343 ""
+  "preambolo.tex" 1488645856 5161 9a11b529e93404c8239743b3aabd33ff ""
   (generated)
-  "hearts.aux"
-  "hearts.out"
   "hearts.log"
+  "hearts.out"
   "hearts.pdf"
+  "hearts.aux"
