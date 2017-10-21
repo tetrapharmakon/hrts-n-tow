@@ -1,0 +1,79 @@
+\begin{abstract}
+We exploit the equivalence between $t$-structures and normal torsion theories described in a previous work, to unify two apparently separated constructions in the theory of triangulated categories: the characterization of \emph{bounded} $t$-\emph{structures} in terms of their hearts, and \emph{semiorthogonal decompositions} on triangulated categories. In the stable setting both notions stem as particular cases of a single construction, the \emph{tower} of a morphism $f$, induced by a suitable choice of a multiple factorization system on a stable $\infty$-category $\C$. 
+\end{abstract}
+\section{Introduction}
+The purpose of this brief subsection is to give an account of results and notation from our previous \cite{Fiorenza2014}, of which the present work is a natural follow-up. 
+
+We borrow from \cite{Fiorenza2014} for all that concerns categories and higher categories, functors, simplicial sets, and in particular the basic theory of quasicategorical factorization systems, $t$-structures on stable $\infty$-categories and related topics. Since we only aim to provide a reference, statements will be recalled in a sketchy form; we refer the reader to \cite{Fiorenza2014} for a detailed version of these results.
+\begin{proposition*}\cite[Prop. \textbf{2.2}]{CHK}
+Let $\C$ be a category with a terminal object. There exists an antitone Galois connection between the poset $\text{Rex}(\C)$ of reflective subcategories of $\C$ and the poset $\pf(\C)$ of prefactorization systems on $\C$. The functor $r(\firstblank)/1 \colon \textsc{fs}(\C) \to \text{Rex}(\C)$ sends the factorization system $\fF=(\E,\M)$ to the reflexive subcategory $r(\fF)/1 = \{B\in\C\mid (B\to 1)\in\M\}$ ($r$ is simply the correspondence that picks the right class of a factorization system, so if we denote the typical factorization system as $\fF=(\E,\M)$ we can --and we will-- $r(\firstblank)/1(\fF) = \M/1$), and its left adjoint $(\firstblank)_\orth$ is defined by sending a reflective subcategory $\cB$ of $\cate{C}$ to the prefactorization system $\hom(\cB)_\orth$ \emph{right generated}\footnote{If a prefactorization $\fF$ on $\C$ is such that there exists a class of edges $\mathcal{S}$ such that $\fF=(\prescript{\orth}{}{\mS}, (\prescript{\orth}{}{\mS})^\orth)$ then $\fF$ is said to be \emph{right generated} by $\mS$.} by $\hom(\cB)\subseteq \hom(\C)$. We are then in the following situation:
+\[
+\xymatrix{
+	**[l]\pf(\C) \cong \pf(\C)_R \ar@<6pt>[r]^{r(\firstblank)/1} \ar@{}[r]|\adj & \ar@<6pt>[l]^{(\firstblank)_\orth} \text{Rex}(\C) 
+}
+\]
+There is, of course, a dual result about coreflective subcategories and left classes of (pre)factorizations on $\C$:
+\[
+\xymatrix{
+	**[l]\pf(\C) \cong \pf(\C)_L \ar@<6pt>[r]^{0/\ell(\firstblank)} \ar@{}[r]|\adj & \ar@<6pt>[l]^{\prescript{}{\orth}{(\firstblank)}} \text{Rex}(\C) 
+}
+\]
+\end{proposition*}
+We will freely refer to both of them as a single result; the following step is to recall the ``Rosetta stone theorem'' proved in \cite{Fiorenza2014}:
+\begin{theorem*}
+Let $\C$ be a stable $\infty$-category. There is a bijective correspondence between the class of normal torsion theories and the class of $t$-structures on $\C$.
+\end{theorem*}
+\begin{remark*}
+The partial order on $\pf(\C)$ is given by $\fF\preceq \fF'$ iff $r(\fF)\subseteq r(\fF')$ (or equivalently, $\ell(\fF')\subseteq \ell(\fF)$). We endow the collection of normal torsion theories (and then the collection of $t$-structures on $\C$) with the order induced by this relation.
+\end{remark*}
+\begin{lemma*}[Sator Lemma]
+In a pointed quasicategory $\C$, an initial arrow $0\to A$ lies in a class $\E$ or $\M$ of a bireflective factorization system $\fF$ if and only if the terminal arrow $A\to 0$ lies in the same class.
+\end{lemma*}
+Finally, we briefly recall the construction of the canonical factorization system of $n$-connected and $n$-truncated morphisms, that prototypes our main example of a ``family'' of $t$-structures. First of all recall
+\begin{definition}
+\cite[5.5.6.23]{HTT}
+Let $\H$ be an $\infty$-topos, and let $\mathbb{N}^\rhd$ be the (nerve of the) category $\{0\le 1\le \cdots \le \infty\}$. We define
+\begin{itemize}
+	\item A \emph{(Postnikov) tower} in $\H$ to be a functor $(\mathbb{N}^\rhd)^\opp \to \H$: $X_0\leftarrow \cdots \leftarrow X_\infty$ (such that $X_k \cong \tau_{\le k}(X_\infty)$);
+	\item A \emph{(Postnikov) pretower} in $\H$ to be a functor $\mathbb{N}^\opp \to \H$: $X_0\leftarrow \cdots$ (such that $X_n\cong \tau_{\le n}(X_{n+1})$)
+\end{itemize}
+We denote $\varphi \colon \text{Post}^+(\H) \hookrightarrow \text{Post}(\H)$ the inclusion of Postnikov towers into Postnikov pretowers. We say that \emph{Postnikov towers are convergent} in $\H$ if $\varphi$ is an equivalence, whose inverse is given by taking the limit $\varprojlim (X_0\leftarrow X_1\leftarrow \cdots)$.
+\end{definition}
+\begin{definition}
+Let $f\colon X\to Y$ be a map of spaces. It is called \emph{$n$-connected} if it induces isomorphisms in $\pi_{\le n}$ and a surjection on $\pi_{n+1}$. A map of spaces $g\colon A\to B$ is called \emph{$n$-truncated} if it induces isomorphisms in $\pi_{> n+1}$ and an injection on $\pi_{n+1}$.
+
+There is a factorization system $\mathbb{S}_n = (\E_n,\M_n)$ on $\iGpd$ having left class the $n$-connected maps and right class the $n$-truncated maps, and each of these factorization systems assemble into a $\omega$-ary factorization $\omega \to \fs(\iGpd)$. 
+\end{definition}
+\begin{remark}
+The equivalence between reflective factorization systems and co/reflections allows us to blur the distinction between the factorization system $\mathbb{S}_n$ and its associated pair of functors $c_{\ge n} \colon \iGpd \to \iGpd_{\ge n}$, $t_{\le n} \colon \iGpd \to \iGpd_{\le n}$ (respectively a right and left adjoint to the obvious inclusions), so that the chain of reflections 
+\[
+X \to \cdots \to t_{\le n}X \to \cdots \to t_{\le 2}X \to t_{\le 1}X\to *
+\]
+generated by the factorization of $n$-connected maps is a (convergent) Postnikov tower for $\iGpd$.
+\end{remark}
+\begin{remark}
+There is a ``fibrational'' description of this construction, performed in \cite[5.5.6.24]{HTT} that packages Postnikov towers into a cocartesian fibration $p \colon \cate{W} \to \mathbb{N}^\rhd$ such that $p^\leftarrow(n) = \H_{\le n}$; this fibration classifies a tower of functors
+\[
+\H_{\le 0} \leftarrow \H_{\le 1}\leftarrow \cdots \leftarrow \H
+\]
+that are precisely the reflections $t_{\le *}$ above. Postnikov towers are then identified with \emph{cocartesian sections} of $p$.
+\end{remark}
+A similar definition holds for stable $\infty$-categories, in that the canonical $t$-structure whose left class is determined by those objects whose homotopy groups vanish in negative dimension:
+\begin{gather*}
+\cate{Sp}_{\ge 0} = \{  A_* \in \cate{Sp} \mid \pi_n(A_*)=0;\; n\le 0 \}\\
+\cate{Sp}_{\le 0} = \{ B_* \in \cate{Sp} \mid \pi_n(B_*)=0;\; n\ge 0 \}.
+\end{gather*}
+This is called the \emph{Postnikov family} of the canonical $t$-structure on the stable $\infty$-category $\cate{Sp}$ of spectra. The two families of factorizations systems are linked by the stabilization functor, in the following sense:
+\begin{proposition}
+The image of the $\omega$-ary factorization system $\mathbb{S}_n$ on $\iGpd$ under the stabilization functor $\text{St}\colon \cate{Cat}_\infty \to \cate{StCat}_\infty$ is the Postnikov family of the canonical $t$-structure on $\cate{Sp}$.
+\end{proposition}
+(This results raises the question of which unstable factorization systems on $\C$ become normal torsion theories --and hence $t$-structures-- on the stabilization of $\C$; we will not investigate the problem here).
+
+In analogy with the example of the Postnikov decomposition of a morphism $f\colon X\to Y$ of spaces (or spectra, or objects of an $\infty$-topos), we construct (\adef \refbf{tower.of.f}) the \emph{tower}\footnote{Pron. \emph{rook}; it is the same rook of the game of chess.} $\rook(f,\vec \imath\,)$ relative to a chain $\vec\imath = i_1\leq i_2\leq\cdots \leq i_k$ of a morphism induced by a $\Z$-equivariant \emph{$J$-family} of normal torsion theories $\{\fF_i\}_{i\in J}$, \ie a monotone function $J \to\fs(\C)$ ``taking normal values'', which is \emph{equivariant} with respect to an action of the group $\Z$ on both sets.
+
+As we will see, a natural way to encompass these structures is to vary the action on the domain of the $J$-family (choosing diffferent $J$s and different actions on $J$ will result in different kinds of $t$-structures for the values $J(\lambda)$. We will concentrate on the following two ``extremal'' examples:
+\begin{itemize}
+\item For $J=\Z$ with its obvious self-action, we recover the classical notion of Postnikov towers in a triangulated category endowed with a $t$-structure (and a fortiori, the notion of Postnikov tower in the category $\cate{Sp}$ of spectra), and subsequently we give a neat, conceptual proof of the the abelianity of the \emph{heart} of a $t$-structure in the stable setting, basically relying on the uniqueness of a suitable factorization. 
+
+\item For $J$ a finite totally ordered set, or more generally any set $J$ with trivial $\Z$-action, we recover the theory of \emph{semiorthogonal decompositions} \cite{Bondal1995, Kuz}, showing in \athm \refbf{what.s.semiortho} that such a $J\to \fs_\nu(\C)$ consists of a family $\{\fF_i\}_{i\in J}$ of \emph{stable} $t$-structures. This is a classical result.
+\end{itemize}

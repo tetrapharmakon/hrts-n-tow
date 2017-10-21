@@ -1,0 +1,164 @@
+\section{Histoire d'\texorpdfstring{$\mathcal{O}(J)$}{\mathcal{O}(J)}}
+The main reason why we are interested in the theory of $\Z $-poset is the following result:
+\begin{remark}\label{slicing.cotow}
+Let $\C$ be a stable $\infty$-category. Then, the collection $\ts(\C)$ of all $t$-structures on $\C$ is a poset with respect to following order relation: given two $t$-structures $\tee_a=(\C_{\ge_a 0}, \C_{<_a0})$\footnote{The baffled reader is invited to look at Notation \refbf{magictrick}.} and  $\tee_b=(\C_{\ge_b 0}, \C_{<_b0})$, one has  $\tee_a \preceq \tee_b$ iff $\C_{<_a0}\subseteq \C_{<_b0}$. 
+
+The ordered group $\Z $ acts on $\ts(\C)$ in a way that is fixed (Remark \refbf{trivial.but.useful}) by the action of the generator $+1$; this maps a $t$-structure $\tee=(\C_{\geq 0},\C_{<0})$ to the \emph{shifted} $t$-structure $\tee[1]=(\C_{\geq 0}[1],\C_{<0}[1])$.
+
+Since $\tee\preceq\tee[1]$ one sees that $\ts(\C)$ is naturally a $\Z $-poset.%(this follows from \refbf{slicing}). 
+\end{remark}
+\begin{notat}\label{avoid.cumbersomeness}
+If $\tee=(\C_{\geq 0},\C_{<0})$ is a $t$-structure on $\C$, it is customary to write $\C_{\geq 1}$ for $\C_{\geq 0}[1]$ and $\C_{<1}$ for $\C_{<0}[1]$, so that $\tee[1]=(\C_{\geq 1},\C_{<1})$, and more generally $\C_{\ge n} := \C_{\ge 0}[n]$, $\C_{<n} := \C_{<0}[n]$ for each $n\in\Z$, so that $\tee[n]=(\C_{\geq n},\C_{<n})$.
+\end{notat}
+We now have the natural desire to consider families of $t$-structures on $\C$ indexed by an \emph{arbitrary} $\Z $-poset $J$, as in the following
+\begin{definition}
+Let $(J,\leq)$ be a $\Z $-poset. A \emph{$J$-family} of $t$-structures on a stable $\infty$-category $\C$ is a $\Z $-equivariant morphism of posets $\tee\colon J\to \ts(\C)$.
+ \end{definition}
+ More explicitly, a $J$-family is a family $\{\tee_j\}_{j\in J}$ of $t$-structures on $\C$ such that
+ \begin{enumerate}
+\item $\tee_i\preceq \tee_j$ if $i\leq j$ in $J$;
+\item $\tee_{i+1}=\tee_i[1]$ for any $i\in J$.
+ \end{enumerate}
+\begin{remark}
+A natural choice of notation, motivated by the ``Rosetta stone'' theorem, is the following: a $J$-family of $t$-structures is the same as a $J$-family of normal torsion theories on $\C$ (or, more formally, the maps $\fF(-)$ and $\tee(-)$ defined in the proof of the Rosetta stone become isomorphisms \emph{in the category $\Z\text{-}\cate{Pos}$} for a suitable choice of partial order and $\Z$-action on normal torsion theories).
+
+Motivated by this remark, we feel free to call ``$J$-family of normal torsion theories'' any monotone function $J\to \smallcap{ntt}(\C)$ which is also $\Z$-equivariant.
+\end{remark}
+\begin{notat}\label{magictrick}
+For $i\in J$, we will write $\C_{\leq i}$ and $\C_{>i}$ for $\C_{\leq_i0}$ and $\C_{<_i0}$, respectively. With this notation we have that $\tee_i=(\C_{\geq i},\C_{<i})$. Note that, by $\Z $-equivariancy, this notation is consistent. Namely $\tee_{i+1}=\tee_i[1]$ implies $\C_{\geq_{i+1}0}=\C_{\geq_i0}[1]$ and so
+\[
+\C_{\geq i+1}=\C_{\geq i}[1].
+\]
+Similarly, one has
+\[
+\C_{< i+1}=\C_{< i}[1].
+\]
+We underline how in this choice of notation the condition $\tee_i\preceq \tee_j$ for $i\leq j$ translates to the very natural condition $\C_{<i}\subseteq \C_{<j}$ for $i\leq j$. Notice that this is basically \cite[\adef \textbf{3.1}]{GKR}.
+\end{notat}
+\begin{example}
+A $\Z $-family of $t$-structures is, by Lemma \refbf{trivial.but.useful}, equivalent to the datum of a $t$-structure $\tee_0=(\C_{\geq 0},\C_{<0})$. One has $\tee_1=(\C_{\geq 1},\C_{<1})$ consistently with the notations in Remark \refbf{slicing.cotow}. Notice that by our Remark \refbf{rem.finite}, as soon as $\C_{\ge 0}[1]\subset \C_{\ge 0}$ (proper inclusion), then this proper inclusion is valid for all $n\in\Z$, \ie the orbit $\tee + \Z$ is an infinite set.
+\end{example}
+\begin{example}\label{what.s.slici}
+An $\R$-family of $t$-structures is the datum of a $t$-structure $\tee_\lambda=(\C_{\geq \lambda},\C_{<\lambda})$ on $\C$ for any $\lambda\in \R$ in such a way that $\tee_{\lambda+1}=\tee_\lambda[1]$. Such a structure is called a \emph{slicing} of $\C$ in \cite{Brid}.\footnote{This is not entirely true, but it's a good approximation of the definition given there. \cite{Brid} imposes more restrictive conditions to ensure ``compactness'' of the factorization. Compare also \cite{GKR}.} 
+\end{example}
+\begin{example}[A tautological example]
+By taking $J=\ts(\C)$ and $\tee$ to be the identity of $\ts(\C)$ one sees that the whole $\ts(\C)$ can be looked at as a particular $J$-family of $t$-structures on $\C$.
+\end{example}
+\begin{remark}\label{infinity}
+The poset $\ts(\C)$ has a minimum and a maximum given by
+\[
+\min(\ts(\C))=(\C,\cate{0});\qquad \max(\ts(\C))=(\cate{0},\C).
+\]
+which correspond to the maximal and minimal factorizations on $\C$ respectively, and will be called the \emph{trivial} factorizations\fshyp{}$t$-structures. 
+
+Hence, by Lemma \refbf{extends}, any $J$-family of $t$-structures $\tee\colon J\to \ts(\C)$ extends to a $(J\cup\{\pm\infty\})$-family by setting $\tee_{-\infty}=(\C,\cate{0})$ and $\tee_{+\infty}=(\cate{0},\C)$. 
+\end{remark}
+\begin{definition}\label{std.endocardium}
+Let $\tee$ be a $J$-family of $t$-structures. For $i$ and $j$ in $J$ we set
+\[
+\C_{[i,j)}=\C_{\geq i}\cap \C_{<j}.
+\]
+Consistently with Remark \refbf{infinity} and Notation \refbf{magictrick}, we also set
+\[
+\C_{[i,+\infty)}=\C_{\geq i};\qquad \C_{[-\infty,i)}= \C_{<i}
+\]
+for any $i$ in $J$. We say that $\C$ is \emph{$J$-bounded} if 
+\[
+\C=\bigcup_{i,j\in J}\C_{[i,j)}.
+\]
+Similarly, we say that $\C$ is \emph{$J$-left-bounded} if $\C=\bigcup_{i\in J}\C_{[i,+\infty)}$ and \emph{$J$-right-bounded} if $\C=\bigcup_{i\in J}\C_{[-\infty,i)}$. This notion is well known in the classical as well as in the quasicategorical setting: see \cite{BBDPervers,LurieHA}.
+\end{definition}
+\begin{remark}
+Since $\C_{[i,j)}=\C_{[i,+\infty)}\cap \C_{[-\infty,j)}$ one immediately sees that $\C$ is $J$-bounded if and only if $\C$ is both $J$-left- and $J$-right-bounded.
+\end{remark}
+\begin{remark}
+As it is natural to expect, if $i\geq j$, then $\C_{[i,j)}$ is contractible. Namely, since $j\leq i$ one has $\C_{<j}\subseteq \C_{<i}$ and so 
+\[
+\C_{[i,j)}=\C_{\geq i}\cap \C_{<j}\subseteq \C_{\geq i}\cap \C_{<i}=\C_{\geq_i0}\cap \C_{<_i0}
+\]
+which corresponds to the contractible subcategory of zero objects in $\C$ (this is immediate, in view of the definition of the two classes).
+\end{remark}
+\begin{remark}
+Let $\tee$ be a $\Z $-family of $t$-structures on $\C$. Then $\C$ is $\Z $-bounded (resp., $\Z $-left-bounded, $\Z $-right-bounded) if and only if $\C$ is bounded (resp., left-bounded, right-bounded)with respect to the $t$-structure $\tee_0$, agreeing with the classical definition of boundedness as given, \eg, in \cite{BBDPervers}.
+\end{remark}
+\begin{remark}
+If $\tee$ is an $\R$-family of $t$-structures on $\C$, then one can define
+\[
+\C_\lambda=\bigcap_{\epsilon>0}\C_{[\lambda,\lambda+\epsilon)}.
+\]
+These subcategories $\C_\lambda$ are the \emph{slices} of $\C$ in the terminology of \cite{Brid}.
+\end{remark}
+\begin{remark}\label{oss.perp}
+For any $i,j,h,k$ in $J$ with $j\le h$ one has
+\[
+\C_{[i,j)}\subseteq \C_{[h,k)}^\orth,
+\]
+\ie, $\C(X,Y)$ is contractible whenever $X\in \C_{[h,k)}$ and $Y\in \C_{[i,j)}$ (one says that $\C_{[i,j)}$ is \emph{right-orthogonal} to $\C_{[h,k)}$.%, see Notation \refbf{orth.between.classes}).
+Indeed, since $\C_{< j}=\C_{<_j0}=\C_{\geq_j0}^\orth=\C_{\geq j}^\orth$, and passing to the orthogonal reverses the inclusions, we have
+\[
+\C_{[i,j)}\subseteq \C_{<j} = \C_{\ge j}^\orth \subseteq \C_{\ge h}^\orth\subseteq \C_{[h,k)}^\orth.
+\]
+\end{remark}
+\begin{definition}
+Let $(\C, \tee)$ be a stable $\infty$-category endowed with a $t$-structure, arising from the normal torsion theory $\fF=(\E,\M)$. For each $n\in\Z$, let $\C_{\ge n}$ and $\C_{<n}$ be the reflective and coreflective subcategories of $\C$ determined by the $t$-structure $\tee$.
+
+Then $\tee$ is said to be
+\begin{itemize}
+\item \emph{bounded} if $\bigcup  \C_{\ge n}= \C$;
+\item \emph{limited} if every $f \colon  X\to Y$ fits into a fiber sequence
+\[
+\label{limited}
+\begin{kodi}
+\obj{
+	F & X & 0 \\
+	|(0')| 0 & Y & C \\
+};
+\mor F -> X -> 0 {{e[b]}}:-> C;
+\mor C <- Y <- 0' {{m[a]}}:<- F;
+\mor X f:-> Y;
+\pullout{F}{Y};
+\pullout{X}{C};
+\end{kodi}
+\]
+where $F=\fib(f), C=\cofib(f)$, and $m[a]\in\M[a], e[b]\in \E[b]$ for suitable integers $a,b\in\Z$;
+\item \emph{narrow} if $\C = \bigcup_{a\le b} \C_{[a,b)}$, where $\C_{[a,b)}=\C_{\ge a} \cap \C_{<b}$.
+\end{itemize}
+\end{definition}
+\begin{proposition}
+Let $(\C, \tee)$ be a stable $\infty$-category endowed with a $t$-structure. Then $\tee$ is narrow if and only if it is bounded, if and only if it is limited.
+\end{proposition}
+\begin{remark}
+We say that an $f\colon X\to Y$ in $(\C, \tee)$ is \emph{limited between $a,b\in\Z$} if there exists a diagram like (\refbf{limited}) for $f$; we say that $f$ is \emph{limited} if it is limited between $a,b$ for some $a,b\in\Z$. In this terminology, a $t$-structure $\tee$ is limited if and only if every $f\colon X\to Y$ is limited with respect to $\tee$.
+\end{remark}
+\begin{proof}
+It is rather obvious that $\tee$ is narrow if and only if it is limited, so we can reduce ourselves to prove that bounded and limited $t$-structures coincide.
+
+This is a consequence of the application of the following
+\begin{lemma}\label{limit}
+Let $f\colon X\to Y$ be limited between $a,b$; then $f$ belongs to $\M[a+1]\cap \E[b-1]$.
+\end{lemma}
+\begin{proof}
+We can reduce the result to an easy consequence of the Sator Lemma. Moreover, we only prove that $f\in \M[a+1]$, the proof that $f\in \E[b-1]$ being dual.
+
+By the abovementioned Sator Lemma, $\var{F}{0}\in \M[a]$ if and only if $\var{0}{F}\in \M[a]$; but now $F\simeq C[-1]$ in diagram (\refbf{limited}), and $\var{0}{C[-1]}\in \M[a]$ implies that $\var{0}{C}\in \M[a+1]$.
+\end{proof}
+Now we can return to the proof of the initial result, implicitly invoking Lemma \refbf{limit} when needed: if $\tee$ is a limited $t$-structure, then every $\var{X}{0}$ is limited between $a_X, b_X$, hence $\var{X}{0}\in \M[a_X+1]$, so that $X\in \C_{ < a_X}$; in the same way $\var{0}{X}\in \E[b_X-1]$, so that $X\in \C_{\ge b_X -1}$ and $X\in \bigcup_{u,v}\C_{[u,v)}$. The other inclusion is obvious.
+
+Conversely, if $\tee$ is bounded, we have that each object $X$ lies in $\E[u_X]\cap \M[v_X]$; so if we consider the following diagram of pullout squares
+\[
+\begin{kodi}
+\obj{
+	Y[-1] & 0 & \\
+	F & X & |(0')| 0 \\
+	|(0'')| 0 & Y & C \\
+};
+\mor[swap] Y[-1] -> 0 {{m[v_X]}}:-> X -> Y -> C <- 0' <- X <- F -> 0'' -> Y;
+\mor Y[-1] -> F;
+\mor Y[-1] {bend right},-> 0'';
+\mor[near end] 0 {{m[v_Y]}}:{bend left},-> Y;
+\end{kodi}
+\]
+we deduce that the arrow $\var{F}{0}$ belongs to $\M[v]$, where $v =\max\{v_X, v_Y\}$, as a consequence of the stability under pullbacks and the 3-for-2 closure property of each class $\M[n]$.
+
+Reasoning in a perfectly dual fashion, we deduce that $\var{0}{C}\in \E[u]$, where $u=\min\{u_X, u_Y\}$, so that each $f\colon X\to Y$ is limited between $u,v$.
+\end{proof}

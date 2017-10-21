@@ -1,0 +1,135 @@
+\section{Tilting theory}
+\epigraph{Quando si vuole uccidere un uomo bisogna colpirlo al cuore, e un Winchester è l'arma più adatta.}{Ramón Rojo}
+Let us first recall (\adef \refbf{df:abelinfty}) that an abelian $\infty$\hyp{}category is an $\infty$\hyp{}category with biproducts, kernels and cokernels, and image\hyp{}factorization which is in addition \emph{homotopically discrete}.
+
+It is not surprising that the language of abelian $\infty$\hyp{}categories is rich enough to interpret the notion of normal torsion theory:\footnote{This is the context where historically torsion theories were introduced \cite{dickson1966torsion}; in some sense, stable categories are ontologically more primitive since ``all'' abelian categories arise as hearts of suitable $t$\hyp{}structures.} to be more precise, we can define a (normal) torsion theory on an abelian $\infty$\hyp{}category $\A$, only paying attention to the fact that the stable setting endows the definition with several useful autodualities (like the equivalence between semiexact and normal torsion theories in \cite{Fiorenza2014}) false in the abelian setting.
+
+Start with the following example: let $\C = \cate{D}(\A)$ be the derived $\infty$\hyp{}category of an abelian category $\A$; it is interesting to ask which (factorization functors of) normal torsion theories $\tee_\C$ on $\D(\A)$ factor through $\A = \D(\A)^\heart \subset \D(\A)$; this means that
+\begin{enumerate}
+\item we have (mild) co\fshyp{}completeness conditions on $\A$, that amount to the existence in $\A$ of finite co\fshyp{}limits;
+\item the reflection $R$ and coreflection $S$ of $\tee_\C$ factor as follows:
+\[
+\xymatrix{
+	\C^\heart \ar[rr]^{S|_{\C^\heart}}\ar@{.>}[dr]_{\hat S} && 0/ \E \\
+	 & 0/\E \cap \C^\heart \ar[ur]
+}\qquad
+\xymatrix{
+	\C^\heart \ar[rr]^{R|_{\C^\heart}}\ar@{.>}[dr]_{\hat R}  && \M/0 \\
+	 & \M/0 \cap \C^\heart \ar[ur]
+}
+\]
+\end{enumerate} 
+This informal definition is needed to cope with a torsio\hyp{}centric reformulation of \emph{tilting theory}. Our aim here is not to delve into the details of such an intricate and vast topic, but only to skim the surface of it: indeed, 
+at the level of generality we are interested in, \emph{tilting} of a $t$\hyp{}structure $\tee$ is a device to produce another $t$\hyp{}structure out of $\tee$ and a (normal) torsion theory on the heart $\C^{\heart, \tee}$; the $t$\hyp{}structure on $\C$ are acted by (normal) torsion theories on their hearts.
+\begin{definition}
+Let $\C$ be a stable $\infty$\hyp{}category, $\fF = (\E, \M)$ a normal torsion theory on $\C$ and $\mathbb{T} = (\mathcal{X}, \mathcal{Y})$ a torsion theory on the heart $\C^{\heart, \tee}$. We define the two classes
+\begin{align}
+\E \tilt \mathcal{X} &= \{f\in \hom(\C)\mid f\in \E [-1],\; h_\tee(f)\in \mathcal{X}\}\notag\\
+\M \tilt \mathcal{Y} &= \{g\in \hom(\C)\mid g\in \M [1], \; h_\tee(g)\in \mathcal{Y}\},\footnotemark
+\end{align}
+\footnotetext{The symbol $\tilt$ (pron. \emph{retort}) recalls the alchemical token for an alembic; here the term hints at the double meaning of the word retort.}
+where $h_\tee\colon \C \to \C^{\heart,\tee}$ is the canonical functor of projection to the heart. These two classes define a new normal torsion theory $\tee \tilt \mathbb{T}$ on $\C$, called the \emph{tilting} of $\tee$ by $\bT$.
+\end{definition}
+\begin{remark}
+The idea behind the definition of tilting is to have a way to factor morphisms ``until the upper half\hyp{}plane'', and below the horizontal line $Y=1$;\footnote{The $Y$ axis is oriented downwards: see Figure \refbf{tilting.fac} below.} specifying a (normal) torsion theory on $\C^{\heart, \tee}$ amounts to specifying a factorization on the objects of the strip $[0,1)$.
+\end{remark}
+\begin{proposition}
+Let $\bT$ be a (normal) torsion theory on $\C^{\heart,\tee}$, and let $\mathbb{S}$ another (normal) torsion theory on $\C^{\heart, \tee\;\tilt\; \bT}$.  Now, the tilting operation ``behaves like an action'', namely
+\begin{itemize}
+\item $(\tee\tilt \bT)\tilt \mathbb{S} = \tee \tilt (\bT \star \mathbb{S})$, for an operation $\star$ between (normal) torsion theories on the heart; 
+\item $\tee \tilt \bT_{\tee} = \tee$, if $\bT_\tee$ is the factorization system induced by $\tee$ on its heart.
+\end{itemize}
+\end{proposition}
+\begin{definition}[Compatible $t$\hyp{}structures]
+Let $\fF, \fF'$ be two $t$\hyp{}structures on the stable $\infty$\hyp{}category $\C$; then $\fF'$ is \emph{compatible with $\fF$} (or \emph{$\fF$\hyp{}compatible}) if the $\fF'$\hyp{}factorization of every object $X\in\C^{\heart,\tee}$ belongs again to $\C^{\heart,\tee}$.
+\end{definition}
+In view of the definition of the heart functor $h_\tee\colon \C \to \C^{\heart,\tee}$ as $X\mapsto R_1 S_0 X$, and since an object $A\in\C$ lies in $\C^{\heart,\tee}$ if and only if $h_\tee A \cong A$, we have that $\fF'$ is $\fF$\hyp{}compatible if and only if its coreflection\fshyp{}reflection pair $(S', R')$ is such that 
+\[
+R_1 S_0 S' = S'; \qquad\qquad R_1 S_0 R'  = R'.
+\]
+\begin{remark}
+Let $J$ be a $\Z$\hyp{}poset and $\tee\colon J\to \ts(\C)$ a $J$\hyp{}slicing on $\C$; let $\bar \jmath$ a specified element of $J$ and $\tee_{\bar\jmath} = (\E_{\bar\jmath}, \M_{\bar\jmath})$ its image under $\tee$; then, every $\tee_j$ such that $\tee_{\bar\jmath+1}\preceq \tee_j \preceq \tee_{\bar\jmath}$ is $\tee_{\bar\jmath}$\hyp{}compatible.
+\end{remark}
+\begin{proposition}
+Given $\fF, \fF'$ compatible $t$\hyp{}structures on $\C$, $\fF'$ induces a normal torsion theory on the heart $\C^{\heart, \tee}$, denoted $\fF'|_\tee$, and $\fF \tilt (\fF'|_\tee) = \fF'$.
+\end{proposition}
+% \begin{proof}
+% \fare
+% \end{proof}
+\begin{proposition}
+There is a bijective correspondence between tiltings of $\fF$ by (normal) torsion theories on $\C^{\heart, \tee}$ and $\fF$\hyp{}compatible normal torsion theories on $\C$.
+\end{proposition}
+The situation is best depicted in the following picture giving the factorization rule; this also yields orthogonality of the two classes so determined.
+\begin{figure}[h]
+\begin{kodi}
+\begin{scope}
+\clip (0,-3cm) rectangle (10,3cm);
+\draw[line width=6cm,gray!15] (0,0) -- (10,0);
+\draw[line width=2.5cm,gray!40] (0,0) -- (10,0);
+\end{scope}
+\draw[thick,yshift=1.25cm] (0,0) -- (10,0) node[right] {$0$};
+\draw (10,-1.25) node[right] {$1$};
+\node[above] (X) at (7.5,2.5) {$X$};
+\node[below] (Y) at (7.5,-2.5) {$Y$};
+\node[left,shape=circle,fill=gray!40,inner sep=.2em,outer sep=.2em]  (A) at (1.5,1.25) {$A$};
+\node[right] (B) at (4.5,0) {$B$};
+\node[left,shape=circle,fill=gray!40,inner sep=.2em,outer sep=.2em] (C) at (2.5,-1.25) {$C$};
+\mor X f:{bend left},-> Y;
+\draw[->] (X) -- (A);
+\draw[->] (A) -- (B);
+\draw[->] (B) -- (C);
+\draw[->] (C) -- (Y);
+\draw[->,dashed,thick] (X.210) to [bend right] (B);
+\draw[->,dashed,thick] (B) to [bend right] (Y.140);
+\end{kodi}
+\caption{Tilting factorization of $f$.}
+\label{tilting.fac}
+\end{figure}
+Even if the result can also be obtained from a direct argument, as a consequence of the following general fact about ternary FS:
+\begin{lemma}[Tilting of factorizations]\label{tilted.FS}
+Let $\tee\colon \Z\to \ts(\C)$ be a $\Z$\hyp{}family of normal torsion theories on a stable $\infty$\hyp{}category $\C$, having values $\tee_i = (\E_i, \M_i)$ for $i\in\Z$ (here, we will only consider the values $\tee_0, \tee_1 = \tee_0[1]$); let $(\LL,\mathcal{R})$ be a torsion theory on the heart $\C^\heart = \C_{[0,1)}$ such that $\E_1\subseteq \LL \subseteq \E_0$ (equivalently, $\M_0 \subseteq \R \subseteq \M_1$). Then, the factorization $(e_{\mintilt},m_{\mintilt})$
+\[
+\begin{kodi}
+\obj{
+X & A && B & Y \\
+&& S &&\\	
+};
+\mor X e_1:-> A {e_0 \cdot m_1}:-> B m_0:-> Y;
+\mor[swap] A l:-> S r:-> B;
+\mor[dashed, bend right,swap] X {e_{\mintilt}}:-> S {m_{\mintilt}}:-> Y;
+\end{kodi}
+\]
+of a morphism $f\colon X\to Y$ in $\C$, obtained from the synergy of the ternary factorization induced by $\tee_0 \preceq \tee_1$, plus the $(\mathcal{L},\mathcal{R})$\hyp{}factorization of its middle part $A\to B \in \E_0\cap \M_1$, defines a factorization system on $\C$, called the \emph{tilting} of $\tee$ (confused with its $0$\hyp{}value $\tee_0$, in view of Remark \refbf{trivial.but.useful2}) by $(\LL, \fR)$, and denoted $\tee\tilt (\LL,\fR)$.
+\end{lemma}
+\begin{proof}
+We have to show that the rule outlined above constitutes a factorization system; the stretagy is to summon \cite[\athm \textbf{A}]{Korostenski199357} again (see the proof of the ``Rosetta stone'' in \cite{Fiorenza2014}).
+
+Now, this allows us to conclude since given a lifting problem
+\[
+\begin{kodi}
+\obj{
+X & A \\
+Y & B \\	
+Z & C \\
+};
+\mor X u:-> A r:-> B m_0:-> C;
+\mor[swap] X e_1:-> Y l:-> Z v:-> C;
+\mor[dashed] Y x:-> C;
+\mor[dashed] Y y:-> A;
+\mor[dashed] Z z:-> A;
+\end{kodi}
+\]
+the arrows $x,y,z$ obtained respectively as composition $v\circ l$, and as solutions to suitable lifting problems, give the desired orthogonality.
+\end{proof}
+\bibliography{allofthem}{}
+\bibliographystyle{amsalpha}
+\hrulefill 
+\begin{center}
+\boxed{
+\begin{minipage}{.5\textwidth}
+Todo:
+
+$\bullet$ mettere a posto le crossref 
+(che al momento puntano alla tesi)
+\end{minipage}}
+\end{center}

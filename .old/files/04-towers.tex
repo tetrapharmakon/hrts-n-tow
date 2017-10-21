@@ -1,0 +1,153 @@
+\section{Towers of morphisms.}
+\epigraph{\cjRL{hAbAh ner:dAh w:nAb:lAh +sAM ,s:pAtAM 'a:+sEr l'o yi+s:m:`U 'iy+s ,s:pat re`ehU;} }{\textsc{Genesis} 11:7}
+%\HebrewEpigraph{הָבָה, נֵרְדָה, וְנָבְלָה שָׁם, שְׂפָתָם--אֲשֶׁר לֹא יִשְׁמְעוּ, אִישׁ שְׂפַת רֵעֵהוּ.}{\cite{BHS}, \smallcap{Genesis} 11:7}
+In the remainder of this section, $J$ will be a fixed $\Z$-poset and $\tee_i$ will be the $i^\text{th}$ element of a $J$-family of $t$-structures on $\C$; $\fF_i$ will denote the corresponding $J$-family of factorization systems.
+
+We recall the definition of a \emph{multiple} factorization system, and in particular that
+\begin{lemma}\label{k.fold.fact}
+The chain $i_1\leq i_2\leq\cdots\leq i_k$ determines a $k$-fold factorization system in $\C$. Namely, every arrow $f\colon X\to Y$ in $\C$ can be uniquely factored into a composition
+\[
+X \xto{\E_{i_k}} Z_{i_k} \xto{\E_{i_{k-1}}\cap \M_{i_k}} Z_{i_{k-1}}\to\dots\to Z_{i_{2}} \xto{\E_{i_{1}}\cap \M_{i_{2}}} Z_{i_1} \xto{\M_{i_{1}}} Y.
+\]
+\end{lemma}
+\begin{lemma}\label{versa.vice}
+Let $i,j$ be elements in $J$ and let $X$ be an object in $\C_{\geq j}$ (see Definition \refbf{std.endocardium}). If a morphism $f\colon X\to Y$ is in $\E_{i}\cap \M_{j}$, then $\cofib(f)$ is in $\C_{[i,j)}$.\end{lemma}
+\begin{proof}
+Since $X$ is in $\C_{\geq j}$, $0\to X\xrightarrow{f} Y$ is the $(\E_j,\M_j)$-factorization of $0\to Y$ (in particular, $X\cong S_jY$ if $S_j$ denotes the coreflection of $\C$ on $\C_{\ge j}$. Since the factorization system $\fF_j$ is normal, hence semi-right-exact, we have the following pullout diagram:
+\[
+\begin{kodi}
+\obj{
+	X & Y \\
+	0 & |(cofib)| \cofib(f) \\
+};
+\mor X {\E_j}:-> Y {\M_j}:-> cofib {\M_j}:<- 0 {\E_j}:<- X;
+\end{kodi}
+\]
+Hence $\cofib(f)$ is in $\C_{<j}$. On the other hand, $f$ is in $\E_i$, which is closed under pushouts, and so $0\to \cofib(f)$ is in $\E_i$, \ie, $\cofib(f)$ is in $\C_{\geq i}$.
+\end{proof}
+An immediate corollary of \refbf{versa.vice} is that the cofibers of each $f_j\colon Y_{i_j}\to Y_{i_{j-1}}$ in the $k$-fold factorization obtained via \refbf{k.fold.fact} belong to the subcategories $\C_{[i_{j-1},i_j)}$. This remark is the basic building block of the \emph{tower} of $f$.
+\begin{corollary} \label{cor:perPostnikov}
+Let $i_1\leq i_2\leq\cdots\leq i_k$ an ascending chain in $J$. Then for any object $Y$ in $\C$, the arrows $f_j\colon Y_{i_j}\to Y_{i_{j-1}}$ in the $k$-fold factorization of the initial morphism $0\to Y$ are such that $\cofib(f_j)\in \C_{[i_{j-1},i_j)}$, where we have set $i_{k+1}=+\infty$ and $Y_{+\infty}=0$ (and, similarly, $i_{0}=-\infty$ and $Y_{-\infty}=Y$) consistently with Remark \refbf{infinity} (and its dual).
+\end{corollary}
+\begin{proof}
+From the $k$-fold factorization
+\[
+0 \xto{\E_{i_k}} Y_{i_k} \xto{\E_{i_{k-1}}\cap \M_{i_k}} Y_{i_{k-1}}\to\dots\to Y_{i_{2}} \xto{\E_{i_{1}}\cap \M_{i_{2}}} Y_{i_1} \xto{\M_{i_{1}}} Y,
+\]
+and from the fact that $\E_{i_1}\supseteq \E_{i_2} \supseteq\dots\supseteq \E_{i_k}$ and each class $\E_{i_j}$ is closed for composition, we see that $Y_{i_j}$ is in $\C_{i_{j}}$ and the previous lemma applies.
+\end{proof}
+Firm reflectivity implies the converse of \refbf{versa.vice}:
+\begin{lemma}\label{lemma.vice.versa}
+Let $i\leq j$ be elements in $J$ and let $f\colon X\to Y$ be a morphism in $\C$. If $X$ is in $\C_{[j,+\infty)}$ and $\cofib(f)$ is in $\C_{[i,j)}$ then $0\to X\xto{f}Y$ is the $(\E_j,\M_j)$-factorization of the initial morphism $0\to Y$ and $Y$ is in $\C_{[i,+\infty)}$. In particular $f$ is in $\E_i\cap \M_j$. \end{lemma}
+\begin{proof}
+
+Since $X$ is in $\C_{\geq j}$, the morphism $0\to X$ is in $\E_j$, and so (reasoning up to equivalence) to show that $0\to X\to Y$ is the $(\E_j,\M_j)$-factorization of $0\to Y$ we are reduced to showing that $f\colon X\to Y$ is in $\M_j$. Since $\cofib(f)$ is in $\C_{[i,j)}$, we have in particular that $\cofib(f)\to 0$ is in $\M_j$ and so $0\to \cofib(f)$ is in $\M_j$ by the Sator lemma. Then we have a homotopy pullback diagram
+\[
+\begin{kodi}
+\obj{
+	X & 0 \\
+	Y &|(cofib)| \cofib(f) \\
+};
+\mor X f:-> 0 {\M_j}:-> cofib <- Y <- X;
+\end{kodi}
+\]
+and so $f$ is in $\M_j$ by the fact that $\M_j$ is closed under pullbacks. 
+
+To show that also $f\in \E_i$ let $0\to X\to T\to Y$ be the ternary factorization of $f$. We can consider the diagram
+\[
+\begin{kodi}
+\obj{
+0 \\
+X &|(0')|0 \\
+T & U &|(0'')| 0 \\
+Y &|(cofib)| \cofib(f) & V &|(0''')| 0 \\
+};
+\mor[swap] 0 {\E_j}:-> X {\E_i\cap \M_j}:-> T {\M_i}:-> Y {\E_j}:-> cofib {\E_i\cap \M_j}:-> V {\M_i}:-> 0''';
+\mor X {\E_j}:-> 0' {\E_i\cap \M_j}:-> U {\E_i\cap \M_j}:-> 0'' {\M_i}:-> V;
+\mor T {\E_j}:-> U {\M_i}:-> cofib;
+\end{kodi}
+\]
+where all the squares are pullouts, and where we have used the Sator lemma, the fact that the classes $\E$ are closed for pushouts while the classes $\M$ are closed for pullbacks, and the 3-for-2 property for both classes. 
+
+\end{proof}
+\begin{lemma}\label{perPostnikov} 
+Let $Y$ an object in $\C$ and let $i_1\leq i_2\leq\cdots\leq i_k$ be an ascending chain in $J$. If a factorization 
+\[
+0 \xto{f_{k+1}} Y_{i_k} \xto{f_k}Y_{i_{k-1}}\to\dots\to Y_{i_{2}} \xto{f_2} Y_{i_1} \xto{f_1} Y,
+\]
+of the initial morphism $0\to Y$ is such that $\cofib(f_j)$ is in $\C_{[i_{j-1},i_j)}$ (with $i_{k+1}=+\infty$ and $i_0=-\infty$) then this factorization is the $k$-fold factorization of $0\to Y$ associated with the chain $i_1\leq\cdots\leq i_k$. 
+\end{lemma}
+\begin{proof}
+By uniqueness of the $k$-fold factorization we only need to prove that $f_j\in \E_{i_{k-1}}\cap \M_{i_k}$, which is immediate by repeated application of Lemma \refbf{lemma.vice.versa}. 
+\end{proof}
+This paves the way to the definition of the tower of $f$: the basic idea is to ``pull back'' the factorization of the initial morphism $0\to \cofib(f)$ using Lemma \refbf{perPostnikov}.
+\begin{definition}[Tower of a morphism] \label{tower.of.f}Let $f\colon X\to Y$ be a morphism in $\C$ and let $i_1\leq i_2\leq\cdots \leq i_k$ be an ascending chain in $J$. We say that a factorization 
+\[
+X \xto{f_{k+1}} Z_{i_k} \xto{f_k}Z_{i_{k-1}}\to\dots\to Z_{i_{2}} \xto{f_2} Z_{i_1} \xto{f_1} Y,
+\]
+of $f$ is a \emph{tower} of $f$ relative to the chain $\{i_j\} = \{i_1\leq i_2\leq\cdots \leq i_k\}$ if for any $j=1,\dots,k+1$ one has
+$\cofib(f_j)\in \C_{[i_{j-1},i_j)}$ (with $i_{k+1}=+\infty$ and $i_0=-\infty$).
+\end{definition}
+\begin{proposition}\label{prop:perPostnikov} 
+Let $f\colon X\to Y$ be a morphism in $\C$ and let $i_1\leq i_2\leq\cdots \leq i_k$ be an ascending chain in $J$. Then a tower for $f$ relative to $\{i_j\}$, denoted $\rook(f,\{i_j\})$, exists and it is unique up to isomorphisms.
+\end{proposition}
+\begin{proof}
+We split the proof in two parts: existence and uniqueness of the tower;
+\begin{enumerate}
+\item {\bf Existece.} Consider the pullout diagram
+\[
+\begin{kodi}
+\obj{
+	X & 0 \\
+	Y &|(cofib)| \cofib(f) \\
+};
+\mor X f:-> 0 {\M_j}:-> cofib <- Y <- X;
+\end{kodi}
+\]
+By Corollary \refbf{cor:perPostnikov}, the $k$-fold factorization 
+\[
+0 \xto{\varphi_{k+1}} A_{i_k} \xto{\varphi_k}A_{i_{k-1}}\to\dots\to A_{i_{2}} \xto{\varphi_2} A_{i_1} \xto{\varphi_1} \cofib(f)
+\]
+of the initial morphism $0\to \cofib(f)$ is such that $\cofib(\varphi_{i_j})\in \C_{[i_{j-1},i_j)}$. Pulling back this factorization along $Y\to \cofib(f)$ we obtain a factorization
+\[
+\begin{kodi}
+\obj{
+	X & 0 \\
+	|(zik)| Z_{i_k} & |(aik)| A_{i_k} \\
+	|(ldots)| \vdots & |(rdots)| \vdots \\
+	|(zi1)| Z_{i_1} & |(ai1)| A_{i_1} \\
+	Y & |(cofib)| \cofib(f) \\
+};
+\mor X -> 0 \phi_{k+1}:-> aik \phi_k:-> rdots \phi_2:-> ai1 \phi_1:-> cofib <- Y {f_1}:<- zi1 {f_2}:<- ldots {f_k}:<- zik {f_{k+1}}:<- X;
+\mor zik -> aik;
+\mor zi1 -> ai1;
+\mor[semilightgray] X f:semilightgray,{bend right},-> Y;
+\end{kodi}
+\]
+of $f$, and the pasting of pullout diagrams
+\[
+\begin{kodi}
+\obj{
+|(zij)| Z_{i_j}       & |(aij)| A_{i_j}       & 0 \\
+|(zij1)| Z_{i_{j-1}} & |(aij1)| A_{i_{j-1}} & |(cof)| \cofib(\varphi_{j}) \\
+};
+\mor zij -> aij -> 0 -> cof <- aij1 <- zij1 f_j:<- zij;
+\mor aij \phi_j:-> aij1;
+\end{kodi}
+\]
+shows that $\cofib(f_{j})=\cofib(\varphi_{j})$ and so $\cofib(f_{j})\in \C_{[i_{j-1},i_j)}$. This proves the existence of the tower. 
+\item {\bf Uniqueness} Start with a tower $\rook(f,\{i_j\})$ for $f$ and push it out along $Y\to \cofib(f)$ to obtain a tower for the initial morphism $0\to \cofib(f)$. By Lemma \refbf{perPostnikov}, this is the $k$-fold factorization of $0\to \cofib(f)$ associated with the chain $\{i_j\}$ and so $\rook(f,\{i_j\})$ is precisely the tower constructed in the first part of the proof. Note how the pullout axiom of stable $\infty$-categories plays a crucial role.\qedhere
+\end{enumerate}
+\end{proof}
+\begin{remark}
+A tower for $f$ relative to an ascending chain $\{i_j\}$ can be equivalently defined as a factorization of $f$ such that $\mathrm{fib}(f)\in \C_{[i_{j-1}-1,i_j-1)}$, for any $j=0,\dots,k+1$.
+\end{remark}
+\begin{remark}
+It's an unavoidable temptation to think of the tower $\rook(f,\{i_j\})$ relative to an ascending chain $\{i_j\}$ as the $k$-fold factorization of $f$ associated with the chain $\{i_j\}$. 
+
+As the following counterexample shows, when $f$ is not an initial morphism this is in general not true.\footnote{When $f\colon A\to 0$ is the terminal morphism, our notation and construction is in line with the classical \cite{LurieHA}, where the ``Postnikov tower'' of $A$ is the sequence
+\[
+A\to \dots \to R_2A\to R_1A\to R_0A \to 0
+\]
+of factorizations obtained from the (stable image of) the $n$-connected factorization system of \cite{Joy}.} Let $J=\Z $ and take an ascending chain consisting of solely the element $0$. Now take a morphism $f\colon X\to Y$ between two elements in $\C_{[-1,0)}$. The object $\cofib(f)$ will lie in $\C_{[-1,+\infty)}$, since $\E_{-1}$ is closed for pushouts, but in general it will not be an element in $\C_{[0,+\infty)}$. In other words, we will have, in general, a nontrivial $(\E_0,\M_0)$-factorization of the initial morphism $0\to \cofib(f)$. Pulling this back along $Y\to \cofib(f)$ we obtain the tower $X\xto{f_2} Z\xto{f_1} Y$ of $f$, and this factorization will be nontrivial since its pushout is nontrivial. It follows that $(f_2,f_1)$, cannot be the $(\E_0,\M_0)$-factorization of $f$. Indeed, by the 3-for-2 property of $\M_0$, the morphism $f$ is in $\M_0$, so its $(\E_0,\M_0)$-factorization is trivial. 
+\end{remark}

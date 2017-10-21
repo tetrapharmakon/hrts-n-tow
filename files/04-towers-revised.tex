@@ -1,0 +1,328 @@
+%!TEX root=../hearts-revised.tex
+\section{Interval decompositions and towers.}\label{sec:towers}
+\begin{modifyepigraph}{.6}
+\epigraph{\cjRL{hAbAh ner:dAh w:nAb:lAh +sAM ,s:pAtAM 'a:+sEr l'o yi+s:m:`U 'iy+s ,s:pat re`ehU;}}{\cjRL{mo+sEh}}
+\end{modifyepigraph}
+\begin{remark}
+For the whole section $(J,\le)$ will be a fixed totally ordered $\Z$-poset and $\tee\colon \O(J)\to  \ts(\C)$ will be a $J$-slicing. 
+\end{remark}
+\begin{definition}
+A \emph{$(k+2)$-fold interval decomposition} of $J$ is a morphism of posets $I_{\ordk}\colon \ordk\to \O(J)$. 
+\end{definition}
+\begin{notat}
+When no ambiguity is possible, the image of $j\in \{0,1,\dots,k\}$ via $I_{\ordk}$ will be denoted simply by $(L_j,U_j)$. For every $j=0,\dots,k+1$ the interval $I_j=U_{j-1}\cap L_j$ is called the \emph{$j$-th interval} in the decomposition, with the convention that $U_{-1}=J=L_{k+1}$. %We also set $I_{0}=L_0$ and $I_{k+1}=U_k$. 
+
+The factorization system associated with $(L_j,U_j)$ will be denoted by $(\E_j,\M_j)$. Notice that, since $I_{\ordk}$ is a morphism of posets we have $\E_{j+1}\subseteq \E_j$ and $\M_{j+1}\supseteq \M_j$. 
+\end{notat}
+This implies that the composition $\ordk \xto{I_{\ordk}} \O(J) \xto{\tee} \ts(\C)$ is a $k$-fold factorization system; in other words
+\begin{lemma}\label{k.fold.fact}
+Let $(\E_j, \M_j)$ as above. Then every arrow $f\colon X\to Y$ in $\C$ can be uniquely factored into a composition
+\[
+X \xto{\E_{k}} Z_{k} \xto{\E_{k-1}\cap \M_{k}} Z_{k-1}\to\dots\to Z_{1} \xto{\E_{0}\cap \M_{1}} Z_{0} \xto{\M_{0}} Y.
+\]
+\end{lemma}
+\begin{proof}
+Since $(\E_k,\M_k)$ is a factorization system, we have a (unique) factorization $X \xto{\E_{k}} Z_{k} \xto{\M_{k}} Y$.  Since $(\E_{k-1},\M_{k-1})$ is a factorization system, we can (uniquely) factor $Z_k\to Y$ as $Z_k \xto{\E_{k-1}} Z_{k-1} \xto{\M_{k-1}} Y$. Since $\M_{k-1}\subseteq \M_k$, the morphism $Z_{k-1} \to Y$ is also in $\M_k$ and so, by the 3-for-2 property, also $Z_k \to Z_{k-1}$ is in $\M_k$. Therefore $Z_k \xto{\E_{k-1}} Z_{k-1}$ is in $\E_{k-1}\cap \M_k$. then one concludes iterating this argument.
+\end{proof}
+\begin{definition}
+The sequence of morphism in the factorization of $f\colon X\to Y$ in Lemma \refbf{k.fold.fact} is called the \emph{$I_{\ordk}$-tower} of $f$, and it is denoted $\rook(f,I_{\ordk})$, or simply by $\rook(f)$ when the interval decomposition $I_{\ordk}$ is clear from the context.
+\end{definition}
+\begin{remark}
+When $\C$ is the stable $\infty$-category of spectra and $X\to 0$ and $0\to X$ are the terminal and the initial morphism of $X$, respectively, the above notation and construction is in line with the classical Postnikov and Whitehead towers of $X$, i.e., with the sequences
+\[
+X\to \dots \to R_2X\to R_1X\to R_0X \to 0
+\]
+\[
+0\to \dots \to S_2X\to S_1X\to S_0X \to X
+\]
+of factorizations obtained from the (stable image of) the $n$-connected factorization system of \cite{Joy}. 
+\end{remark}
+\begin{remark}\label{rem.trivial-factorizations}
+If both $X$ and $Y$ are in $\C_{L_k}$, then the morphism $X\to Z_{k}$ in $\rook(f,I_{\ordk})$ is an isomorphism. Indeed, by construction the morphism $Z_{k}\to Y$ is in $\M_{k}$. Since both $X\to 0$ and $Y\to 0$ are in $\M_{k}$ then also $X\to Y$ is in $\M_{k}$ by 3-for-2, and so also $X\to Z_{k}$ in in $\M_{k}$ again by 3-for-2. But by construction $X\to Z_{k}$ is in $\E_{k}$, so it is an isomorphism. By the same argument one sees that if both $X$ and $Y$ are in $\C_{U_0}$, then the morphism $Z_{0}\to Y$ is an isomorphism.
+\end{remark}
+
+\begin{corollary}\label{cor:perPostnikov}
+Let $I_{\ordk}$ be a $(k+2)$-fold interval decomposition of $J$. Then for any object $Y$ in $\C$, the tower $\rook\Big(\var{0}{Y},I_{\ordk}\Big)$
+is
+\[
+0 \xto{\E_{k}} \mathcal{H}^{U_k}Y \xto{\E_{k-1}\cap \M_{k}} \mathcal{H}^{U_{k-1}}Y\to\dots\to \mathcal{H}^{U_1}Y \xto{\E_{0}\cap \M_{1}} \mathcal{H}^{U_0}Y \xto{\M_{0}} Y.
+\]
+Moreover, the arrows $f_j\colon \mathcal{H}^{U_j}Y\to \mathcal{H}^{U_{j-1}}Y$ in $\rook(0\to Y,I_{\ordk})$ are such that $\cofib(f_j)=\mathcal{H}^{I_j}Y\in \C_{I_j}$, for $j=0,\dots,k+1$.
+\end{corollary}
+\begin{proof}
+From the $(k+2)$-fold factorization
+\[
+0 \xto{\E_{k}} Y_{k} \xto{\E_{k-1}\cap \M_{k}} Y_{k-1}\to\dots\to Y_{1} \xto{\E_{0}\cap \M_{1}} Y_{0} \xto{\M_{0}} Y,
+\]
+and from the fact that $\E_{0}\supseteq \E_{1} \supseteq\dots\supseteq \E_{k}$ and each class $\E_{j}$ is closed for composition, we see that 
+$0\to Y_{j}\to Y$ is the $(\E_j,\M_j)$-factorization of $0\to Y$ and so $Y_{j}=S_{U_j}Y=\mathcal{H}^{U_j}Y$. One concludes by Lemma \refbf{lem.for-homology}. 
+\end{proof}
+The above corollary motivates the following
+\begin{definition}
+Let $f\colon X\to Y$ be a morphism in $\C$. A \emph{$I_{\ordk}$-weaved factorization}  for $f$ is a factorization of $f$ of the form
+\[
+X \xto{f_{k+1}} Z_{k} \xto{f_{k}} Z_{k-1}\to\dots\to Z_{1} \xto{f_{1}} Z_{0} \xto{f_{0}} Y.
+\]
+with $\cofib(f_j)\in \C_{I_j}$, for $j=0,\dots,k+1$.
+\end{definition}
+\begin{remark}
+If we call $\weaves(f, I_{\ordk})$ the class of $I_{\ordk}$-weaved factorizations for a morphism $f \colon X\to Y$, it is immediate to see that we have a canonical identification
+\[
+\weaves\Big(\varnobkt{X}{Y},I_{\ordk}\Big) \leftrightarrows \weaves\Big(\varnobkt{0}{\cofib(f)}, I_{\ordk}\Big)
+\]
+Moreover \acor\refbf{cor:perPostnikov} precisely states that $\rook\Big(\varnobkt{0}{\cofib(f)},I_{\ordk}\Big)$ is an $I_{\ordk}$-weaved factorization, and so we have the existence of $I_{\ordk}$-weaved factorizations for arbitrary morphisms. The remainder of this section is devoted to proving the uniqueness of $I_{\ordk}$-weaved factorizations. This reduces to proving the uniqueness of $I_{\ordk}$-weaved factorizations for initial morphism, i.e., to showing that the only possible $I_{\ordk}$-weaved factorization of $0\to Y$ is its tower.
+\end{remark}
+\begin{lemma}\label{lemma.vice.versa}
+In the above notation, let $f\colon X\to Y$ be a morphism in $\C$. If $X$ is in $\C_{U_j}$ and $\cofib(f)$ is in $\C_{I_j}$ then $0\to X\xto{f}Y$ is the $(\E_j,\M_j)$-factorization of the initial morphism $0\to Y$ and $Y$ is in $\C_{U_{j-1}}$. In particular $f$ is in $\E_{j-1}\cap \M_j$. \end{lemma}
+\begin{proof}
+
+Since $X$ is in $\C_{U_j}$, the morphism $0\to X$ is in $\E_j$, and so to show that $0\to X\xto{f} Y$ is the $(\E_j,\M_j)$-factorization of $0\to Y$ we are reduced to showing that $f\colon X\to Y$ is in $\M_j$. Since $\cofib(f)$ is in $\C_{I_j}$, we have in particular that $\cofib(f)\to 0$ is in $\M_j$ and so $0\to \cofib(f)$ is in $\M_j$ by the Sator lemma. Then we have a homotopy pullback diagram
+\[
+\begin{kodi}
+\obj{
+	X & 0 \\
+	Y &|(cofib)| \cofib(f) \\
+};
+\mor X :-> 0 {\M_j}:-> cofib <- Y f:<- X;
+\end{kodi}
+\]
+and so $f$ is in $\M_j$ by the fact that $\M_j$ is closed under pullbacks.  To show also that $f\in \E_{j-1}$ let $X\to T\to Y$ be the $(\E_{j-1},\M_{j-1})$-factorization of $f$. Then, since $\E_j\subseteq \E_{j-1}$,  $0\to T\to Y$ is the $(\E_{j-1},\M_{j-1})$-factorization of $0\to Y$. So, by the normality of $(\E_{j-1},\M_{j-1})$ 
+we get the diagram
+\[
+\begin{kodi}
+\obj{
+0 \\
+X &[1cm]|(0')|0 &[1cm]&[1cm]\\
+T & U &|(0'')| 0 \\
+Y &|(cofib)| \cofib(f) & V &|(0''')| 0 \\
+};
+\mor[swap] 0 {\E_j}:-> X {\E_{j-1}\cap \M_j}:-> T {\M_{j-1}}:-> Y {\E_j}:-> cofib {\E_{j-1}\cap \M_j}:-> V {\M_{j-1}}:-> 0''';
+\mor X {\E_j}:-> 0' {\E_{j-1}\cap \M_j}:-> U {\E_{j-1}\cap \M_j}:-> 0'' {\M_{j-1}}:-> V;
+\mor T {\E_j}:-> U {\M_{j-1}}:-> cofib;
+\end{kodi}
+\]
+where all the squares are pullouts, and where we have used the Sator lemma, the fact that $\cofib(f)\to 0$ is in $\M_j$, that the classes $\E$ are closed for pushouts while the classes $\M$ are closed for pullbacks, and the 3-for-2 property for both classes. Since by hypothesis $0\to \cofib(f)$ is in $\E_{j-1}$, we see that $V=0$ and so $T=Y$. Therefore, $Y\in \C_{U_{j-1}}$ and $f\in\E_{j-1}\cap \M_j$.
+\end{proof}
+
+
+
+\begin{corollary}\label{perPostnikov2} 
+Let $Y$ an object in $\C$ and let 
+\[
+0 \xto{f_{k+1}} Y_{k} \xto{f_k}Y_{{k-1}}\to\dots\to Y_{1} \xto{f_1} Y_{0} \xto{f_0} Y,
+\]
+be an $I_{\ordk}$-weaved factorization for $0\to Y$. Then $(f_{k+1},\dots,f_1,f_0)=\rook\left(\varnobkt{0}{Y},I_{\ordk}\right)$
+\end{corollary}
+\begin{proof}
+By uniqueness of the $k$-fold factorization we only need to prove that $f_j\in \E_{i_{k-1}}\cap \M_{i_k}$, which is immediate by repeated application of Lemma \refbf{lemma.vice.versa}. 
+\end{proof}
+
+
+
+
+
+\begin{remark}
+It's an unavoidable temptation to think of the $I_{\ordk}$-weaved factorization of a morphism $f$ as of its tower $\rook(f,I_{\ordk})$.
+As the following counterexample shows, when $f$ is not an initial morphism this is in general not true. Let $J=\Z$, let $k=0$ and let $I_{\ordered{0}}\colon \ordered{0}\to \O(\Z)$ be the slicing $U_0=[0,+\infty)$. Now take a morphism $f\colon X\to Y$ between two elements in $\C_{-1}$. The object $\cofib(f)$ will lie in $\C_{[-1,+\infty)}$, since $\E_0[-1]$ is closed for pushouts, but in general it will not be an element in $\C_{[0,+\infty)}$. In other words, we will have, in general, a nontrivial $(\E_0,\M_0)$-factorization of the initial morphism $0\to \cofib(f)$, i.e., a nontrivial tower $\rook\Big(\varnobkt{0}{\cofib(f)},I_{\ordered{0}}\Big)$. Pulling this back along $Y\to \cofib(f)$ we obtain the $I_{\ordered{0}}$-weaved factorization $X\xto{f_2} Z\xto{f_1} Y$ of $f$, and this factorization will be nontrivial since its pushout is nontrivial. It follows that $(f_2,f_1)$, cannot be $\rook(f,I_{\ordered{0}})$, which is the $(\E_0,\M_0)$-factorization of $f$. Indeed, by the 3-for-2 property of $\M_0$, the morphism $f$ is in $\M_0$, so its $(\E_0,\M_0)$-factorization is trivial. 
+\end{remark}
+
+\begin{remark}\label{rem.infittimento1}
+Let $I_{\ordered{k'}}\colon \ordered{k'}\to \mathcal{O}(J)$ be a \emph{refinement} of an interval decomposition $I_{\ordk}\colon \ordk\to \mathcal{O}(J)$. This means that for every $i=0,\dots,k+1$ we have an interval decomposition $I_{[\mathbf{k}_i]}\colon [\mathbf{k}_i]\to \mathcal{O}(I_{\ordk;i})$, where $I_{\ordk;i}$ denotes the $i$-th interval in the subdivision $I_{\ordk}$. By the pasting law for pullouts it is immediate to see that for any morphism $f\colon X \to Y$ we have a canonical identification
+\[
+\weaves\Big(\varnobkt{X}{Y},I_{\ordered{k'}}\Big) \leftrightarrows \weaves\Big(\varnobkt{X}{Y},I_{\ordk}\Big)\times \prod_{i=0}^{k+1}\weaves\Big(\varnobkt{0}{\cofib(f_i)}, I_{[\mathbf{k}_i]}\Big).
+\]
+\end{remark}
+
+
+\subsection{Bridgeland slicings} \label{confronto}
+\begin{definition}
+A $J$-slicing $\tee\colon \O(J)\to  \ts(\C)$ of a stable $\infty$-category $\C$ is called \emph{discrete} if for any object $X$ in $\C$ one has $\mathcal{H}^i(X)=\mathbf{0}$ for every $i$ in $J$ if and only if $X=\mathbf{0}$. A discrete $J$-slicing is said to be of \emph{finite type} if for any object $X$ one has $\mathcal{H}^i(X)\neq\mathbf{0}$ only for finitely many elements $i\in J$.
+\end{definition}
+\begin{example}\label{example.bounded-t-structure}
+A finite type discrete $\mathbb{Z}$-slicing on $\C$ is precisely the datum of a bounded $t$-structure on $\C$.
+\end{example}
+Suppose now that $\tee$ is of finite type, so that for each $X \in \C$ one has $\mathcal{H}^i(X)=\mathbf{0}$ but for a finite set $\{ i_1^X < \cdots < i_{k_X}^X \} \subseteq J$ of indices $i$, depending on $X$. We can then build up a $(k+2)$-fold interval decomposition $I_{[ \mathbf{k}_X ]}^X$, depending on the object $X$, by setting  $U_j^X=(i_j, +\infty)$. As we are assuming $J$ to be totally ordered, we have $L_j^X=(-\infty, i_j]$. The next proposition shows that the tower of the initial morphism $\mathbf{0} \to X$ associated to this interval decomposition is indeed the ``finest one''. 
+\begin{proposition}
+Let $\tee\colon \mathcal{O}(J)\to \ts(\C)$ be a $J$-slicing of finite type and let $X$ an object of $\C$. Then for all $j$ we have
+\[
+\mathcal{H}^{I_j^X}(X)=\mathcal{H}^{i_j^X}(X)
+\qquad\text{ and }\qquad  \mathcal{H}^{(i_{j-1}^X,i_{j}^X)}(X)=\mathbf{0}.
+\]
+\end{proposition}
+\begin{proof}
+Let us write $i_j$, $I_j$ and  $S_j$ for $i_j^X$, $I_j^X$ and  $S_{U_j}^X$, respectively.
+Now, for each $\phi \in J$, using 
+By, \aprop\refbf{H-intersection} we have
+\[
+\mathcal{H}^{i}(\mathcal{H}^{(i_{j-1}, i_{j})}X)=
+\begin{cases}
+\mathcal{H}^{i}X &\text{if } i\in (i_{j-1},i_{j})\\
+\mathbf{0} &\text{otherwise}
+\end{cases}.
+\]
+ But $\mathcal{H}^iX=\mathbf{0}$ for $i \not = i_1 , \cdots , i_{k_X}$, and so $\mathcal{H}^{i}(\mathcal{H}^{(i_{j-1}, i_{j})}X)=\mathbf{0}$ for all $i \in J$. Since $\tee$ is discrete, this gives $\mathcal{H}^{(i_{j-1}, i_{j})}X= \mathbf{0}$, proving the second part of the statement. To prove the first part, recall that
+by Lemma \refbf{lem.for-homology}, $\mathcal{H}^{I_j}(X)$ is the cofiber of $S_{j}X\to S_{j-1}X$, while $\mathcal{H}^{i_j}(X)$ is the cofiber of $S_jX\to S_{[i_j,+\infty)}X$. So we are reduced to show that $S_{j-1}X=S_{[i_j,+\infty)}X$. Since $i_{j} > i_{j-1}$ we have $[i_{j},+\infty)\subseteq (i_{j-1},+\infty)=U_{j-1}^X$ and so, by Lemma \refbf{lem.iterated}, $S_{[i_j,+\infty)}X=S_{[i_j,+\infty)}S_{j-1}X$. Thus, we are reduced to show that $S_{j-1}X=S_{[i_j,+\infty)}S_{j-1}X$, i.e., equivalently, that $R_{(-\infty,i_j)}S_{j-1}X=\mathbf{0}$. This is immediate as $
+R_{(-\infty,i_j)}S_{j-1}X=\mathcal{H}^{(i_{j-1}, i_j)}X$.
+\end{proof}
+
+
+In particular the above tells us that, writing $\varphi_j$ for $i_{k_X-j}$, the cofiber of the $j$-th morphism of $\rook(\mathbf{0} \to X,I_{[ \mathbf{k}_X ]}^X)$ is $\mathcal{H}^{\varphi_j^X}(X)\in \C_{\varphi_j^X}$. In other words, these towers are weaved factorizations with cofibers in the subcategories $\{ \C_{\varphi} \}_{\varphi \in J}$ and so they correspond to the Harder-Narasimhan filtrations from \cite{Brid}. That is,  Bridgeland's slicings (in their generalized version from \cite{GKR} are precisely the slicings of finite type in our sense. We show this in detail below.
+
+
+\begin{definition}\label{def.bridgeland-slicing}
+A \textit{Bridgeland $J$-slicing} on $\C$ is a collection $\{\C_{\phi} \}_{\phi \in J}$ of full extension closed sub-$\infty$-subcategories satisfying:  
+ \begin{enumerate}[label=$\roman*$)]
+\item $\C_{\phi +1}=\C_{\phi}[1]$ for each $\phi \in J$;
+\item orthogonality: $\C(X,Y)$ is contractible for each $X \in \C_{\phi}$, $Y \in \C_{\psi}$ for $\phi > \psi$ in $J$;
+\item for each object $X \in \C$ there is a finite set $\{ \phi_1 > \cdots > \phi_n \}$ and a factorization of the initial morphism $\mathbf{0} \to X$
+$$ \mathbf{0}=X_0 \xrightarrow{\alpha_1} \cdots \xrightarrow{\alpha_n} X_n=X$$
+with $\mathbf{0} \neq \cofib(\alpha_i) \in \C_{\phi_i}$ for all $i = 1, \cdots, n$. 
+ \end{enumerate}
+\end{definition} 
+
+
+\begin{notat}\label{notation.bridg-slicing}
+For $\cate{S}$ a subcategory of $\C$, we write $\langle \cate{S}\rangle$ for the smallest extension closed full subcategory of $\C$ containing $\cate{S}$. 
+If $M \subseteq J$ is a subset and $\{ \C_{\phi} \}_{\phi \in J}$ is a Bridgeland $J$-slicing on $\C$, we denote $\C_M$ the extension-closed subcategory generated by $\C_{\phi}$ with $\phi \in M$, i.e., we set 
+\[
+\textstyle \C_M=\left\langle \bigcup_{\phi\in M}\C_\phi \right\rangle.
+\]
+\end{notat}
+\begin{remark}\label{extensions}
+Set  $\langle \cate{S}\rangle_0=\mathbf{0}$,  define $\langle \cate{S}\rangle_1$ as the full subcategory of $\C$ generated by $\cate{S}$ and $\mathbf{0}$, and define inductively $\langle \cate{S}\rangle_n$ as the full subcategory of $\C$ on those objects $X$ which fall into a homotopy fiber sequence
+\[
+\xymatrix{
+X_h\ar[r]\ar[d]& X\ar[d]\\
+0\ar[r] &X_k
+}
+\]
+with $h,k\geq 1$, $X_h$ in $\langle \cate{S}\rangle_h$, $X_k$ in $\langle \cate{S}\rangle_k$ and $h+k=n$. One clearly has 
+\[
+\langle \cate{S}\rangle_0\subseteq \langle \cate{S}\rangle_1 \subseteq \langle \cate{S}\rangle_2\subseteq\cdots \subseteq \langle \cate{S}\rangle.
+\]
+Moreover $\bigcup_n \langle \cate{S}\rangle_n$ is clearly extension closed, so that
+\[
+\langle \cate{S}\rangle =\bigcup_n \langle \cate{S}\rangle_n.
+\] 
+\end{remark}
+\begin{lemma}\label{closure}
+Let $\cate{S}_1,\cate{S}_2$ be two subcategories of $\C$ with $\cate{S}_1\orth \cate{S}_2$, i.e., such that $\C(Y,X)$ is contractible for any $X\in \cate{S}_1$ and any $Y\in\cate{S}_2$. Then $\cate{S}_1\orth \langle\cate{S}_2\rangle$ and $\langle\cate{S}_1\rangle\orth \cate{S}_2$, and so $\langle\cate{S}_1\rangle\orth \langle\cate{S}_2\rangle$
+\end{lemma}
+\begin{proof}
+By Remark \refbf{extensions}, to prove the first statement we are reduced to show that, if $X\in \cate{S}_1$ and $Y\in \langle\cate{S}_2\rangle_n$ then $\C(X,Y)$ is contractible. We prove this by induction on $n$. For $n=0,1$ there is nothing to prove by the assumption $\cate{S}_1\orth \cate{S}_2$. For $n\geq 2$, consider a fiber sequence $Y_h\to Y\to Y_k$ with $1\leq h,k$ and $h+k=n$ as in Remark \refbf{extensions}. Since $\C(X,-)$ preserves homotopy fiber sequences, we get a homotopy fiber sequence of $\infty$-groupoids
+\[
+\xymatrix{
+\C(X,Y_h)\ar[r]\ar[d]& \C(X,Y)\ar[d]\\
+{*}\ar[r] &\C(X,Y_k)
+}.
+\]
+By the inductive hypothesis both $\C(X,Y_h)$ and $\C(X,Y_k)$ are contractible, so $\C(X,Y)$ also is. The proof of the second statement is perfectly dual, due to the fact that in $\C$ every fiber sequence is also a cofiber sequence, and $\C(-,Y)$ transforms a cofiber sequence into a fiber sequence.
+\end{proof}
+\begin{lemma}\label{uno}
+Let $(L,U)$ be a slicing of $J$, and let $\C_L$ and $\C_U$ be defined according to Notation \refbf{notation.bridg-slicing}.  Then $\C_U\orth \C_L$.\end{lemma}
+\begin{proof}
+Since by definition $\C_\phi\orth\C_\psi$ for $\phi>\psi$, the statement immediately follows from Lemma \refbf{closure}.
+\end{proof}
+
+\begin{lemma}\label{due}
+In the above hypothesis and notation, every object $Y$ of $\C$ sits into a homotopy fiber sequence $Y_{U}\to Y\to Y_{L}$ with $Y_{U}\in \C_{U}$ and $Y_{L}\in \C_{L}$.
+\end{lemma}
+\begin{proof}
+Let
+\[
+\mathbf{0}=X_0 \xrightarrow{\alpha_1} X_1\cdots \xrightarrow{\alpha_{{\bar\imath}}}X_{{\bar\imath}}\xrightarrow{\alpha_{{\bar\imath}+1}}X_{{\bar\imath}+1}\xrightarrow{}\cdots \xrightarrow{\alpha_n} X_n=X
+\]
+a factorization of the initial morphism $\mathbf{0} \to X$
+with $\mathbf{0} \neq \cofib(\alpha_i) \in \C_{\phi_i}$ for all $i = 1, \cdots, n$, with $\phi_i>\phi_{i+1}$ and with $\phi_{{\bar\imath}}\in U$ and $\phi_{{\bar\imath}+1}\in L$ (with ${\bar\imath}=-1$ or $n$ when all of the $\phi_i$ are in $L$ or in $U$, respectively). 
+Consider the pullout diagram
+\[
+\xymatrix{
+X_{{\bar\imath}}\ar[r]\ar[d]_{f_{L}}&0\ar[d]\\
+X\ar[r]&\mathrm{cofib}(f_{L})
+}\]
+together with the %$\A$-weaved factorizations
+\[
+\mathbf{0}=X_0 \xrightarrow{\alpha_1} X_1\cdots \xrightarrow{\alpha_{{\bar\imath}}}X_{{\bar\imath}} 
+\]
+and
+\[
+X_{{\bar\imath}}\xrightarrow{\alpha_{{\bar\imath}+1}}X_{{\bar\imath}+1}\xrightarrow{}\cdots \xrightarrow{\alpha_n} X_n=X.
+\]
+The first factorization shows that $X_{{\bar\imath}}\in \langle\cup_{i=0}^{{\bar\imath}}\C_{\phi_i}\rangle\subseteq \C_{U}$ while the second factorization shows that $\mathrm{cofib}(f_{L})\in  \langle\cup_{i={\bar\imath}+1}^n\C_{\phi_i}\rangle\subseteq \C_{L}$.
+\end{proof}
+
+\begin{lemma}\label{tre}
+In the above hypothesis and notation, one has $\C_U[1]\subseteq \C_U$ and $\C_L[-1]\subseteq\C_L$.
+\end{lemma}
+\begin{proof}
+Since the shift functor commutes with pushouts, if an object $X$ is obtained by iterated extensions by objects in $\C_\phi$ with $\phi\in U$, then $X[1]$ is obtained by iterated extensions by objects in $\C_\phi[1]=\C_{\phi+1}$ with $\phi\in U$. In other words, $X[1]$ is an object in $\C_{U+1}$. Since $U$ is an upper set, $U+1\subseteq U$ and so $X[1]\in \C_U$. This proves that $\C_U[1]\subseteq \C_U$. The proof for $\C_L$ is perfectly analogous. 
+\end{proof}
+The above Lemmas together give the following
+\begin{proposition}
+In the above hypothesis and notation, the map $\tee\colon (L,U)\mapsto (\C_L,\C_U)$ defines a $J$-slicing of $\C$, i.e., $\tee$ is a $\mathbb{Z}$-equivariant map of posets $\mathcal{O}(J)\to \ts(\C)$. 
+\end{proposition}
+\begin{proof}
+Lemmas \refbf{uno}-\refbf{tre} together precisely say that $(\C_L,\C_U)$ is a $t$-structure on $\C$. Equivariancy of the map is the fact that, as remarked in the proof of Lemma \refbf{tre}, one has $\C_U[1]=\C_{U+1}$. Finally, if $(L_0,U_0)\leq (L_1,U_1)$ then we have $U_1\subseteq U_0$ and so $\C_{U_1}\subseteq \C_{U_0}$, which shows that the map $\tee$ is a morphism of posets.
+\end{proof}
+
+\begin{proposition}\label{b-is-discrete}
+Let $J$ be a totally ordered $\mathbb{Z}$-poset and let $\C$ be a stable $\infty$-category. Then we have a bijection
+\[
+\begin{array}{ccc}
+ \left\{
+\begin{smallmatrix}
+\text{finite type discrete}\\
+\text{$J$-slicings on $\C$}
+\end{smallmatrix}
+\right\}
+& \longleftrightarrow & 
+\left\{
+\begin{smallmatrix}
+\text{Bridgeland}\\
+\text{$J$-slicings on $\C$}
+\end{smallmatrix}
+\right\}\\[3mm]
+(\C_L,\C_U)
+& \mapsto & 
+\C_{[\phi,+\infty)}\cap \C_{(-\infty,\phi]}\\[3mm]
+\Big(\langle \cup_{\phi\in L}\C_\phi \rangle,\langle \cup_{\phi\in U}\C_\phi \rangle\Big)
+& \mapsfrom &
+\C_\varphi
+\end{array}
+\]
+\end{proposition}
+\begin{proof}
+The only thing left to be proven is that the above construction actually produces a discrete slicing of finite type. This is actually immediate once one realizes that the factorization  $\mathbf{0}=X_0 \xrightarrow{\alpha_1} \cdots \xrightarrow{\alpha_n} X_n=X$ of the initial morphism $0\to X$ provided by the definition of Bridgeland slicing is actually the weaved factorization corresponding to the interval decomposition of $J$ associated with the decreasing sequence $\phi_1 > \cdots > \phi_n$. One then directly sees that the two constructions indicated in the statement of the proposition are inverse each other.
+\end{proof}
+
+\begin{remark}\label{rem:b-is-discrete}
+Using the orthogonality condition $\C_\phi\orth\C_\psi$ for $\phi>\psi$,  is not hard to prove by induction on the length of the factorizations that \adef\refbf{def.bridgeland-slicing} actually implies uniqueness of Bridgeland factorizations 
+\[\mathbf{0}=X_0 \xrightarrow{\alpha_1} \cdots \xrightarrow{\alpha_n} X_n=X\]
+of initial morphisms $0\to X$. As a consequence one has well defined functors
+\[
+\mathcal{H}^\phi_B\colon \C \to \C_\phi
+\]
+given by 
+\[
+\mathcal{H}^\phi_B(X)=\begin{cases}
+\cofib(\alpha_i) &\text{ if $\phi=\phi_i$}
+\\
+\mathbf{0}&\text{ otherwise}
+\end{cases}
+\]
+As it is natural to expect, in the correspondence given by \aprop\refbf{b-is-discrete} the functor $\mathcal{H}^\phi_B$ is identified with the functor $\mathcal{H}^\phi$ associated with the discrete $J$-slicing. Moreover, one easily sees that 
+\begin{align*}
+\langle \cup_{\phi\in L}\C_\phi \rangle&=\{X\in \C \text{ such that }\mathcal{H}_B^\phi X=\mathbf{0} \text{ for } \phi\in U\}\\
+\langle \cup_{\phi\in U}\C_\phi \rangle&=\{X\in \C \text{ such that }\mathcal{H}_B^\phi X=\mathbf{0} \text{ for } \phi\in L\}
+\end{align*}
+so that the correspondence of \aprop\refbf{b-is-discrete} can be defined sending the pair $(\C_L,\C_U)$ into $\C_{[\phi,+\infty)}\cap \C_{(-\infty,\phi]}$, with inverse
+\[
+\C_\varphi \mapsto \Big(\{\mathcal{H}_B^\phi X=\mathbf{0} \mid \phi\in U\},\{\mathcal{H}_B^\phi X=\mathbf{0}\mid \phi\in L\}\Big)
+\]
+\end{remark}
+
+
+
+
+
+

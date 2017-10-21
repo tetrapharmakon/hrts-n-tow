@@ -1,0 +1,18 @@
+\documentclass{article}
+
+\usepackage{amsmath,amsthm,amsfonts,amssymb}
+\def\C{\mathbf{C}}
+\def\D{\mathbf{D}}
+\title{Congettura}
+\begin{document}
+\maketitle
+C'\`e una categoria $\C\#\D$ avente per oggetti quelli di $\C \times \D$, e dove $(C,D)\to (C', D')$ è una successione finita
+\[
+(C,D) \leftrightarrows (C_0,D_0) \leftrightarrows (C_1,D_1)\leftrightarrows \dots \leftrightarrows (C_n,D_n)\leftrightarrows (C', D')
+\]
+dove le frecce superiori formano una stringa $C\leftarrow C_0\leftarrow \dots C_n \leftarrow C'$ e le frecce inferiori formano una stringa $D \to D_0 \to \dots \to D_n \to D'$. Ora, $\# \colon \textbf{Cat}\times\textbf{Cat} \to\bf Cat$ da luogo a una struttura monoidale, avente per identità la categoria terminale. $\C\#\D$ soddisfa la seguente proprietà universale:
+\begin{quote}
+$\mathcal{X}=\C\#\D$ is equipped with two families of functors $\{F_C\colon \D\to \mathcal X\}_{C\in\mathrm{Ob}_\C}$, and $\{G_D\colon \C\to \mathcal X\}_{D\in \mathrm{Ob}_{\D}}$ such that $F_C(D)=G_D(C)$ for any $(C,D)\in \mathrm{Ob}_{\C\times\D}$, and universal among these.
+\end{quote}
+A cosa corrisponde in $\textbf{Pos}$ (guardata come sottocategoria di $\mathbf{Cat}$) questa struttura monoidale? (Risp.: non all'ordine lessicografico: quest'ultimo non \`e simmetrico, mentre $P\# Q\cong Q\# P$).
+\end{document}

@@ -1,0 +1,373 @@
+\section{Hearts of $t$-structures.}
+\setlength{\epigraphwidth}{.75\textwidth}
+\epigraph{I watched a snail crawl along the edge of a straight razor. That's my dream. That's my nightmare. Crawling, slithering, along the edge of a straight razor\dots\ and surviving.
+}{Col. Walter E. Kurtz}
+\setlength{\epigraphwidth}{\DefaultEpigraphWidth}
+We now focus in the case $J=\Z $. As indicated in remark \refbf{trivial.but.useful} this is equivalent to a single distinguished $t$-structure $\tee=\tee_0$ on the stable $\infty$-category $\C$, together with its orbit $\{\tee_j = \tee_0[j]\}_{j\in\Z}$. As the set of indices for our family of $t$-structures is the ordered set of integers, we will always consider \emph{complete} ascending chains of the form $\Delta^{\{n,\dots,n+k-1\}}$ in what follows. In particular, Proposition \refbf{prop:perPostnikov} becomes the following statement:
+\begin{proposition}
+Let $f\colon X\to Y$ be a morphism in $\C$. Then for any integer $n$ and any positive integer $k$ there exists a unique tower for $f$ associated with the ascending chain $n<n+1<\cdots<n+k-1$. Denoting this tower by
+\[
+X \xto{f_{n+k}} Z_{n+k-1} \xto{f_{n+k-1}}Z_{n+k-2}\to\dots\to Z_{n+1} \xto{f_{n}} Z_{n} \xto{f_{n-1}} Y,
+\]
+one has
+$\cofib(f_j)\in \C_{[j,j+1)}$ for any $j=n,\dots,n+k-1$,  $\cofib(f_{n-1})\in \C_{<n}$  and $\cofib(f_{n+k})\in \C_{\geq n+k}$.
+\end{proposition}
+Since $\C_{[j,j+1)}=\C_{[0,1)}[j]$ for any $j\in\Z$, the above Proposition suggests to focus on the subcategory $\C_{[0,1)}$ of $\C$. This subcategory has a special name and special properties (it is an \emph{abelian} subcategory).
+\begin{definition}\label{coeur}
+Let $\C$ be a stable $\infty$-category equipped with a $t$-structure $\tee=(\C_{\ge 0}, \C_{<0})$; the \emph{heart} $\C^\heart$ of $\tee$ is the subcategory $\C_{[0,1)}$ defined following \adef \refbf{std.endocardium}.
+\end{definition}
+\begin{remark}\label{evocative}
+There is a rather evocative pictorial representation of the heart of a $t$-structure, manifestly inspired by \cite{Brid}:
+ if we depict $\C_{<0}$ and $\C_{\geq 0}$ as contiguous half-planes, like in the following picture,
+\begin{center}
+\begin{figure}[h]
+\begin{tikzpicture}
+\filldraw[gray!15] (5,-2) -- (-5,-2) -- (-5,2) -- (5, 2) -- cycle;
+\filldraw[gray!40] (.5, -2) -- (0,-2) -- (0,2) -- (.5,2) -- cycle;
+\draw[thick] (0,-2) -- (0,2);
+\fill (2,1) circle (2pt) node[left] (X) {$X$};
+\fill (-1,-1) circle (2pt) node[right] (Y) {$Y$};
+\node at (4.5,-1.5) {$\C_{\geq 0}$};
+\node at (-4.5,-1.5) {$\C_{<0}$};
+\draw[->] (2.2,1) -- (2.8,1);
+\draw[->] (-1.2,-1) -- (-1.8,-1);
+\fill[xshift=1cm] (2,1) circle (2pt) node[right] (X) {$X[1]$};
+\fill[xshift=-1cm] (-1,-1) circle (2pt) node[left] (Y) {$Y[-1]$};
+\draw (.25,0.5) circle (2pt) node[right] {$Z$};
+\draw (-.75,0.5) circle (2pt) node[left] {$Z[-1]$};
+\draw[thick, ->, red] (.05,0.5) to (-.55,0.5);
+\draw[->, xshift=-.5cm, yshift=-.5cm] (-5,-2) -- (6,-2) node[below, pos=.9] {\text{shift}};
+\end{tikzpicture}
+\caption{Heart of a $t$-structure}
+\end{figure}
+\end{center}
+then the action of the shift functor can be represented as an horizontal shift, and the closure properties of the two classes $\C_{\geq 0},\C_{<0}$ under positive and negative shifts are a direct consequence of the shape of these areas. With these notations, an object $Z$ is in the heart of $\tee$ if it lies in a ``boundary region'', \ie if it lies in $\C_{\geq 0}$, but $Z[-1]$ lies in $\C_{<0}$.
+\end{remark}
+Having introduced this notation, we can rephrase the existence of the tower for $f$ as follows: given a morphism  $f\colon X\to Y$  in $\C$, for any integer $n$ and any positive integer $k$ there exists a unique factorization of $f$ 
+\[
+X \xto{f_{n+k}} Z_{n+k-1} \xto{f_{n+k-1}}Z_{n+k-2}\to\dots\to Z_{n+1} \xto{f_{n}} Z_{n} \xto{f_{n-1}} Y,
+\]
+such that
+$\cofib(f_j)\in \C^\heart[j]$ for any $j=n,\dots,n+k-1$,  $\cofib(f_{n-1})\in \C_{<n}$  and $\cofib(f_{n+k})\in \C_{\geq n+k}$. 
+
+
+The content of this statement becomes more interesting when $\C$ is \emph{bounded} with respect to the $t$-structure $\tee$ (see Definition \refbf{std.endocardium}). If $\C$ is bounded, then the $(\E_n,\M_n)$-factorizations of an initial morphism $0\to Y$ are trivial (see Definition \refbf{std.endocardium} and the subsequent Remark) for $|n|\gg 0$. 
+
+As an immediate consequence, the morphisms $X \xto{f_{n+k}} Z_{n+k-1}$ and $Z_{n} \xto{f_{n-1}} Y$ in the tower of $f$ associated with the chain $n<n+1<\dots<n+k-1$ are isomorphisms for $n\ll 0$ and $k \gg 0$. One notices, as it is obvious, that the class of isomorphisms in $\C$ is closed under transfinite composition this leads to the following
+\begin{proposition}\label{prop.Z.Postnikov}
+Let $\C$ be a stable $\infty$-category which is bounded with respect to a given $t$-structure $\tee$. 
+Then for any morphism $f\colon X\to Y$  in $\C$ there exists an integer $n_0$ and a positive integer $k_0$ such that for any integer $n\leq n_0$ and any positive integer $k$ with $k\geq n_0-n+k_0$ there exists a unique factorization of $f$ 
+\[
+X \xto{\sim} Z_{n+k-1} \xto{f_{n+k-1}}Z_{n+k-2}\to\dots\to Z_{n+1} \xto{f_{n}} Z_{n} \xto{\sim} Y
+\]
+such that
+$\cofib(f_j)\in \C^\heart[j]$ for any $j=n,\dots,n+k-1$.
+\end{proposition}
+\begin{remark}\label{oss.Z.Postnikov}
+By uniqueness in Proposition \refbf{prop.Z.Postnikov}, one has a well defined $\Z $-factorization
+\[
+X=\lim(Z_j) \to\cdots \to Z_{j+1} \xto{f_{j}} Z_{j} \xto{f_{j-1}}Z_{j-1}\to \cdots\to \mathrm{colim}(Z_j)=Y
+\]
+with 
+with $j$ ranging over the integers, $\cofib(f_j)\in \C^\heart[j]$ for any $j\in \Z $ and with $f_m$ being an isomorphism for $|j|\gg 0$. We will refer to this factorization as the \emph{$\Z $-tower} of $f$. Notice how the boundedness of $\C$ has played an essential role: when $\C$ is not bounded, one still has towers for any finite ascending chain, but in general they do not stabilize.
+\end{remark}
+\begin{remark}\label{oss.for.Heart.to.t}
+Since we know that the tower of an initial morphism is its $k$-fold $(\E_j,\M_j)$-factorization, we see that in a stable $\infty$-category $\C$ which is bounded with respect to a $t$-structure $\tee=(\C_{\geq 0},\C_{<0})$ the $\Z $-tower of $0\to Y$,
+\[
+0=\lim(Y_j) \to\cdots \to Y_{j+1} \xto{f_{j}} Y_{j} \xto{f_{j-1}}Y_{j-1}\to \cdots\to \mathrm{colim}(Y_j)=Y
+\]
+is such that $f_j\in \E_j\cap\M_{j+1}$ for any $j\in \Z $. It follows that an object $Y$ is in $\C_{\geq 0}$ if and only if the $\Z $-tower of $0\to Y$
+satisfies $\cofib(f_j)=0$ for any $j< 0$, while $Y$ is in $\C_{<0}$ if and only if  $\cofib(f_j)=0$ for any $j\geq 0$.
+\end{remark}
+\subsection{Abelianity of the heart.}
+In the following section we present a complete proof, in the stable setting, of the fact that the heart of a $t$-structure, as defined in \cite[Def. \textbf{1.2.1.11}]{LurieHA}, is an abelian $\infty$-category. 
+
+In other words, $\C^\heart$ is homotopy equivalent to its homotopy category $h\C^\heart$, which is an abelian category; this is the higher-categorical counterpart of a classical result, first proved in \cite[Thm. \textbf{1.3.6}]{BBDPervers}, 
+which 
+only relies on properties stated in terms of normal torsion theories in a stable $\infty$-category. We begin with the following
+\begin{definition}[Abelian $\infty$-category]\label{df:abelinfty}
+An \emph{abelian $\infty$-category} is a quasicategory $\cate{A}$ such that
+\begin{enumerate}
+\item the hom space $\cate{A}(X,Y)$ is a homotopically discrete infinite loop space for any $X, Y$, \ie, there exists an infinite sequence of $\infty$-groupoids $Z_0, Z_1,Z_2,\dots$, with $Z_0\cong \C(X,Y)$ and homotopy equivalences $Z_i\cong \Omega Z_{i+1}$ for any $i\geq 0$, such that $\pi_n Z_0=0$ for any $n\geq 1$;
+\item $\cate{A}$ has a zero object, (homotopy) kernels, cokernels and biproducts;
+\item for any morphism $f$ in $\cate{A}$, the natural morphism from the \emph{coimage} of $f$ to the \emph{image} (see Definition \refbf{imcoim}) of $f$ is an equivalence.
+\end{enumerate}
+\end{definition}
+\begin{remark}
+Axiom (i) is the homotopically-correct version of $\cate{A}(X,Y)$ being an abelian group. For instance, if the abelian group is $\Z $, then the corresponding homotopy discrete space is the Eilenberg-Mac Lane spectrum $\Z ,K(\Z ,1), K(\Z ,2),\dots$. The homotopy category of such an $\cate{A}$ is an abelian category in the classical sense (note that $\cate{A}(X,Y)$ being homotopically discrete is necessary in order that kernels and cokernels in $\cate{A}$ induce kernels and cokernels in $h\cate{A}$). Moreover, since the hom spaces $\cate{A}(X,Y)$ are homotopically discrete, the natural morphism $\cate{A}\to h\cate{A}$ is actually an equivalence.
+\end{remark}
+The rest of the section is devoted to the proof of the following result:
+\begin{theorem}\label{heart.is.abelian}
+The heart $\C^\heart$ of a $t$-structure $\tee$ on a stable $\infty$-category $\C$ is an abelian $\infty$-category; its homotopy category $h\C^\heart$ is the abelian category arising as the heart of the $t$-structure $h(\tee)$ on the triangulated category $h\C$.
+\end{theorem}
+\begin{lemma}
+For any $X$ and $Y$ in $\C^\heart$, the hom space $\C^\heart(X,Y)$ is a homotopically discrete infinite loop space.
+\end{lemma}
+\begin{proof}
+Since $\C^\heart$ is a full subcategory of $\C$, we have $\C^\heart(X,Y)=\C(X,Y)$, which is an infinite loop space since $\C$ is a stable $\infty$-category. 
+
+So we are left to prove that $\pi_n\C(X,Y)=0$ for $n\geq 1$. Since $\pi_n\C(X,Y)=\pi_{n-1}\Omega\C(X,Y)=\pi_{n-1}\C(X,Y[-1])$, this is equivalent to showing that 
+$\C(X,Y[-1])$ is contractible. Since $X$ and $Y$ are objects in $\C^\heart$, we have $X\in \C_{[0,1)}$ and $Y[-1]\in \C_{[-1,0)}$. But $\C_{[-1,0)}$ is right object-orthogonal to $\C_{[0,1)}$ (see Remark \refbf{oss.perp}), therefore $\C(X,Y[-1])$ is contractible.
+\end{proof}
+
+The subcategory $\C^\heart$ inherits the $0$ object and biproducts (in fact, all finite limits) from $\C$, so in order to prove it is is abelian we are left to prove that it has kernels and cokernels, and that the canonical morphism from the coimage to the image is an equivalence.
+\begin{lemma}\label{lemma.qua.e.la}
+Let $f\colon X\to Y$ be a morphism in $\C^\heart$. Then $\mathrm{fib}(f)$ is in $\C_{<1}$ and $\cofib(f)$ is in $\C_{\geq 0}$.
+\end{lemma}
+\begin{proof}
+Since both $X\to 0$ and $Y\to 0$ are in $\M[1]$, by the 3-for-2 property also $f$ is in $\M[1]$. Since $\M[1]$ is closed for pullbacks, $\mathrm{fib}(f)\to 0$ is in $\M[1]$ and so $\mathrm{fib}(f)$ is in $\C_{<1}$. The proof for $\cofib(f)$ is completely dual.
+\end{proof}
+\begin{definition}
+Denote by
+\[
+\xymatrix{
+0\ar[r]^{\E}&\ker(f)\ar[r]^{\M}&\fib(f)
+}
+\]
+the $(\E,\M)$-factorization of the morphism $0\to \fib(f)$
+and by
+\[
+\xymatrix{
+\cofib(f)\ar[r]^{\E[1]}&\coker(f)\ar[r]^-{\M[1]} &0
+}
+\]
+the $(\E[1],\M[1])$-factorization of the morphism $\cofib(f)\to 0$. We call $S\fib(f)=\ker(f)$ and $R_{[1]}\cofib(f)=\coker(f)$ respectively the \emph{kernel} and the \emph{cokernel} of $f$ in $\C^\heart$.
+\end{definition}
+\begin{remark}\label{oss.miracle}
+Since $\cofib(f)[-1]\cong \fib{f}$, one can equivalently define $\coker(f)$ by declaring the $(\E,\M)$-factorization of $\fib(f)\to 0$ to be $\fib(f)\xto{\E}\coker(f)[-1]\xto{\M} 0$. Similarly, one can define $\ker(f)$ by declaring the $(\E[1],\M[1])$-factorization of $0\to \cofib(f)$ to be $0\xto{\E[1]}\ker(f)[1]\xto{\M[1]} \cofib(f)$.
+By normality of the factorization system we therefore have the homotopy commutative diagram 
+\[
+\begin{kodi}
+\obj{
+	0  &|(ker)| \ker(f) &[5em] |(fib)| \fib(f)\\
+	&|(0')| 0 &|(coker)| \coker(f)[-1]\\
+	&&|(0'')| 0 \\
+};
+\mor 0 {\E}:-> ker \M:-> fib \E:-> coker \M:-> 0'';
+\mor ker \E:-> 0' \M:-> coker \M:-> 0'';
+\end{kodi}
+\]
+whose square sub-diagram is a homotopy pullout.
+\end{remark}
+\begin{lemma}
+Both $\ker(f)$ and $\coker(f)$ are in $\C^\heart$.
+\end{lemma}
+\begin{proof}
+By construction $\ker(f)$ is in $\C_{\geq 0}$, so we only need to show that $\ker(f)$ is in $\C_{<1}$. By definition of $\ker(f)$, we have that $\ker(f)\to \fib(f)$ is in $\M$. Since $\M[-1]\subseteq \M$, we have that also $\ker(f)[-1]\to \fib(f)[-1]$ is in $\M$.
+By Lemma \refbf{lemma.qua.e.la}, $\fib(f)[-1]\to 0$ is in $\M$ and so we find that also $\ker(f)[-1]\to 0$ is in $\M$. 
+The proof for $\coker(f)$ is perfectly dual.
+\end{proof}
+By definition of $\ker(f)$ and $\coker(f)$, the defining diagram of $\fib(f)$ and $\cofib(f)$ can be enlarged as
+\[
+\begin{kodi}
+\obj{
+0 & |(ker)| \ker(f) & |(fib)| \fib(f) & X & |(01)| 0 \\
+& &|(02)| 0 & Y & |(cofib)| \cofib(f) & |(coker)| \coker(f) & |(03)| 0\\	
+};
+\mor 0 -> ker -> fib -> X -> 01 -> cofib -> coker -> 03;
+\mor fib -> 02 -> Y -> cofib;
+\mor X f:-> Y;
+\mor ker k_f:{bend left},-> X; \mor Y c_f:{bend right},-> coker;
+\end{kodi}
+\]
+where $k_f$ and $c_f$ are morphisms in $\C^\heart$.
+\begin{definition}\label{imcoim}
+Let $f\colon X\to Y$ be a morphism in $\C^\heart$. The \emph{image} $\im(f)$ and the \emph{coimage} $\coim(f)$ of $f$ are defined as $\im(f)=\ker(c_f)$ and  $\coim(f)=\coker(k_f)$. 
+\end{definition}
+The following lemma shows that $\ker(f)$ does indeed have the defining property of a kernel:
+\begin{lemma}\label{is.a.kernel}
+The homotopy commutative diagram
+\[
+\xymatrix{
+\ker(f)\ar[r]^{k_f}\ar[d]&X\ar[d]^{f}\\
+0\ar[r]&Y}
+\]
+is a pullback diagram in $\C^\heart$.
+\end{lemma}
+\begin{proof}
+A homotopy commutative diagram 
+\[
+\xymatrix{
+K\ar[r]\ar[d]&X\ar[d]^{f}\\
+0\ar[r]&Y}
+\]
+between objects in the heart is in particular a homotopy commutative diagram in $\C$ so it is equivalent to the datum of a morphism $k'\colon K\to \fib(f)$ in $\C$, with $K$ an object in $\C^\heart$. By the orthogonality of $(\E,\M)$, this is equivalent to a morphism $\tilde{k}\colon K\to\ker(f)$:
+\[\xymatrix{
+0\ar[r]\ar[d]_{\E}&\ker(f)\ar[d]^{\M}\\
+K\ar[ru]^{\tilde{k}}\ar[r]_{k'}&\fib(f)
+}. \qedhere 
+\]
+\end{proof}
+There is, obviously, a dual result showing that $\coker(f)$ is indeed a cokernel.
+\begin{lemma}
+The homotopy commutative diagram
+\[\xymatrix{
+X\ar[r]\ar[d]_{f}&0\ar[d]\\
+Y\ar[r]^-{c_f}&\coker(f)
+}\]
+is a pushout diagram in $\C^\heart$.
+\end{lemma}
+\begin{lemma}\label{lemma.titanic}
+For $f\colon X\to Y$ a morphism in $\C$, there is a homotopy commutative diagram where all squares are homotopy pullouts:
+\[
+\begin{kodi}
+\obj{
+|(ker)| \ker(f) &|(fib)| \fib(f) & X & 0 \\
+|(01)| 0 &|(coker-1)| \coker(f)[-1] & |(Z)| Z_f &|(ker1)| \ker(f)[1] &|(02)| 0 \\
+& |(03)| 0 & Y & |(cofib)| \cofib(f) & |(coker)| \coker(f) \\
+};
+\mor ker -> fib -> X -> 0 {{\E[1]}}:-> ker1 -> 02 {{\M[1]}}:-> coker;
+\mor ker {\E}:-> 01 -> coker-1 -> Z -> ker1 {{\M[1]}}:-> cofib -> coker;
+\mor fib {\E}:-> coker-1 {\M}:-> 03 -> Y -> cofib;
+\mor[swap] X {\E}:-> Z {{\M[1]}}:-> Y;
+\mor X f:{near start},dashed,{bend left},-> Y; 
+\mor ker k_f:{bend left},-> X; 
+\mor[swap] Y c_F:{bend right},-> coker;
+\end{kodi}\]
+uniquely determining an object $Z_f\in \C^\heart$.
+\end{lemma}
+\begin{proof}
+Define $Z_f$ as the homotopy pullout
+\[
+\xymatrix{
+\fib(f)\ar[r]\ar[d]_{\E} \pp & X\ar[d]^{\E}\\
+\coker(f)[-1]\ar[r]& Z_f}
+\]
+Here the vertical arrow on the right is in $\E$ since the vertical arrow on the left is in $\E$ by definition of $\coker(f)$ (see Remark \refbf{oss.miracle}) and $\E$ is preserved by pushouts. Next, paste on the left of this diagram the pullout given by Remark \refbf{oss.miracle} and build the rest of the 
+diagram by taking pullbacks or pushouts. Use again Remark \refbf{oss.miracle} and the fact that $\M[1]$ is closed under pullbacks to see that $Z_f\to Y$ is in $\M[1]$. 
+Finally, we have 
+\[
+0\xto{\E} X\xto{\E} Z_f\xto{\M[1]} Y\xto{\M[1]} 0,
+\]
+and so $Z_f$ is in $\C^\heart$.
+\end{proof}
+\begin{proposition}\label{im.iso.coim}
+There is an isomorphism $\im (f)\cong\coim (f)$.\end{proposition}
+\begin{proof}
+By definition, $\im(f)$ and $\coim(f)$ are defined by the factorizations
+\[
+\xymatrix{
+0\ar[r]^{\E}&\im(f)\ar[r]^{\M}&\fib(c_f)
+}
+\]
+and
+\[
+\xymatrix{
+\cofib(k_f)\ar[r]^{\E[1]}&\coim(f)\ar[r]^-{\M[1]} &0
+}
+\]
+The diagram in Lemma \refbf{lemma.titanic} shows that we have $\fib(c_f)=Z_f=\cofib(k_f)$. Therefore, 
+what we need to exhibit are the $(\E,\M)$ factorizations of $0\to Z_f$ and the $(\E[1],\M[1])$ factorization of $Z_f\to 0$. Since $Z_f$ is an object in $\C^\heart$, these are
+\[
+0\xrightarrow{\E}Z_f\xrightarrow{\mathrm{id}_{Z_f}}Z_f
+\]
+and 
+\[
+Z_f\xrightarrow{\mathrm{id}_{Z_f}}Z_f\xrightarrow{\M[1]}0,
+\]
+respectively, thus giving $\im(f)\cong Z_f\cong \coim(f)$.
+\end{proof}
+\subsection{Abelian subcategories as hearts.}
+\begin{proposition}\label{to.be.repeated.verbatim}
+Let $\A$ be an abelian full subcategory of a stable $\infty$-category $\C$, such that any morphism $f\colon X\to Y$  in $\C$ has a unique $\A$-weaved $\Z$-Postnikov tower. Let
+$\C_{\A,\geq 0}$ be the full subcategory of $\C$ on those objects $Y$ such that  the $\A$-weaved $\Z$-Postnikov tower
+\[
+0 =\lim(Y_j)\to\cdots \to Y_{j+1} \xrightarrow{f_{j}} Y_{j} \xrightarrow{f_{j-1}}Y_{j-1}\to \cdots\to \mathrm{colim}(Y_j)=Y
+\]
+of the initial morphism $0\to Y$ is such that $\mathrm{cofib}(f_j)=0$ for any $j< 0$, and let $\C_{\A,< 0}$ be the full subcategory of $\C$ on those objects $Y$ such that $\mathrm{cofib}(f_j)=0$ for any $j\geq 0$. Then $\mathfrak{t}_{\A}=(\C_{\A,\geq 0}, \C_{\A,<0})$ is a $t$-structure on $\C$, the stable $\infty$-category $\C$ is bounded with respect to $\mathfrak{t}_{\A}$, and the heart of $\mathfrak{t}_{\A}$ is (equivalent to) $\A$.
+\end{proposition}
+ The proof is split in several Lemmas. We begin introducing the following
+\begin{notat}
+For $\cate{S}$ a subcategory of $\C$, we write $\langle \cate{S}\rangle$ for the smallest extension closed full subcategory of $\C$ containing $S$.
+\end{notat}
+\begin{remark}\label{extensions}
+Set  $\langle \cate{S}\rangle_0=\cate{0}$,  define $\langle \cate{S}\rangle_1$ as the full subcategory of $\C$ generated by $\cate{S}$ and $\cate{0}$, and define inductively $\langle \cate{S}\rangle_n$ as the full subcategory of $\C$ on those objects $X$ which fall into a homotopy fiber sequence
+\[
+\xymatrix{
+X_h\ar[r]\ar[d]& X\ar[d]\\
+0\ar[r] &X_k
+}
+\]
+with $h,k\geq 1$, $X_h$ in $\langle \cate{S}\rangle_h$, $X_k$ in $\langle \cate{S}\rangle_k$ and $h+k=n$. One clearly has 
+\[
+\langle \cate{S}\rangle_0\subseteq \langle \cate{S}\rangle_1 \subseteq \langle \cate{S}\rangle_2\subseteq\cdots \subseteq \langle \cate{S}\rangle.
+\]
+Moreover $\bigcup_n \langle \cate{S}\rangle_n$ is clearly extension closed, so that
+\[
+\langle \cate{S}\rangle =\bigcup_n \langle \cate{S}\rangle_n.
+\] 
+\end{remark}
+\begin{lemma}\label{closure}
+Let $\cate{S}_1,\cate{S}_2$ be two subcategories of $\C$ with $\cate{S}_1\orth \cate{S}_2$. Then $\cate{S}_1\orth \langle\cate{S}_2\rangle$ and $\langle\cate{S}_1\rangle\orth \cate{S}_2$, and so $\langle\cate{S}_1\rangle\orth \langle\cate{S}_2\rangle$
+\end{lemma}
+\begin{proof}
+By Remark \refbf{extensions}, to prove the first statement we are reduced to show that, if $Y\in \cate{S}_1$ and $X\in \langle\cate{S}_2\rangle_n$ then $\C(Y,X)$ is contractible. We prove this by induction on $n$. For $n=0,1$ there is nothing to prove by the assumption $\cate{S}_1\orth \cate{S}_2$. For $n\geq 2$, consider a fiber sequence $X_h\to X\to X_k$ with $1\leq h,k$ and $h+k=n$ as in Remark \refbf{extensions}. Since $\C(Y,-)$ preserves homotopy fiber sequences, we get a homotopy fiber sequence of $\infty$-groupoids
+\[
+\xymatrix{
+\C(Y,X_h)\ar[r]\ar[d]& \C(Y,X)\ar[d]\\
+{*}\ar[r] &\C(Y,X_k)
+}.
+\]
+By the inductive hypothesis both $\C(Y,X_h)$ and $\C(Y,X_k)$ are contractible, so $\C(Y,X)$ also is. The proof of the second statement is perfectly dual, due to the fact that in $\C$ every fiber sequence is also a cofiber sequence, and $\C(-,Y)$ transforms a cofiber sequence into a fiber sequence.
+\end{proof}
+\begin{lemma}\label{uno}
+Let $\A$ be an abelian full subcategory of $\C$. Then $\langle \{\A[s]\}_{s\geq 0}\rangle\orth \langle \{\A[s]\}_{s<0}\rangle$. In particular, in the hypothesis of Proposition \refbf{to.be.repeated.verbatim} we have $\C_{\A,\geq 0}\orth \C_{\A,<0}$
+\end{lemma}
+\begin{proof}
+By Lemma \refbf{closure}, we only need to show that $\A[s_1]\orth \A[s_2]$ whenever $s_1\geq 0> s_2$. Let $X\in \A[s_1]$ and $Y\in\A[s_2]$. Then $X=Z_1[s_1]$ and $Y=Z_2[s_2]$ for suitable $Z_1,Z_2\in \A$ and so 
+\begin{align*}
+\C(X,Y)&=\C(Z_1[s_1],Z_2[s_2])\cong  \C(Z_1,Z_2[s_2-s_1])\\
+&\cong \Omega^{s_1-s_2}\C(Z_1,Z_2)=\Omega^{s_1-s_2}\A(Z_1,Z_2),
+\end{align*}
+where in the last equality we used the fact that $\A$ is full. Since $s_1-s_2>0$, the space $\Omega^{s_1-s_2}\A(Z_1,Z_2)$ is contractible by definition of abelian $\infty$-category.
+Finally, in the hypothesis of Proposition \refbf{to.be.repeated.verbatim}  one clearly has $\C_{\A,< 0}\subseteq \langle \{\A[s]\}_{s<0}\rangle$ and $\C_{\A,\geq 0}\subseteq \langle \{\A[s]\}_{s\geq 0}\rangle$.
+\end{proof}
+\begin{lemma}\label{due}
+In the hypothesis of Proposition \refbf{to.be.repeated.verbatim} every object $Y$ of $\C$ sits into a homotopy fiber sequence $Y_{\geq 0}\to Y\to Y_{<0}$ with $Y_{\geq 0}\in \C_{\A,\geq 0}$ and $Y_{< 0}\in \C_{\A,< 0}$.
+\end{lemma}
+\begin{proof}
+Let
+\[
+0 =\lim(Y_j)\to\cdots \to Y_{1} \xrightarrow{f_{0}} Y_{0} \xrightarrow{f_{-1}}Y_{-1}\to \cdots\to \mathrm{colim}(Y_j)=Y
+\]
+be teh $\A$-weaved Postnikov tower of $0\to Y$ and consider the pullout diagram
+\[
+\xymatrix{
+Y_0\ar[r]\ar[d]_{f_{<0}}&0\ar[d]\\
+Y\ar[r]&\mathrm{cofib}(f_{<0})
+}\]
+together with the $\A$-weaved $\Z$-Postnikov towers
+\[
+0 =\lim(Y_j)\to\cdots \to Y_{1} \xrightarrow{f_{0}} Y_{0} 
+\]
+and
+\[
+Y_{0}\xrightarrow{f_{-1}}Y_{-1}\to \cdots\to \mathrm{colim}(Y_j)=Y.
+\]
+The first Postnikov tower shows that $Y_0\in \C_{\A,\geq 0}$ while the second Postnikov tower shows that $\mathrm{cofib}(f_{<0})\in  \C_{\A,<0}$.
+\end{proof}
+\begin{lemma}\label{tre}
+In the hypothesis of Proposition \refbf{to.be.repeated.verbatim}, for any $\lambda\in \R$ let
+$\C_{\A,\geq \lambda}$ be the full subcategory of $\C$ on those objects $Y$ such that  the $\A$-weaved $\Z$-Postnikov tower
+\[
+0 =\lim(Y_j)\to\cdots \to Y_{j+1} \xrightarrow{f_{j}} Y_{j} \xrightarrow{f_{j-1}}Y_{j-1}\to \cdots\to \mathrm{colim}(Y_j)=Y
+\]
+of the initial morphism $0\to Y$ is such that $\mathrm{cofib}(f_j)=0$ for any $j<\lambda$, and let $\C_{\A,< \lambda}$ be the full subcategory of $\C$ on those objects $Y$ such that $\mathrm{cofib}(f_j)=0$ for any $j\geq \lambda$. 
+Then, for any $n\in\Z$, one has $\C_{\A,< \lambda}[n]=\C_{\A,< \lambda+n}$ and $\C_{\A,\geq \lambda}[n]=\C_{\A,\geq \lambda+n}$. In particular, $\C_{\A,<0}[-1]\subseteq \C_{\A,<0}$ and $\C_{\A,\geq 0}[1]\subseteq\C_{\A,\geq 0}$.
+\end{lemma}
+\begin{proof}
+Since the shift functor commutes with the formation of  $\A$-weaved $\Z$-Postnikov towers, an object $Y$ lies in $\C_{\A,< \lambda}[n]$ if and only if $\mathrm{cofib}(f_{j+n}[-n])=0$ for any $j\geq \lambda$, i.e.,  if and only if $\mathrm{cofib}(f_j)=0$ for any $j\geq \lambda+n$.
+The proof for $\C_{\A,\geq \lambda}[n]$ is identical.
+\end{proof}
+\begin{proof}[Proof of Proposition \refbf{to.be.repeated.verbatim}]
+Lemmas \refbf{uno}, \refbf{due} and \refbf{tre} together show that $\mathfrak{t}_\A=(\C_{\A,\geq 0}, \C_{\A,<0})$ is a bounded $t$-structure on $\C$. To see that the heart of  $\mathfrak{t}_\A$ is $\A$ notice that an object $Y$ lies in $\C_{\A,[0,1)}$ if and only if the $\A$-weaved $\Z$-Postnikov tower
+\[
+0 =\lim(Y_j)\to\cdots \to Y_{j+1} \xrightarrow{f_{j}} Y_{j} \xrightarrow{f_{j-1}}Y_{j-1}\to \cdots\to \mathrm{colim}(Y_j)=Y
+\]
+of its initial morphism has $\mathrm{cofib}(f_j)=0$ for every $j\neq0$, and so it is of the form
+\[
+\cdots 0 \to 0\to \cdots \to 0\xrightarrow{f_{0}} Y \xrightarrow{\mathrm{id}_Y}Y\xrightarrow{\mathrm{id}_Y} \cdots\xrightarrow{\mathrm{id}_Y}Y\xrightarrow{\mathrm{id}_Y}\cdots,\] 
+with $Y=\mathrm{cofib}(f_0)\in \A$.
+\end{proof}
+\begin{remark}The same reasoning used in the proof of Proposition \refbf{to.be.repeated.verbatim}, shows that $(\C_{\A,\geq \lambda}, \C_{\A,<\lambda})$ is a bounded $t$-structure on $\C$ for every $\lambda\in \R$, and that the assignment $\lambda\mapsto (\C_{\A,\geq \lambda}, \C_{\A,<\lambda})$ is a $\Z$-equivariant morphisms of posets $\R\to \textsc{ts}(\C)$, so it is a slicing of $\C$. The heart of $(\C_{\A,\geq \lambda}, \C_{\A,<\lambda})$ is $\A[\left \lceil{\lambda}\right \rceil]$, where $\left \lceil{\lambda}\right \rceil=\min\{n\in \Z\,|\, n\geq\lambda\}$.
+\end{remark}

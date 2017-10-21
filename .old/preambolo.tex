@@ -1,0 +1,224 @@
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{
+ amssymb
+,amsfonts
+,url
+,cancel
+,pigpen
+,enumitem
+,nameref
+,stmaryrd
+,marginnote
+,pifont
+,inconsolata
+,attrib
+,lettrine
+,hyphenat
+,pifont
+,todonotes
+,epigraph
+,tikz
+,manfnt
+,etoolbox
+,mparhack
+,mathtools
+,microtype
+,amsmath
+,lmodern
+,datetime
+,cite
+,CJKutf8
+,tikz-cd
+,kodi
+,marvosym
+,chessfss}
+
+\usepackage[foot]{amsaddr}
+\usepackage{xspace}
+  \providecommand{\abbrv}[1]{#1.\@\xspace}
+  \providecommand{\ie}       {\abbrv{i.e}}
+  \providecommand{\etc}      {\abbrv{etc}}
+  \providecommand{\prof}     {\abbrv{prof}}
+  \providecommand{\viz}      {\abbrv{viz}}
+  \providecommand{\eg}       {\abbrv{e.g}}
+  \providecommand{\adef}     {\abbrv{Def}}
+  \providecommand{\acor}     {\abbrv{Cor}}
+  \providecommand{\aprop}    {\abbrv{Prop}}
+  \providecommand{\athm}     {\abbrv{Thm}}
+
+
+\usepackage{cjhebrew}
+\usepackage[spanish, greek, english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+\setcounter{tocdepth}{1} 
+
+\newcommand{\orth}{\boxslash}
+\newcommand{\adj}{\perp}
+
+\def\opp{\text{op}}
+\def\Ch{\cate{Ch}}
+
+\usepackage[titletoc]{appendix}
+\usepackage[bottom=6cm,
+			left=3.5cm,
+			right=4cm,
+			top=4.5cm]{geometry}
+\usepackage[all,2cell,cmtip]{xy}\UseAllTwocells
+
+\newcommand{\bDelta}{\pmb\Delta}
+\newcommand{\varsSet}{\widehat{\bDelta}}
+\newcommand{\xto}[1]{\xrightarrow{#1}}
+\newcommand{\xot}[1]{\xleftarrow{#1}}
+\renewcommand{\to}{\longrightarrow}
+\newcommand{\ot}{\longleftarrow}
+\newcommand{\bsmat}{\left[\begin{smallmatrix}}
+\newcommand{\esmat}{\end{smallmatrix}\right]}
+\newcommand{\tee}{\mathfrak{t}}
+\newcommand{\lemname}{Sator }
+\newcommand{\po}{\ar@{}[dr]|(.7){\text{ }}} \newcommand{\pb}{\ar@{}[dr]|(.3){\text{\pigpenfont J}}}
+\newcommand{\pp}{\ar@{}[dr]|{\text{ }}} \newcommand{\heart}{\heartsuit}
+\newcommand{\var}[2]{\left[\begin{smallmatrix} #1 \\ \downarrow \\ #2 \end{smallmatrix}\right]}
+\newcommand{\refbf}[1]{\textbf{\ref{#1}}}
+\newcommand{\cate}[1]{\text{\fontseries{b}\selectfont{\upshape #1}}}
+
+\newcommand{\A}		{\mathcal{A}}
+\newcommand{\cA}  {\cate{A}}
+\newcommand{\cB}	{\cate{B}}
+\newcommand{\C}   {\cate{C}}
+\renewcommand{\H}		{\cate{H}}
+\newcommand{\D}		{\cate{D}}
+\newcommand{\E}		{\mathcal{E}}
+\newcommand{\F}		{\mathfrak{F}}
+\newcommand{\fF}	{\mathbb{F}}
+\newcommand{\R}	{\mathbb{R}}
+\newcommand{\bT}	{\mathbb{T}}
+\newcommand{\Z}	{\mathbb{Z}}
+\newcommand{\K}		{\cate{K}}
+\newcommand{\iGpd}{\infty\text{-}\cate{Gpd}}
+\newcommand{\M}		{\mathcal{M}}
+\newcommand{\T}		{\mathfrak{T}}
+\newcommand{\fs}	{\textsc{fs}}
+\newcommand{\W}		{\mathcal{W}}
+
+\newcommand{\op}{\mathrm{op}}
+
+\newlength{\seplen}
+\setlength{\seplen}{5pt}
+%
+\newlength{\sepwid}
+\setlength{\sepwid}{.4pt}
+%
+\def\firstblank{\,\rule{\seplen}{\sepwid}\,}
+\def\secondblank{\firstblank\llap{\raisebox{2pt}{\firstblank}}}
+
+
+\renewcommand{\phi}{\varphi}
+
+	\let\amalg=\undefined
+	\let\coprod=\undefined
+	\DeclareSymbolFont{cmsymbols}{OMS}{cmsy}{m}{n}
+	\DeclareSymbolFont{cmlargesymbols}{OMX}{cmex}{m}{n}
+	\DeclareMathSymbol{\amalg}{\mathbin}{cmsymbols}{"71}
+	\DeclareMathSymbol{\coprod}{\mathop}{cmlargesymbols}{"60}
+
+\DeclareMathOperator{\id}{id} 			
+\DeclareMathOperator{\im}{\textsf{im}}
+\DeclareMathOperator{\coim}{\textsf{coim}} 			
+\DeclareMathOperator{\coker}{coker}
+\DeclareMathOperator{\fib}{fib}
+\DeclareMathOperator{\cofib}{cofib}
+
+\DeclareMathOperator{\ob}{Ob}
+
+\long\def\symbolfootnote[#1]#2{\begingroup\def\thefootnote{\fnsymbol{footnote}}\footnote[#1]{#2}\endgroup}
+
+\setlength{\epigraphwidth}{0.55\textwidth}
+
+\usetikzlibrary{fit}
+
+\def\Set{\cate{Set}}
+\def\length{\text{length}}
+
+\newtheoremstyle{reference}
+   {}                
+   {}                
+   {}              
+   {}                      
+   {\fontseries{b}\selectfont}              
+   {:}                     
+   {.2em}                  
+   {\thmname{#1}           
+    \thmnumber{#2}         
+    \thmnote{{\sc [#3]}}} 
+
+\theoremstyle{reference}
+  \newtheorem{theorem}{Theorem}[section]
+  \newtheorem{lemma}[theorem]{Lemma}
+  \newtheorem{proposition}[theorem]{Proposition}
+  \newtheorem{example}[theorem]{Example}
+  \newtheorem{remark}[theorem]{Remark}
+  \newtheorem{definition}[theorem]{Definition}
+  \newtheorem{corollary}[theorem]{Corollary}
+  \newtheorem{notat}[theorem]{Notation}
+  \newtheorem*{acknowledgements}{Acknowledgements}
+  \newtheorem{scholium}[theorem]{Scholium}
+  %
+  %
+  %
+  \newtheorem*{theorem*}{Theorem}
+  \newtheorem*{lemma*}{Lemma}
+  \newtheorem*{proposition*}{Proposition}
+  \newtheorem*{example*}{Example}
+  \newtheorem*{question*}{Exercise}
+  \newtheorem*{remark*}{Remark}
+  \newtheorem*{definition*}{Definition}
+  \newtheorem*{corollary*}{Corollary}
+  \newtheorem*{notat*}{Notation}
+  \newtheorem*{scholium*}{Scholium}
+
+\newcommand{\arXivPreprint}[1]{arXiv preprint \href{http://arxiv.org/abs/#1}{arXiv:#1}}
+
+
+\usepackage{hyperref}
+\hypersetup{pdftitle={hearts},
+   	pdfauthor={D. Fiorenza and F. Loregian},
+	colorlinks=true,
+	linkcolor=black,
+	citecolor=blue!40!black}
+
+\makeatletter
+  \def\@cite#1#2{[\textbf{#1}\if@tempswa , #2\fi]}
+  \def\@biblabel#1{[\textsf{#1}]}
+\makeatother
+
+\newcommand{\smallcap}[1]{\text{\scshape #1}}
+  \providecommand{\iso}{\smallcap{Eqv}}
+  \providecommand{\fs}{\smallcap{fs}}
+  \providecommand{\cart}{\smallcap{Cart}}
+  \providecommand{\cocart}{\smallcap{Cocart}}
+  \providecommand{\ts}{\smallcap{ts}}
+  \providecommand{\pf}{\smallcap{pf}}
+\def\DefaultEpigraphWidth{.6\textwidth}
+
+\def\rwr{\raisebox{\depth}{\rotatebox[origin=c]{90}{$\wr$}}}
+\def\tilt{\mathrel{\scalebox{.75}{\rotatebox[origin=c]{-90}{\sf 6}}}}
+\def\mintilt{\scalebox{.75}{\rotatebox[origin=c]{-90}{\sf 6}}}
+\def\LL{\mathcal{L}}
+\def\fR{\mathcal{R}}
+\def\semicol{\fatsemi}
+\newcommand{\EmailTo}[1]{\href{mailto:#1}{\sf #1}}
+
+\renewcommand{\textbf}[1]{\text{\fontseries{b}\selectfont{\upshape #1}}}
+
+\newcommand{\pullback}[2]{\node at ($(#1)!.2!(#2)$) {$\lrcorner$}}
+\newcommand{\pushout}[2]{\node  at ($(#1)!.8!(#2)$) {$\ulcorner$}}
+\newcommand{\pullout}[2]{\pullback{#1}{#2}; \pushout{#1}{#2}}
+
+\newcommand{\msg}[1]{\[\tikz \node[red] {\bf #1};\]}
+\definecolor{semilightgray}{rgb}{0.65, 0.65, 0.65}
+\def\gray#1{\textcolor{semilightgray}{#1}}
+
+\def\mS{\mathcal{S}}
+\def\pf{\textsc{pf}}

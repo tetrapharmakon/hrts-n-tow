@@ -1,0 +1,1306 @@
+%% kodi-doc.tex
+%% Copyright 2017 Paolo Brasolin
+%
+% This file is part of 'koDi', hereafter referred as 'this work'.
+% This file belongs to version v0.0.0 of this work.
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License, either version 1.3
+% of this license or (at your option) any later version.
+% The latest version of this license is in
+%   <http://www.latex-project.org/lppl.txt>
+% and version 1.3 or later is part of all distributions of LaTeX
+% version 2005/12/01 or later.
+%
+% This work has the LPPL maintenance status `maintained'.
+%
+% The Current Maintainer of this work is Paolo Brasolin
+% who can be contacted at <paolo.brasolin@gmail.com>.
+%
+% This work consists of the following files, typically distributed in either
+% a flat directory structure or the tree directory structure described below:
+%
+%   tex/plain/kodi/
+%    ╰╴kodi.tex
+%   tex/latex/kodi/
+%    ╰╴kodi.sty
+%   tex/context/third/kodi/
+%    ╰╴t-kodi.tex
+%   tex/generic/kodi/
+%    ├╴tikzlibrarykodi.katharizo.code.tex
+%    ├╴tikzlibrarykodi.code.tex
+%    ├╴tikzlibrarykodi.ramma.code.tex
+%    ├╴tikzlibrarykodi.ektropi.code.tex
+%    ├╴tikzlibrarykodi.ozos.code.tex
+%    ├╴tikzlibrarykodi.koinos.code.tex
+%    ├╴tikzlibrarykodi.mandyas.code.tex
+%    ├╴tikzlibrarykodi.bapto.code.tex
+%    ├╴tikzlibrarykodi.diorthono.code.tex
+%    ├╴tikzlibrarykodi.mitra.code.tex
+%    ╰╴tikzlibrarykodi.velos.code.tex
+%   doc/generic/kodi/
+%    ├╴kodi-doc.tex
+%    ├╴kodi-doc.pdf
+%    ╰╴README
+%
+% Further informations about this work can be found at the following links:
+%
+%   https://ctan.org/pkg/kodi
+%    ╰╴download, read generalities
+%   http://mirror.ctan.org/graphics/pgf/contrib/kodi
+%    ╰╴download, browse the files
+%   https://paolobrasolin.github.io/kodi
+%    ╰╴homepage
+%   https://github.com/paolobrasolin/kodi
+%    ╰╴Github repository
+%
+
+%==[ document class ]===========================================================
+
+\documentclass[12pt]{scrbook}
+
+%==[ languages ]================================================================
+
+\usepackage[british]{babel}
+% \hyphenation{Fortran hy-phen-ation}
+
+%==[ fonts, encoding ]==========================================================
+
+\usepackage{libertine}
+\usepackage{libertinust1math}
+\usepackage[ttdefault=true]{AnonymousPro}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+%==[ page geometry ]============================================================
+
+\usepackage{geometry}
+
+\geometry{
+  a4paper,
+  portrait,
+  marginparwidth=4.25cm,
+  marginparsep=.75cm,
+  showframe,
+  width=11cm,
+  hmarginratio=10:25,
+  height=23cm,
+  vmarginratio=20:30,
+}
+
+\makeatletter
+\let\org@Gm@pageframes\Gm@pageframes
+\renewcommand*{\Gm@pageframes}{%
+  \begingroup
+    \color{gray}%
+    \org@Gm@pageframes
+  \endgroup
+}
+\makeatother
+
+%==[ page layout ]==============================================================
+
+%\usepackage{multicol}
+%\usepackage{tabularx}
+%\usepackage{verbatimbox}
+%\usepackage{wrapfig}
+
+\usepackage{float}
+% \usepackage{framed}
+% \usepackage{lipsum}
+\usepackage{enumitem}
+% \usepackage{pdfpages}
+
+% \usepackage{caption}
+\usepackage{sidenotes}
+
+% \DeclareCaptionStyle{sidenote}{font=scriptsize}
+
+% \usepackage{todonotes}
+% \usepackage{marginnote}
+
+\usepackage[
+  headwidth=textwithmarginpar,
+  footwidth=textwithmarginpar,
+]{scrlayer-scrpage}
+%\clearpairofpagestyles
+
+\lofoot{\color{red}\bfseries DRAFT COPY -- UNRELEASED VERSION}
+\refoot{\color{red}\bfseries DRAFT COPY -- UNRELEASED VERSION}
+
+% \lofoot{}
+% \cofoot{}
+% \rofoot{}
+% \lohead{}
+% \cohead{}
+% \rohead{\thepage}
+
+%==[ page style ]===============================================================
+
+\setkomafont{disposition}{\rmfamily\scshape}
+
+\usepackage{parskip}
+
+% \usepackage{csquotes}
+
+\usepackage{caption}
+\usepackage{subcaption}
+
+\captionsetup[marginfigure]{
+  textfont=bf,
+  justification=centering
+}
+
+\captionsetup[subfigure]{
+  textfont=normalfont,
+  singlelinecheck=off,
+  justification=centering
+}
+
+\setcounter{secnumdepth}{0}
+
+%==[ commonplace math ]=========================================================
+
+\usepackage{mathtools}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+
+\DeclareMathOperator{\coker}{coker}
+
+% \def\id{{\mathbf 1}}
+% \DeclareUnicodeCharacter{0131}{{\noexpand\mathbf R}}
+% \DeclareUnicodeCharacter{00D7}{{\otimes}}
+% \catcode`ı=\active \letı\id
+% \catcode`×=\active \let×\otimes
+\usepackage{newunicodechar}
+\newunicodechar{ı}{\mathbf 1}
+\newunicodechar{×}{\otimes}
+
+%==[ graphics ]=================================================================
+
+\usepackage{graphicx}
+\usepackage{xcolor}
+% TODO: what did I need soul for again?
+\usepackage{color,soul}
+
+\usepackage{tikz}
+\usetikzlibrary{decorations.pathreplacing}
+
+%==[ koDi ]=====================================================================
+
+% \usetikzlibrary{kodi}
+\usepackage{kodi}
+\usetikzlibrary{positioning}
+
+%==[ alternatives to koDi ]=====================================================
+
+\usepackage[all]{xy}
+
+\usepackage{pstricks,pst-node}
+
+% TODO: DANGER! tikz-cd is writing global styles!!
+%   I think it's only arrows.meta though. Investigate!
+% \usetikzlibrary{arrows.meta}
+\usetikzlibrary{cd}
+
+%==[ utilities and custom macros ]==============================================
+
+\usepackage{etoolbox}
+\usepackage{xparse}
+
+% \NewDocumentCommand{\SmashAndCenter}{m}{%
+% \begingroup\setbox0=\hbox{#1}%
+% \newdimen\tmp\tmp=\dimexpr-.5\ht0+.5\dp0\relax%
+% \hfill\smash{\raisebox{\the\tmp}{\box0}}\hfill\null\endgroup%
+% }
+
+\newsavebox\SmashAndCenterBox
+\newdimen\SmashandCenterRaise
+
+% TODO: make overflow on left pages go left
+\NewDocumentEnvironment{SmashAndCenter}{}{%
+\begin{lrbox}{\SmashAndCenterBox}}{%
+\end{lrbox}%
+\SmashandCenterRaise=\dimexpr-.5\ht\SmashAndCenterBox+.5\dp\SmashAndCenterBox\relax%
+\hfill\smash{\raisebox{\the\SmashandCenterRaise}{\usebox\SmashAndCenterBox}}\hfill\null%
+}
+
+%==[ sourcecode and examples ]==================================================
+
+\usepackage{listings}
+
+% http://tex.stackexchange.com/a/336331/82186
+\makeatletter
+\lst@Key{lastline}\relax{\ifnumcomp{#1}{<}{0}{%
+  \let\mylst@file\lst@intname\sbox0{\lstinputlisting{\mylst@file}}%
+  \def\lst@lastline{\the\numexpr#1+\value{lstnumber}-1\relax}}%
+  {\def\lst@lastline{#1\relax}}}
+\makeatother
+
+\usepackage{showexpl}
+
+\makeatletter
+\lst@Key{postset}\relax{\def\SX@postset{#1}}
+\newcommand\SX@postset{}
+\renewcommand*\SX@resultInput{%
+  \ifx\SX@graphicname\@empty
+    \begingroup
+      \MakePercentComment\makeatother\catcode`\^^M=5\relax
+      \SX@@preset\SX@preset
+      \if@SX@rangeaccept
+       \let\SX@tempa=\SX@input
+      \else
+       \let\SX@tempa=\input
+      \fi
+      \if\SX@scaled ?%
+        \let\SX@tempb=\@firstofone
+      \else
+        \if\SX@scaled !%
+          \def\SX@tempb##1{\resizebox{\SX@width}{!}{##1}}%
+        \else
+          \def\SX@tempb##1{\scalebox{\SX@scaled}{##1}}%
+        \fi
+      \fi
+      \SX@tempb{\SX@tempa{\SX@codefile}}\SX@postset\par
+    \endgroup
+  \else
+    \expandafter\includegraphics\expandafter[\SX@graphicparam]%
+      {\SX@graphicname}%
+  \fi
+}
+\makeatother
+
+% \lstdefinelanguage{TikZ}{
+%   morekeywords={for},
+%   sensitive=false,
+%   morecomment=[l]{//},
+%   morecomment=[s]{/*}{*/},
+%   morestring=[b]",
+% }
+
+\lstdefinestyle{TeX}{
+  language=[LaTeX]TeX,
+  basicstyle=\ttfamily\lst@ifdisplaystyle\scriptsize\fi,
+  backgroundcolor=\color{teal!10},
+  % keywordstyle=*\color{blue},
+  % identifierstyle=\color{orange}\bfseries,
+  % morekeywords={\path},
+  alsoother={@},
+  moretexcs={
+    \starttext,\stoptext,\usemodule,
+    \tikzpicture,\endtikzpicture,
+    \tikzexternalize,
+    \starttikzpicture,\stoptikzpicture,
+    \usetikzlibrary,
+    \kodi,\endkodi,
+    \startkodi,\stopkodi,
+    \lay,\obj,\mor,
+    \bye,
+    \draw,\foreach,
+    \ar,
+    \psset,\everypsbox,\ncline,\ncarc,
+    \xymatrix,
+  },
+  texcsstyle=*\bfseries,
+  % morestring=[b]",
+  commentstyle=\itshape\color{black!60},
+  frame=none,
+  % extendedchars=false,
+  % inputencoding=utf8,
+  escapeinside={(@}{@)},
+  moredelim=**[is][\color{orange!80!black}]{@opt@}{@/opt@},
+  moredelim=**[is][\color{blue!80!black}]{@nws@}{@/nws@},
+  % moredelim=**[is][\color\underbar]{@rep@}{@/rep@},
+  moredelim=**[s][\itshape]{<}{>},
+  literate={~}{{\textvisiblespace}}1 {XOR}{{$\vert$}}1 {:}{{\textbf{:}}}1 {:=}{{$\equiv$}}1 ,
+}
+
+\lstset{style=TeX}
+% \lstMakeShortInline[style=TeX]"
+
+% \makeatletter
+% \newcount\ublvl\ublvl=0
+% \newcount\ubdpt\ubdpt=0
+% \newdimen\ubgap\ubgap=.2em
+% \def\underbra#1{\underline {\sbox \tw@ {\global\advance\ubdpt1\advance\ublvl1#1}\dp \tw@ \dimexpr\ubgap*(\ubdpt-\ublvl-1)\relax \box \tw@ }\ifnum\ublvl=0\ubdpt=0\fi}
+% \makeatother
+
+% \lstset{explpreset={
+%   wide,
+%   basicstyle=\ttfamily\scriptsize,
+%   pos=o,
+%   width=\marginparwidth,
+%   hsep=\marginparsep,
+%   rframe={},
+%   preset={\centering\tikzpicture[kodi]},
+%   postset={\endtikzpicture}
+% }}
+
+\usepackage{tcolorbox}
+\tcbuselibrary{listingsutf8}
+\tcbset{listing utf8=latin1}
+
+\tcbset{
+  smash and center/.style={
+    if odd page={
+      before lower=\begin{SmashAndCenter},
+      after lower=\end{SmashAndCenter}
+    }{
+      before upper=\begin{SmashAndCenter},
+      after upper=\end{SmashAndCenter}
+    }},
+  trim/.style args={#1 and #2}{
+    listing options={
+      firstline=#1,
+      lastline=#2}},
+  trim/.default={2 and -1},
+  snippet/.style={
+    size=tight,
+    colback=white,
+    colframe=white,
+    if odd page={
+      listing side text,
+      lefthand width=\textwidth,
+      righthand width=\marginparwidth,
+      halign lower=center,
+    }{
+      text side listing,
+      righthand width=\textwidth,
+      lefthand width=\marginparwidth,
+      halign upper=center,
+    },
+    toggle enlargement,
+    grow to right by=\marginparsep+\marginparwidth,
+    sidebyside gap=\marginparsep,
+    smash and center,
+    listing options={}
+  },
+  gallery/.style={
+    size=tight,
+    colback=white,
+    colframe=white,
+    if odd page={
+      % listing side text,
+      % lefthand width=\textwidth,
+      % righthand width=\marginparwidth,
+      grow to right by=\marginparsep+\marginparwidth,
+    }{
+      grow to right by=\marginparsep+\marginparwidth,
+      % text side listing,
+      % righthand width=\textwidth,
+      % lefthand width=\marginparwidth,
+      % halign upper=center,
+    },
+    toggle enlargement,
+    % grow to right by=\marginparsep+\marginparwidth,
+    text above listing,
+    listing options={}
+  }
+}
+
+% \tcbset{kodi snippet/.style={snippet, trim, smash and center}}
+
+\def\nilstrut{\rule{0sp}{0sp}}
+
+%==[ extra stuff ]==============================================================
+
+\usepackage{soul}
+
+% \usepackage{lipsum}
+
+\usepackage{hologo}
+\def\ConTeXt{\hologo{ConTeXt}}
+\def\koDi{{\scshape koDi}}
+\def\TikZ{{\scshape TikZ}}
+
+% \usepackage[lastpage,user]{zref}
+\usepackage[
+  % colorlinks=true,
+  % urlcolor=blue,
+  % linkbordercolor=black,
+  % pdfborderstyle={/S/U/W .4}% border style will be underline of width 1pt
+  % urlbordercolor=cyan        % color of external links
+  hidelinks
+]{hyperref}
+
+%==[ microtype ]================================================================
+
+\usepackage{microtype}
+ 
+\begin{document}
+
+%==[ TITLE PAGE ]===============================================================
+
+\thispagestyle{empty}
+\noindent
+\resizebox{\linewidth}{!}{\scshape koDi}\\[0.62em]
+\resizebox{\linewidth}{!}{\scshape kommutative Diagramme für \TeX}\\[1.62em]
+\resizebox{\linewidth}{!}{\scshape enchiridion}\par
+\vfill
+\marginpar{
+  \resizebox{\linewidth}{!}{\scshape\color{red} unreleased}\\[0.62em]
+  \resizebox{\linewidth}{!}{\scshape v1.0.0}\\
+  \resizebox{\linewidth}{!}{\scshape \today}
+}
+
+%==[ FOREWORD ]=================================================================
+
+\newpage
+% \begin{adjustwidth}{.45\textwidth}{.45\textwidth-\marginparwidth-\marginparsep}
+\noindent\koDi\ is a \TikZ\ library. Its purpose
+is drawing commutative diagrams.
+It is designed precisely to overcome
+the shortcomings of traditional ones.
+The syntax is minimalistic and intelligible.\par
+\hfill{\itshape Paolo Brasolin}
+% \end{adjustwidth}
+
+\newpage
+\section{Preliminaries}
+\TikZ\ is the only dependency of \koDi.
+This ensures compatibility with most \TeX\ flavours.
+Furthermore, it can be invoked as a standalone as well as a \TikZ\ library.
+Below are minimal working examples for the main dialects.
+
+\begin{figure}[H]
+  \begin{adjustwidth}{0sp}{-\marginparwidth-\marginparsep}
+    \begin{subfigure}{\marginparwidth}
+      \caption*{\TeX\ package}
+      \begin{lstlisting}[gobble=8]
+
+        \input kodi
+
+        \kodi
+          % diagram here
+        \endkodi
+        \bye
+      \end{lstlisting}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{\marginparwidth}
+      \caption*{\ConTeXt\ module}
+      \begin{lstlisting}[gobble=8]
+
+        \usemodule[kodi]
+        \starttext
+        \startkodi
+          % diagram here
+        \stopkodi
+        \stoptext
+      \end{lstlisting}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{\marginparwidth}
+      \caption*{\LaTeX\ package}
+      \begin{lstlisting}[gobble=8]
+        \documentclass{article}
+        \usepackage{kodi}
+        \begin{document}
+        \begin{kodi}
+          % diagram here
+        \end{kodi}
+        \end{document}
+      \end{lstlisting}
+    \end{subfigure}
+    \par
+    \begin{subfigure}{\marginparwidth}
+      \caption*{\TeX\ (\TikZ\ library)}
+      \begin{lstlisting}[gobble=8]
+
+        \input tikz
+        \usetikzlibrary kodi
+
+        \tikzpicture[kodi]
+          % diagram here
+        \endtikzpicture
+        \bye
+      \end{lstlisting}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{\marginparwidth}
+      \caption*{\ConTeXt\ (\TikZ\ library)}
+      \begin{lstlisting}[gobble=8]
+
+        \usemodule[tikz]
+        \usetikzlibrary[kodi]
+        \starttext
+        \starttikzpicture[kodi]
+          % diagram here
+        \stoptikzpicture
+        \stoptext
+      \end{lstlisting}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{\marginparwidth}
+      \caption*{\LaTeX\ (\TikZ\ library)}
+      \begin{lstlisting}[gobble=8]
+        \documentclass{article}
+        \usepackage{tikz}
+        \usetikzlibrary{kodi}
+        \begin{document}
+        \begin{tikzpicture}[kodi]
+          % diagram here
+        \end{tikzpicture}
+        \end{document}
+      \end{lstlisting}
+    \end{subfigure}
+  \end{adjustwidth}
+\end{figure}
+
+A useful \TikZ\ feature exclusive to \LaTeX\ is externalization.
+A small expedient is necessary to use it with \koDi.
+
+\begin{marginfigure}[-2em]
+  \caption*{\TikZ\ externalization}
+  \begin{lstlisting}[gobble=4]
+    \documentclass{article}
+    \usepackage{tikz}
+    \usetikzlibrary{kodi}
+    \usetikzlibrary{external}
+    \tikzexternalize
+      [prefix=tikzpicfolder/]
+    \begin{document}
+    \begin{tikzpicture}[kodi]
+      % diagram here
+    \end{tikzpicture}
+    \end{document}
+  \end{lstlisting}
+\end{marginfigure}
+ \newpage
+\section{Quick tour}
+Objects are typeset using the \lstinline|\obj| macro.
+
+\begin{tcblisting}{snippet, trim}
+\begin{kodi}
+\obj {X};
+\end{kodi}
+\end{tcblisting}
+
+Almost every diagram is laid along a regular grid,
+so the customary tabular syntax of \TeX\ is recognized.
+
+\begin{tcblisting}{snippet, trim}
+\begin{kodi}
+\obj {
+  A & B \\
+  C & D \\
+};
+\end{kodi}
+\end{tcblisting}
+
+\koDi\ objects are self-aware and clever enough to name themselves
+so you can comfortably refer to them.
+
+\begin{tcblisting}{snippet, trim}
+\begin{kodi}
+\obj {\lim F};
+\draw (lim F) circle (4ex);
+\end{kodi}
+\end{tcblisting}
+
+Morphisms are typeset using the \lstinline!\mor! macro.
+
+\begin{tcblisting}{snippet, trim}
+\begin{kodi}
+\obj { A & B \\ };
+\mor A f:-> B;
+\end{kodi}
+\end{tcblisting}
+
+Commutative diagrams exist to illustrate composition and commutation,
+so \koDi\ allows arrow chaining and chain gluing.
+
+\begin{tcblisting}{snippet, trim}
+\begin{kodi}
+\obj { A & B \\ C & D \\ };
+\mor A -> B -> D;
+\mor * -> C -> *;
+\end{kodi}
+\end{tcblisting}
+
+
+These are the only two macros defined by \koDi.
+
+There are more features: read on if this caught your attention.
+ \newpage
+\section{Alternatives}
+\def\NiceURL#1#2{\href{#2}{\color{blue}\ul{#1}}}
+
+It is only fair to mutely offer a comparison with mainstream packages,
+showing idiomatic code to draw the same diagram.
+
+Let \NiceURL
+  {\Xy-pic}
+  {http://texdoc.net/texmf-dist/doc/generic/xypic/xyrefer.pdf\#page=1}
+set the bar with a \emph{verbatim} extract from its manual.
+
+\begin{tcblisting}{snippet}
+\xymatrix{
+ U \ar@/_/[ddr]_y \ar[dr] \ar@/^/[drr]^x \\
+  & X \times_Z Y \ar[d]^q \ar[r]_p
+                 & X \ar[d]_f            \\
+  & Y \ar[r]^g & Z                       }
+\end{tcblisting}
+
+Here is an example adapted from \NiceURL
+  {\ttfamily\small pst-node}
+  {http://texdoc.net/texmf-dist/doc/generic/pst-node/pst-node-doc.pdf\#page=23}'s
+documentation.
+
+\begin{tcblisting}{snippet}
+$ \psset{colsep=2.5em, rowsep=2em}
+ \begin{psmatrix}
+  U \\
+ & X\times_Z Y & X \\
+ & Y & Z
+ \psset{arrows=->, nodesep=3pt}
+ \everypsbox{\scriptstyle}
+ \ncline{1,1}{2,2}
+ \ncarc[arcangle=-10]{1,1}{3,2}_{y}
+ \ncarc[arcangle=10]{1,1}{2,3}^{x}
+ \ncline{2,2}{3,2}>{q}
+ \ncline{2,2}{2,3}_{p}
+ \ncline{2,3}{3,3}<{f}
+ \ncline{3,2}{3,3}^{g}
+ \end{psmatrix}$
+\end{tcblisting}
+
+Next one is refitted from the guide to \NiceURL
+  {\ttfamily\small\{tikz-cd\}}
+  {http://texdoc.net/texmf-dist/doc/latex/tikz-cd/tikz-cd-doc.pdf\#page=3}.
+
+\begin{tcblisting}{snippet}
+\begin{tikzcd}[column sep=scriptsize, row sep=scriptsize]
+  U
+  \arrow[drr, bend left=10, "x"]
+  \arrow[ddr, bend right=10, swap, "y"]
+  \arrow[dr] & & \\
+    & X \times_Z Y \arrow[r, swap, "p"] \arrow[d, "q"]
+      & X \arrow[d, swap, "f"] \\
+    & Y \arrow[r, "g"]
+      & Z
+\end{tikzcd}
+\end{tcblisting}
+
+Finally, \textbf{\koDi}.
+
+\begin{tcblisting}{snippet}
+\begin{kodi}[golden]
+  \obj { |(pb)| X \times_Z Y & X \\
+                           Y & Z \\ };
+  \obj [above left=of pb] {U};
+
+  \mor[swap] pb p:-> X f:-> Z;
+  \mor        * q:-> Y g:-> *;
+
+  \mor                       U   -> pb;
+  \mor      :[bend left=10]  * x:-> X;
+  \mor[swap]:[bend right=10] * y:-> Y;
+\end{kodi}
+\end{tcblisting}
+ \newpage
+\section{Syntax: objects}
+The first of the two macros that \koDi\ offers is \lstinline|\obj|.
+It is polymorphic and can draw both single objects and layouts.
+
+\begin{lstlisting}
+\obj@opt@ <object options> @/opt@{<math>};(@
+  \marginpar{\scriptsize Orange denotes optional fragments.}@)
+\obj@opt@ <layout options> @/opt@{<layout>};
+\end{lstlisting}
+
+Layouts are described using the customary \TeX\ tabular syntax.
+
+\begin{lstlisting}
+<layout>         := (@\itshape\underbar{<row> <row separator>}@)(@
+  \marginpar{\scriptsize Underlined fragments are repeated one or more times.}@)
+<row>            := <cell> (@\itshape\color{orange!80!black}\underbar{<cell separator> <cell>}@)
+<row separator>  := \\ @opt@[<length>]@/opt@
+<cell>           := @opt@|<object options>| @/opt@<math>
+<cell separator> := & @opt@[<length>]@/opt@
+\end{lstlisting}
+
+The discretionary options syntax is analogous to standard \TikZ\ nodes and
+matrices, respectively.
+
+\begin{lstlisting}
+<object options> := (@\itshape\color{orange!80!black}\underbar{[object keylist]}@) @opt@(<name>) at (<coordinate>)@/opt@
+<layout options> := (@\itshape\color{orange!80!black}\underbar{[layout keylist]}@) @opt@(<name>) at (<coordinate>)@/opt@
+\end{lstlisting}
+
+\hfill$\therefore$\hfill\null
+
+Very little of the given syntax is specific to \koDi.
+\TikZ\ options are easy to pick up on the way,
+blah blah blah.
+
+Here is a kitchen sink for tabular syntax:
+
+\begin{tcblisting}{snippet, trim}
+\begin{kodi}[square=3em]
+\obj { A & B &[1em] C \\
+       D & E &      F \\[-1em]
+       G & H &      I \\ };
+\end{kodi}
+\end{tcblisting}
+
+Objects are automagically named; the latest homonymous prevails.
+
+\begin{tcblisting}{snippet, trim}
+\begin{kodi}[square=3em]
+\obj { A & A \\ };
+\draw (A) circle (1em);
+\end{kodi}
+\end{tcblisting}
+
+Naming a specific object avoids its automatic labeling.
+
+\begin{tcblisting}{snippet, trim}
+\begin{kodi}[square=3em]
+\obj { A & |(A')| A \\ };
+\draw [red]   (A)  circle (1em);
+\draw [green] (A') circle (1em);
+\end{kodi}
+\end{tcblisting}
+
+Naming a layout lets you refer to its objects by row and column.
+
+\begin{tcblisting}{snippet, trim}
+\begin{kodi}[square=3em]
+\obj (M) { A & A \\ A & A \\ };
+\draw [red]   (M-1-2) circle (1em);
+\draw [green] (M-2-1) circle (1em);
+\end{kodi}
+\end{tcblisting}
+ \newpage
+\section{Syntax: morphisms}
+\begingroup\tcbset{trim/.default={3 and -1}}
+
+The second and last macro that \koDi\ offers is \lstinline|\mor|.
+It can draw single or chained morphisms.
+
+\begin{lstlisting}
+\mor@opt@ <chain options> @/opt@<object>(@
+  \itshape\underbar{\textvisiblespace<morphism>\textvisiblespace<object>}@);(@
+  \marginpar{\scriptsize Whitespace marked as \textvisiblespace\ is mandatory.}@)
+\end{lstlisting}
+
+Source and target objects are referred to by their name.
+  
+\begin{lstlisting}
+<object>   := @nws@(<name>)@/nws@ (@
+  \marginpar{\scriptsize Blue fragments can be either enclosed in the shown delimiters, or a \TeX\ group (not idiomatic), or simply devoid of whitespace.}@)
+\end{lstlisting}
+
+Morphisms consist of one or more optional labels and an arrow.
+  
+\begin{lstlisting}
+<morphism> := @opt@<labels> : @/opt@<arrow>
+<labels>   := @nws@"<math>"@/nws@ XOR (@\underbar{[{\itshape "<math>", <label keylist>}]}@) (@
+  \marginpar{\scriptsize Alternatives are separated by $\vert$s.}@)
+<arrow>    := @nws@[<arrow keylist>]@/nws@
+\end{lstlisting}
+% <labels>   := @nws@"<math>"@/nws@ XOR @nws@[<label keylist>]@/nws@ XOR (@\underbar{[{\itshape <label keylist>}]}@)
+
+Global options can be given to both labels and arrows.
+
+\begin{lstlisting}
+<chain options> := [<label keylist>] @opt@: [<arrow keylist>]@/opt@
+\end{lstlisting}
+
+\hfill$\therefore$\hfill\null
+
+These rules allow for a label syntax that sprouts gracefully
+from the simplest to the most complex arrow.
+
+\begin{tcblisting}{snippet, trim}
+\begin{kodi}
+\obj { A & B & C \\ F & E & D \\ };
+\mor A -> B;
+\mor B f:-> C;
+\mor C \hat g:-> D;
+\mor D "h i":-> E;
+\mor E ["L", above]:-> F;
+\mor F ["m", near start]["n", swap]["o", near end]:-> A;
+\end{kodi}
+\end{tcblisting}
+
+The same holds for arrow syntax.
+
+\begin{tcblisting}{snippet, trim}
+\begin{kodi}
+\obj { A & B & C \\ };
+\mor A -> B;
+\mor B [>-, dashed] C;
+\end{kodi}
+\end{tcblisting}
+
+Blah.
+
+\begin{tcblisting}{snippet, trim}
+\begin{kodi}
+\obj { A & B & C \\ F & E & D \\ };
+\mor A -> B;
+\mor [swap]:[bend left] B f:-> C g:>-> D h:>- E;
+\end{kodi}
+\end{tcblisting}
+
+\endgroup
+ \newpage
+\section{Names}
+As you'll have guessed by now, objects name themselves.
+
+The process happens in three steps:
+\begin{itemize}[nosep]
+  \item expand tokens;
+  \item replace characters;
+  \item apply name, overwriting if necessary.
+  \end{itemize}
+
+Each one can be configured in any \koDi\ scope with the keys.
+
+You can control the degree of expansion; the default behaviour (no expansion)
+shields you from problems with unsafe macros.
+
+ \newpage
+\subsection{Shortcuts}
+\begingroup\tcbset{trim/.default={3 and -1}}
+
+Two special labels exist: {\ttfamily *} and {\ttfamily +}.
+
+As a source, {\ttfamily *} evaluates to the head of the previous chain.
+
+\begin{tcblisting}{snippet, trim}
+\begin{kodi}
+\obj [square=2.5em] { A & B & C & \phantom{D} \\ };
+\mor B -> C;
+\mor * -> A;
+\end{kodi}
+\end{tcblisting}
+
+As a target, {\ttfamily *} evaluates to the tail of the previous chain.
+
+\begin{tcblisting}{snippet, trim}
+\begin{kodi}
+\obj [square=2.5em] { \phantom{A} & B & C & D \\ };
+\mor B -> C;
+\mor D -> *;
+\end{kodi}
+\end{tcblisting}
+
+The natural use case for {\ttfamily *} is chain gluing.
+
+\begin{tcblisting}{snippet, trim}
+\begin{kodi}
+\obj [square=2.5em] { A & B \\ D & C \\ };
+\mor A -> B -> C;
+\mor * -> D -> *;
+\end{kodi}
+\end{tcblisting}
+
+As a source, {\ttfamily +} evaluates to the tail of the previous chain.
+
+\begin{tcblisting}{snippet, trim}
+\begin{kodi}
+\obj [square=2.5em] { \phantom{A} & B & C & D \\ };
+\mor B -> C;
+\mor + -> D;
+\end{kodi}
+\end{tcblisting}
+
+As a target, {\ttfamily +} evaluates to the head of the previous chain.
+
+\begin{tcblisting}{snippet, trim}
+\begin{kodi}
+\obj [square=2.5em] { A & B & C & \phantom{D} \\ };
+\mor B -> C;
+\mor A -> +;
+\end{kodi}
+\end{tcblisting}
+
+The natural use case for {\ttfamily +} is chain extension.
+
+\begin{tcblisting}{snippet, trim}
+\begin{kodi}
+\obj [square=2.5em] { A & B & C & D \\ };
+\mor B -> C;
+\mor A -> + -> D;
+\end{kodi}
+\end{tcblisting}
+
+The meanings of {\ttfamily *} and {\ttfamily +} swap on opposite chains.
+
+Chain extension can be obtained using {\ttfamily *}.
+
+\begin{tcblisting}{snippet, trim}
+\begin{kodi}
+\obj [square=2.5em] { A & B & C & D \\ };
+\mor B <- C;
+\mor D -> * -> A;
+\end{kodi}
+\end{tcblisting}
+
+Chain gluing can be obtained using {\ttfamily +}.
+
+\begin{tcblisting}{snippet, trim}
+\begin{kodi}
+\obj [square=2.5em] { A & B \\ D & C \\ };
+\mor A <- B <- C;
+\mor + -> D -> +;
+\end{kodi}
+\end{tcblisting}
+
+\endgroup
+ \newpage
+\subsection{Expansion}
+The expansion behaviour of the naming routine can be configured
+inside any \koDi\ scope using the \lstinline!expand! key.
+
+\begin{lstlisting}
+/kD/expand = none | once | full
+\end{lstlisting}
+
+The three available settings correspond to different degrees of expansion.
+A side by side comparison completely illustrates their meanings.
+
+\begin{tcblisting}{snippet, trim}
+\begin{kodi}
+\def\B{Z}
+\def\A{\B}
+\obj{ |[expand=none]| \A &     % name: A (default)
+      |[expand=once]| \A &     % name: B
+      |[expand=full]| \A \\ }; % name: Z
+\mor A -> B -> Z;
+\end{kodi}
+\end{tcblisting}
+
+\hfill$\therefore$\hfill\null
+
+The default behaviour is to avoid expansion in compliance with the principle
+that \emph{names should be predictable from the \emph{literal} code}.
+Furthermore, it is seldom wise to liberally expand tokens.
+
+There are circumstances in which it is useful to perform token expansion,
+though. A useful application is procedural drawing.
+
+\begin{tcblisting}{snippet, trim}
+\begin{kodi}
+\foreach [count=\r] \l in {A,B,C}
+  \foreach [count=\c] \n in {n-1,n,n+1}
+    \obj [expand=full] at (3em*\c,-2em*\r) {\l_{\n}};
+\mor (A_{n}) -> (B_{n+1}) -> (C_{n}) -> (B_{n-1}) -> (A_{n});
+\end{kodi}
+\end{tcblisting}
+
+In some cases finer control is needed. For instance, full expansion
+yields unpractical results when parametrizing macros.
+
+\begin{tcblisting}{snippet, trim}
+\begin{kodi}
+\foreach [count=\c] \m in {\lim,\prod}
+  \obj [expand=full] at (4em*\c,0) {\m F};
+\mor (protect mathop {relax kern z@ mathgroup
+                        symoperators lim}nmlimits@ F)
+  -> (DOTSI prodop slimits@ F);
+\end{kodi}
+\end{tcblisting}
+
+This explains why a setting to force a single expansion exists.
+
+\begin{tcblisting}{snippet, trim}
+\begin{kodi}
+\foreach [count=\c] \m in {\lim,\prod}
+  \obj [expand=once] at (4em*\c,0) {\m F};
+\mor (lim F) -> (prod F);
+\end{kodi}
+\end{tcblisting}
+ \newpage
+\subsection{Replacement}
+The character replacement behaviour of the naming routine can be configured
+inside any \koDi\ scope using various keys.
+
+\begin{lstlisting}
+/kD/replace character = <character> with <character>
+/kD/replace charcode = <charcode> with <character>
+/kD/remove characters = <characters>
+/kD/remove character = <character>
+/kD/remove charcode = <charcode>
+\end{lstlisting}
+
+You can set up a replacement for any character, using the character code for
+the hardest to type, like {\ttfamily \textvisiblespace} or {\ttfamily \textbackslash}.
+
+\begin{tcblisting}{snippet, trim}
+\begin{kodi}[golden]
+\obj{ |[replace character=F with G]| \lim F &     % name: lim G
+      |[remove character=F]|         \lim F \\    % name: lim
+      |[replace charcode=92 with /]| \lim F &     % name: /lim F
+      |[remove charcode=32]|         \lim F \\ }; % name: limF
+\mor (lim G) -> (lim) -> (/lim F) -> (limF);
+\end{kodi}
+\end{tcblisting}
+
+\hfill$\therefore$\hfill\null
+
+The default behaviour is removal of the minimal set of universally annoying%
+\footnote{The difficult part is not creating the names but having to type them.}
+characters: {\ttfamily (),.:}  have special meanings to \TikZ\ while
+{\ttfamily \textbackslash} is impossible to type by ordinary means, so they're \emph{kaput}.
+
+Each one can be restored by replacing it with itself. Don't.
+
+Another egregiously bad idea is replacing characters with spaces.
+It's tempting because it solves a somewhat common edge case.
+
+\begin{tcblisting}{snippet, trim}
+\begin{kodi}[golden]
+\obj{ \beta & F & b\eta \\ };
+\mor F -> beta;
+\end{kodi}
+\end{tcblisting}
+
+Since characters in names are literal, this causes whitespace
+duplication and names become inaccessible by ordinary means.
+
+\begin{tcblisting}{snippet, trim}
+\begin{kodi}[golden]
+\obj [replace charcode=92 with \space]
+  { \beta & b\eta & \beta \eta \\ };
+\mor beta -> (b eta) -> (beta \space eta);
+\end{kodi}
+\end{tcblisting}
+
+The wise solution is writing better code.
+
+\begin{tcblisting}{snippet, trim}
+\begin{kodi}[golden]
+\obj{ \beta & F & b \eta \\ };
+\mor F -> beta;
+\end{kodi}
+\end{tcblisting}
+
+ \newpage
+\subsection{Overwriting}
+The name overwriting behaviour of the naming routine can be configured
+inside any \koDi\ scope using the \lstinline!overwrite! key.
+
+\begin{lstlisting}
+/kD/overwrite = false | alias | true
+\end{lstlisting}
+
+The three available settings correspond to different naming priorities.
+A side by side comparison completely illustrates their meanings.
+
+\begin{tcblisting}{snippet, trim}
+\begin{kodi}
+\obj{ |[overwrite=false] (A')| A &     % names: A'    (default)
+      |[overwrite=alias] (B')| B &     % names: B', B
+      |[overwrite=true]  (C')| C \\ }; % names:     C
+\mor A' -> B';
+\mor B  -> C;
+\end{kodi}
+\end{tcblisting}
+
+\hfill$\therefore$\hfill\null
+
+The default behaviour is the ideal for manually solving automatic names
+conflicts.
+
+TODO: Why is false useful? conflict solving.
+
+\begin{tcblisting}{snippet, trim}
+\begin{kodi}[golden]
+\obj {        A & |(A')| A \\
+       |(Z')| Z &        Z \\ };
+\mor A -> A';
+\mor Z -> Z';
+\end{kodi}
+\end{tcblisting}
+
+TODO: Why is alias useful? semantic aliasing
+
+\begin{tcblisting}{snippet, trim}
+\begin{kodi}
+\obj [overwrite=alias] { A & |(center)| B & |(right)| C \\ };
+\mor A -> B;
+\mor center -> right;
+\end{kodi}
+\end{tcblisting}
+
+TODO: Why is true useful? \ldots completeness?
+ \newpage
+\section{Gallery}
+% \makeatletter
+% \newcommand\prev{\the\tikz@lastxsaved,\the\tikz@lastysaved}
+% \makeatother
+
+The remainder of the text is just commented examples.
+
+\clearpage
+
+\subsection{Snake}
+
+\begin{tcblisting}{gallery}
+\begin{kodi}[golden]
+  \obj{          & \ker a   & \ker b   & \ker c   &   \\
+                 & A        & B        & C        & 0 \\
+        |(0')| 0 & A'       & B'       & C'       &   \\
+                 & \coker a & \coker b & \coker c &   \\ };
+
+  \mor   (ker a) ->   (ker b) ->   (ker c);
+  \mor (coker a) -> (coker b) -> (coker c);
+  \mor       A  f :-> B  g :-> C -> 0;
+  \mor 0' -> A' f':-> B' g':-> C';
+
+  \mor[near start] (ker a) -> A a:-> A' -> (coker a);
+  \mor[near start] (ker b) -> B b:-> B' -> (coker b);
+  \mor[near start] (ker c) -> C c:-> C' -> (coker c);
+
+  \draw[/kD/arrows/crossing over, ->, rounded corners, >=stealth]
+    (ker c) -- ++( 0.6,0) -- ++(0,-1.6)
+            -- ++(-3.2,0) -- ++(0,-1.4) -- (coker a);
+\end{kodi}
+\end{tcblisting}
+
+\clearpage
+
+% \begin{tcblisting}{gallery}
+% \begin{kodi}
+% % From the LaTeX preamble:
+% %   \usepackage{newunicodechar}
+% %   \newunicodechar{ı}{\mathbf 1}
+% %   \newunicodechar{×}{\otimes}
+
+%   \foreach [count=\n] \o in {
+%       ((w×x)×y)×x,
+%       (w×(x×y))×x,
+%       w×((x×y)×x),
+%       w×(x×(y×x)),
+%       (w×x)×(y×x)
+%     } \obj (\n) at (72*\n:7em) {\o};
+
+%   \mor 1 "a_{w,x,y}×ı_z": -> 2
+%            "a_{w,x×y,z}": -> 3
+%          "ı_w×a_{x,y,z}": -> 4;
+%   \mor *   "a_{w×x,y,z}": -> 5
+%            "a_{w,x,y×z}": -> *;
+% \end{kodi}
+% \end{tcblisting}
+
+\clearpage
+
+\subsection{Pullback \& pushout}
+
+\begin{tcblisting}{gallery}
+\begin{kodi}[comb]
+  \obj{ |(pb)| A \times_Z B & B \\
+               A            & Z \\ };
+  \obj[above left=of pb] {Q};
+
+  \mor[swap] pb p_1:-> A f:-> Z;
+  \mor        * p_2:-> B g:-> *;
+
+  \mor[swap]:[bend right] Q q_1:-> A;
+  \mor      :[bend left]  * q_2:-> B;
+  \mor [mid]:[dashed]     *   u:-> pb;
+\end{kodi}
+\end{tcblisting}
+
+\begin{tcblisting}{gallery}
+\begin{kodi}[comb]
+  \obj{ Z &                   B \\
+        A & |(po)| A \sqcup_Z B \\ };
+  \obj[below right=of po] {Q};
+
+  \mor[swap] Z f:-> A i_1:-> po;
+  \mor       * g:-> B i_2:-> *;
+
+  \mor[swap]:[bend right]  A j_1:-> Q;
+  \mor      :[bend left]   B j_2:-> *;
+  \mor [mid]:[dashed]     po   u:-> *;
+\end{kodi}
+\end{tcblisting}
+
+\clearpage
+
+\subsection{Complexes sequence}
+
+\begin{tcblisting}{gallery}
+\begin{kodi}
+  \obj (M) {   & \vdots  & \vdots  & \vdots  &   \\
+             0 & A_{n+1} & B_{n+1} & C_{n+1} & 0 \\
+             0 & A_{n}   & B_{n}   & C_{n}   & 0 \\
+             0 & A_{n-1} & B_{n-1} & C_{n-1} & 0 \\
+               & \vdots  & \vdots  & \vdots  &   \\ };
+
+  \foreach \n/\row in {n+1/2, n/3, n-1/4}
+    \mor (M-\row-1) -> (A_{\n}) "\alpha_{\n}":-> (B_{\n})
+                                 "\beta_{\n}":-> (C_{\n}) -> (M-\row-5);
+
+  \foreach \l/\col/\q in {A/2/, B/3/', C/4/''}
+    \mor (M-1-\col) -> (\l_{n+1}) "\partial\q_{n+1}":-> (\l_{n})
+                                  "\partial\q_{n}"  :-> (\l_{n-1}) -> (M-5-\col);
+\end{kodi}
+\end{tcblisting}
+
+\clearpage
+
+\subsection{Braid}
+
+\begin{tcblisting}{gallery}
+\begin{kodi}[ l/.style={bend left}, r/.style={bend right} ]
+  \obj [ comb=step 6em angle 45, remove characters=H_\{q+\} ] {
+    H_{q+2}(X)   & H_{q+2}(X,Y) & H_{q+1}(Y,Z) & H_{q}(Z)     \\
+    H_{q+2}(Y)   & H_{q+2}(X,Z) & H_{q+1}(Y)   & H_{q+1}(X,Z) \\
+    H_{q+2}(Y,Z) & H_{q+1}(Z)   & H_{q+1}(X)   &              \\
+  };
+  
+  \mor :[blue]  2Y  -> 2X  l,-> 2XY   -> 1Y  -> 1X;
+  \mor :[green] 2Y  -> 2YZ r,-> 1Z    -> 1Y  -> 1YZ l,-> Z;
+  \mor :[cyan]  2X  -> 2XZ   -> 1Z  r,-> 1X  -> 1XZ   -> Z;
+  \mor :[red]   2YZ -> 2XZ   -> 2XY l,-> 1YZ -> 1XZ;
+\end{kodi}
+\end{tcblisting}
+
+\clearpage
+
+\subsection{Hammock}
+
+\begingroup\catcode`~=12
+\begin{tcblisting}{gallery}
+\begin{kodi}[x=4em, y=-3em, node distance=1 and 1,
+    sim/.style={sloped, auto,
+      edge node={node[every edge quotes][/velos/install quote
+        handler,"\sim", anchor=south, outer sep=-.15em]}
+    },
+    ~>/.style={->, sim},
+    <~/.style={<-, sim},
+    ../.style={line width=.25ex, dash pattern=on 0sp off .75ex, line cap=round},
+    remove characters=_\{\},
+    expand=full,
+  ]
+    
+  \foreach [count=\c] \col in {1, 2, 3, n}
+  \foreach [count=\r] \row in {K_{\col}, C_{0\col}, \vdots, C_{m\col}, L_{\col}}
+    \obj [name/.expanded={\ifnum\r=3 vdots\col\fi}] at (\c,\r) {\row};
+
+  \obj  [left=of vdots1] {X};
+  \obj [right=of vdotsn] {Y};
+
+  \foreach \col in {1, 2, 3, n}
+    \mor (K\col) ~> (C0\col) ~> (vdots\col) ~>  (Cm\col) ~> (L\col);
+  
+  \foreach \row in {K, C0, Cm, L} {
+    \mor (\row1) -> (\row2) <~ (\row3) .. (\row n);
+    \mor X <~ + -> Y;
+  }
+\end{kodi}
+\end{tcblisting}
+\endgroup
+
+ 
+% \input{test}
+
+\end{document}
+

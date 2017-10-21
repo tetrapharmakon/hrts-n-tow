@@ -1,0 +1,125 @@
+\newcommand{\orth}{\boxslash}
+\newcommand{\adj}{\perp}
+
+\renewcommand{\bowtie}{%
+  \mathchoice%
+  {\lhd\hskip-1.8pt\rhd}%
+  {\lhd\hskip-1.8pt\rhd}%
+  {\lhd\hskip-1.8pt\rhd}%
+  {\lhd\hskip-1.8pt\rhd}%
+}
+
+\def\opp{\text{op}}
+\def\Ch{\cate{Ch}}
+
+\usepackage[titletoc]{appendix}
+\usepackage[bottom=6cm,
+			left=4cm,
+			right=4.5cm,
+			top=4.5cm]{geometry}
+
+\newcommand{\bDelta}{\pmb\Delta}
+\newcommand{\varsSet}{\widehat{\bDelta}}
+\newcommand{\xto}[1]{\xrightarrow{#1}}
+\newcommand{\xot}[1]{\xleftarrow{#1}}
+\renewcommand{\to}{\longrightarrow}
+\newcommand{\ot}{\longleftarrow}
+\newcommand{\tee}{\mathfrak{t}}
+\newcommand{\po}{\ar@{}[dr]|(.7){\text{ }}} 
+\newcommand{\pb}{\ar@{}[dr]|(.3){\text{\pigpenfont J}}}
+\newcommand{\pp}{\ar@{}[dr]|{\text{ }}} 
+\newcommand{\heart}{\text{\Heart}}
+
+\newcommand{\var}[2]{\left[\begin{smallmatrix} #1 \\ \downarrow \\ #2 \end{smallmatrix}\right]}
+\newcommand{\varnobkt}[2]{\begin{smallmatrix} #1 \\ \downarrow \\ #2 \end{smallmatrix}}
+
+\newcommand{\cate}[1]{\EuScript{#1}}
+\DeclareMathAlphabet\EuScript{U}{eus}{m}{n}
+\SetMathAlphabet\EuScript{bold}{U}{eus}{b}{n}
+\newcommand{\CMcal}{}
+%
+%
+%
+\newcommand{\cA}  {\cate{A}}
+\newcommand{\cB}  {\cate{B}}
+\newcommand{\C}   {\EuScript{C}}
+\renewcommand{\H} {\cate{H}}
+%
+\newcommand{\A}   {\mathcal{A}}
+\newcommand{\E}   {\mathcal{E}}
+\newcommand{\M}		{\mathcal{M}}
+\renewcommand{\O} {\mathcal{O}}
+%
+\newcommand{\fF}  {\mathbb{F}}
+\newcommand{\R}   {\mathbb{R}}
+\newcommand{\bT}  {\mathbb{T}}
+\newcommand{\Z}   {\mathbb{Z}}
+%
+\newcommand{\F}   {\cate{F}}
+\newcommand{\T}   {\mathcal{T}}
+\newcommand{\euT} {\cate{T}}
+
+\renewcommand{\phi}{\varphi}
+
+% ====== [ placeholders ]
+
+\newlength{\seplen}
+\setlength{\seplen}{5pt}
+%
+\newlength{\sepwid}
+\setlength{\sepwid}{.4pt}
+%
+\def\firstblank{\,\rule{\seplen}{\sepwid}\,}
+\def\secondblank{\firstblank\llap{\raisebox{2pt}{\firstblank}}}
+
+% ====== [ operators ]
+
+\DeclareMathOperator{\id}{id} 			
+\DeclareMathOperator{\im}{\textsf{im}}
+\DeclareMathOperator{\coim}{\textsf{coim}} 			
+\DeclareMathOperator{\coker}{coker}
+\DeclareMathOperator{\fib}{fib}
+\DeclareMathOperator{\cofib}{cofib}
+\DeclareMathOperator{\ob}{Obj}
+
+\newcommand{\smallcap}[1]{\text{\scshape #1}}
+  \providecommand{\fs}{\smallcap{fs}}
+  \providecommand{\ts}{\smallcap{ts}}  
+  \providecommand{\pf}{\smallcap{pf}}
+  \providecommand{\tot}{\smallcap{tt}}
+
+
+\newcommand{\EmailTo}[1]{\href{mailto:#1}{\sf #1}}
+
+\newcommand{\pullback}[2]{\node at ($(#1)!.2!(#2)$) {$\lrcorner$}}
+\newcommand{\pushout}[2]{\node  at ($(#1)!.8!(#2)$) {$\ulcorner$}}
+\newcommand{\pullout}[2]{\pullback{#1}{#2}; \pushout{#1}{#2}}
+
+\newcommand{\msg}[1]{\[\tikz \node[red] {\bf #1};\]}
+\definecolor{semilightgray}{rgb}{0.65, 0.65, 0.65}
+\def\gray#1{\textcolor{semilightgray}{#1}}
+
+\usepackage{turnstile}
+	\newcommand{\adjunct}[2]{\nsststile{#2}{#1}}
+
+\def\lu{{(L,U)}}
+
+\newcommand{\ordered}[1]{[\mathbf{#1}]}
+  \def\uno{\ordered{1}}
+  \def\zero{\textbf{0}}
+  \def\ordk{\ordered{k}}
+
+\newcommand{\Pos}{\underline{\cate{P}\text{os}}}
+\newcommand{\Tos}{\underline{\cate{T}\text{os}}}
+\def\ZPos{\Z\text{-}\Pos}
+\def\Sp{\cate{S}\text{p}}
+\def\weaves{\text{\Denarius}}
+\newcommand{\japanese}[2][bsmi]{\text{\begin{CJK*}{UTF8}{#1}#2\end{CJK*}}}
+\newcommand{\slicings}{\japanese{切}}
+
+\newlength\DefaultEpiWidth
+\setlength\DefaultEpiWidth{.4\textwidth}
+
+\newenvironment{modifyepigraph}[1]
+  {\setlength{\epigraphwidth}{#1\textwidth}}
+  {\setlength{\epigraphwidth}{\DefaultEpiWidth}}

@@ -1,0 +1,176 @@
+%!TEX root=../hearts-revised.tex
+\newcommand{\tilted}{\mathrel{\lightning}\!}
+\section{Abelian slicings and tiltings}\label{tiltings}
+\begin{modifyepigraph}{.9}
+\epigraph{Quando si vuole uccidere un uomo bisogna colpirlo al cuore, e un Winchester è l'arma più adatta.}{R\@. Rojo}
+\end{modifyepigraph}
+We now review the abelian counterpart of the notion of $J$-slicing and relate slicings on hearts of a stable $\infty$-category $\C$ with slicings of $\C$. First of all recall the notion of \textit{torsion pair} on an abelian $\infty$-category, which is the abelian counterpart of the notion of $t$-structure on a stable $\infty$-category.
+\begin{definition}[torsion theory on an abelian $\infty$-category]
+Let $\cA$ be an abelian $\infty$-category.
+A torsion pair on an abelian $\infty$-category $\cA$ is a pair $(\cate{F},\cate{T})$ of full sub-$\infty$-subcategories of $\cA$ satisfying:
+ \begin{enumerate}[label=$\roman*$)]
+\item orthogonality: $\cA(X,Y)$ is contractible for each $X \in \cate{T}$, $Y \in \cate{F}$;
+\item any object $X \in \cA$ fits into a pullout diagram
+\[
+\xymatrix{
+X_{\cate{T}}\ar[d]\ar[r]& X\ar[d]\\
+\zero\ar[r]& X_{\cate{F}}
+}
+\]
+with $ X_{\cate{T}} \in \cate{T}$ and $X_{\cate{F}} \in \cate{F}$. 
+ \end{enumerate}
+ The subcategories $\cate{T}$ and $\cate{F}$ are called the torsion class and the torsion free class, respectively.
+  \end{definition}
+  \begin{notat}
+We denote by $\tot(\cA)$ the set of torsion theories on $\cA$; this set has a natural choice for a partial order: $(\cate{F}_1, \cate{T}_1) \leq (\cate{F}_2, \cate{T}_2)$ if and only if $\cate{T}_2 \subseteq \cate{T}_1$, or equivalently $\cate{F}_1\subseteq \cate{F}_2$.
+\end{notat}
+The poset $\tot(\cA)$ has a top and a bottom element, given by $(\cA,\zero)$ and $(\zero,\cA)$, respectively. The following definition is directly inspired by \cite{Rud}. 
+ \begin{definition}[abelian slicing]
+Let $(I, \leq)$ be a poset. An \textit{abelian $I$-slicing} on $\cA$ is a morphism of posets $\T \colon \mathcal{O}(I) \to \tot (\cA)$ that preserve the top and bottom element. The image of $(\Lambda,\Upsilon)\in \mathcal{O}(I)$ by $\T$ will be denoted $(\cA_{\Lambda}, \cA_{\Upsilon})$
+ \end{definition}
+ \begin{remark}
+Notice that, since there is no choice of a shift functor in an abelian $\infty$-category,  there is no $\Z$-action on $I$ or $\Z$-equivariancy condition involved in the above definition.
+ \end{remark}
+
+\begin{remark}[The abelian slicings functor]
+By analogy with Remark \refbf{rem.slicing-functor}, for any $\infty$-category $\A$ we have a functor $\slicings_\text{ab} \colon \Pos \to \Pos $  mapping a poset $I$ to the poset of abelian $I$-slicings of $\cA$.
+\end{remark}
+
+  
+ 
+ \begin{lemma}\label{to.get.slicings.on.heart}
+   Let  $\tee_0 = (\cate{L}_0, \cate{U}_0)$ be a $t$-structure on $\C$ with heart $\C^\heart$, and let $\tee_1=\tee_0[1]$. Also let $\tee=(\cate{L}, \cate{U})$ be another $t$-structure with $\tee_0 \leq \tee \leq \tee_1$. Then $$\T=(\cate{F},\cate{T}):=(\cate{L} \cap \C^\heart, \cate{U}\cap \C^\heart)$$
+   is a torsion theory on $\C^\heart$. 
+ \end{lemma}
+\begin{proof}
+Clearly, $\cate{F}\subseteq\C^\heart$ and $\cate{T}\subseteq \C^\heart$.
+Moreover, $\cate{F}\subseteq\cate{L}$ and $\cate{T}\subseteq \cate{U}$, and so $\cate{T}\orth\cate{F}$.
+Now, pick $X \in \C^\heart$ and consider the fiber sequence 
+\[
+\xymatrix{
+X_{\cate{U}}\ar[d]\ar[r]& X\ar[d]\\
+\zero\ar[r]& X_{\cate{L}}
+}
+\]
+induced by the $t$-structure $\tee$. From it we get the fiber sequence
+\[
+\xymatrix{
+X_{\cate{L}}[-1]\ar[d]\ar[r]& \zero\ar[d]\\
+X_{\cate{U}}\ar[r]& X
+}
+\]
+We have $X_{\cate{L}}[-1]\in \cate{L}[-1]\subseteq \cate{L}\subseteq \cate{L}_1$ and $X\in \C^\heart\subseteq \cate{L}_1$. Since $\cate{L}_1$ is closed by extensions (see Remark \refbf{closed.by.extensions}), this implies that $X_{\cate{U}}\in \cate{L}_1$. Therefore $X_{\cate{U}}\in \cate{L}_1\cap \cate{U}=\cate{L}_1\cap \cate{U}_0\cap \cate{U}=\cate{T}$. An analogous argument shows that $X_{\cate{L}}\in \cate{F}$.
+\end{proof}
+ \begin{proposition}\label{J-to-t}
+Let $(J,\leq)$ be a $\mathbb{Z}$-toset, and let $J^\heart$ a heart of $J$. Then a $J$-slicing on $\C$ induces a $t$-structure on $\C$ together with an abelian $J^\heart$-slicing on $\C^\heart$. 
+ \end{proposition}
+ \begin{proof}
+   Let $ \mathcal{O}(J) \to \ts(\C)$ be a fixed $J$-slicing on $\C$, and let $J^\heart=U_0\cap L_1$ for some (unique) upper set $U_0$ and lower set $L_1$ in $J$. Finally, let $\tee_0$ be the $t$-structure on $\C$ corresponding to the slicing $(L_0,U_0)$ of $J$. Then we know from Remark \refbf{oss.Z.Postnikov} that $\C^\heart= \C_{J^\heart}$ is the standard heart of $\tee_0$. Let $\tee_1$ be the $t$-structure on $\C$ corresponding to the slicing $(L_1,U_1)$ of $J$. By Lemma \refbf{lemma.plus.one} we know that $\tee_1=\tee_0[1]$. Moreover we know from Remark \refbf{oi.vs.oj} that every upper set $\Upsilon$ of $J^\heart$ is of the form $\Upsilon=U\cap J^\heart$ for a unique upper set $U$ in $J$ with $U_0\leq U\leq U_1$. Let $(L,U)$ be the slicing of $J$ determined by $U$. By  Lemma \refbf{to.get.slicings.on.heart},
+ \[
+ (\Lambda,\Upsilon) \mapsto (\C_L\cap \C^\heart,\C_U\cap \C^\heart) 
+ \]
+ defines an abelian $J^\heart$-slicing on $\C^\heart$.
+\end{proof}
+As we are going to show, in the bounded case we also have the converse of the above proposition.
+
+\begin{lemma}\label{verso.il.tilting}
+Suppose that $\tee$ is a bounded $t$-structure on $\C$ with heart $\C^\heart$. Then a torsion theory $\T=(\cate{F},\cate{T})$ on $\C^\heart$ induces a bounded $\mathbb{Z} \times_{\mathrm{lex}} \ordered{1}$-slicing on $\C$. 
+\end{lemma} 
+\begin{proof}
+Since every interval of the form $[n_0,n_1]$ in $\mathbb{Z} \times_{\mathrm{lex}} \ordered{1}$ is finite, a bounded $\mathbb{Z} \times_{\mathrm{lex}} \ordered{1}$-slicing is discrete of finite type. Therefore, by \aprop\refbf{b-is-discrete} we are reduced to showing that a torsion theory $\T$ on $\C^\heart$ induces a Bridgeland $\mathbb{Z} \times_{\mathrm{lex}} \ordered{1}$-slicing on $\C$. Since $\T=(\cate{F}, \cate{T})$ is a torsion theory of $\C^\heart$, we have that  $\T[n]=(\cate{F}[n], \cate{T}[n])$ is a torsion theory of $\C^\heart[n]$ for any $n\in \mathbb{Z}$.
+Consider the full subcategories
+\[
+\C_{(n,0)}=\cate{F}[n];\qquad 
+\C_{(n,1)}=\cate{T}[n].
+\]
+Since the $\Z$-action on $\Z\times_{\mathrm{lex}}\ordered{1}$ is $(n,i)+1=(n+1,i)$, it is immediate to see that $\C_{(n,i)+1}=\C_{(n,i)}[1]$ for every $(n,i)$ in $\Z\times_{\mathrm{lex}}\ordered{1}$. Let now $X\in \C_{(n_1,i_1)}$ and $Y\in \C_{(n_2,i_2)}$ with $(n_1,i_1)>(n_2,i_2)$. Since the order is the lexicographic one, we either have $n_1>n_2$ or $n_1=n_2$ and $i_1=1$ and $i_2=0$. In the first case $X\in \C^\heart[n_1]$ and $Y\in \C^\heart[n_2]$ with $n_1>n_2$ and so $X\orth Y$; in the second case $X\in \cate{T}[n_1]$ and $Y\in \cate{F}[n_1]$ and so again $X\orth Y$. Finally, let $X$ be an object in $\C$ and consider the $\C^\heart$-weaved tower of its initial morphism. Keeping only the nontrivial morphisms in this tower we are reduced to a finite factorization of the form
+$$0=X_0 \xrightarrow{\alpha_1} \cdots \xrightarrow{\alpha_k} X_k=X$$ 
+with $\cofib(\alpha_l)\in \C^\heart[n_l]$ for a suitable sequence of decreasing integers $n_0>n_1>\cdots > n_k$. Since $\T[n_l]=(\cate{F}[n_l], \cate{T}[n_l])$ is a torsion theory of $\C^\heart[n_l]$, we have a pullout diagram
+\[
+\xymatrix{
+\cofib(\alpha_l)_{\cate{T}[n_l]}\ar[d]\ar[r]& \cofib(\alpha_i)\ar[d]\\
+\zero\ar[r]& \cofib(\alpha_l)_{\cate{F}[n_l]}
+}
+\]
+in $\C^\heart[n_l]$. By \aprop\refbf{pullout.is.pullout}, this is a pullout diagram in $\C$ and so we can consider the commutative diagram
+\[
+\xymatrix{
+X_{n_l-1}\ar[r]^{\alpha_{l,+}}\ar[d] & \tilde{X}_{n_l}\ar[d]\ar[r]^{\alpha_{l,-}}&X_{n_l}\ar[d]\\
+ \zero\ar[r]&\cofib(\alpha_i)_{\cate{T}[n_l]}\ar[d]\ar[r]& \cofib(\alpha_l)\ar[d]\\
+& \zero\ar[r]& \cofib(\alpha_l)_{\cate{F}[n_l]}
+}
+\]
+where each square is a pullout in $\C$. As $l$ ranges from $0$ to $k$ this gives a factorization of $0\to X$ into morphisms whose cofibers are in $\C_{n,i}$ for a decreasing sequence of indices $(n,i)$'s.
+\end{proof}
+\begin{remark}\label{rem.explicit.tilt}
+The nontrivial upper sets in $\Z \times_{\mathrm{lex}} \ordered{1}$ are easily described: they are all of the form $[(n,i),+\infty)$ for some $n\in \Z$ and $i\in \ordered{1}$. In the notation of Lemma \refbf{verso.il.tilting}, the $t$-structures on $\C$ corresponding to these upper sets are easily described by means of Remark \refbf{rem:b-is-discrete}. We have
+\begin{align*}
+(\C\tilted\T)_{\geq (n,0)} &=\C_{\geq n}=\{X \in \C \mid \mathcal{H}^iX=\zero \text{ for } i<n\}\\
+(\C\tilted\T)_{\geq (n,1)} &=\{X \in \C \mid \mathcal{H}^iX=\zero \text{ for } i<n, \; (\mathcal{H}^nX)_{\cate{F}[n]}=\zero\}
+\end{align*}
+Equivalently,
+\[
+(\C\tilted\T)_{\geq (n,1)}=\{X \in \C \mid \mathcal{H}^iX=\zero \text{ for } i<n,\; \mathcal{H}^nX\in \cate{T}[n]\}
+\] 
+\end{remark}
+
+\begin{definition}\label{def.tilting}
+Let $\tee=(\C_{<0},\C_{\ge 0})$ be a bounded $t$-structure on $\C$ and let $\C^\heart$ be its standard heart. For every torsion theory $\T$ on $\C^\heart$, the $t$-structure $\tee\tilted\T  = \Big((\C\tilted\T)_{< (0,1)} , (\C\tilted\T)_{\ge (0,1)}\Big)$ is said to be obtained \emph{tilting} (it's a verb) $(\C_{ < 0},\C_{\ge 0})$ with $\T$ (see \cite{Beligiannisreiten}).
+\end{definition}
+
+\begin{remark}\label{trivial.tilting}
+One immediately sees that the tilting of a $t$-structure $\tee=(\C_{< 0},\C_{ \ge 0})$ by the bottom torsion theory $\T_\perp = (\zero,\C^\heart)$ is the trivial tilting, %$( \C_{< (0,1)}^{(\zero,\C^\heart)},\C_{\ge (0,1)}^{(\zero,\C^\heart)})=(\C_{< 0},\C_{\ge 0})$, 
+while the tilting by the the top torsion theory $\T_\top = (\C^\heart,\zero)$
+is the shift by 1:
+\begin{itemize}
+ 	\item $\tee\tilted\T_\perp = %( \C_{< (0,1)}^{\lightning(\zero,\C^\heart)},\C_{\ge (0,1)}^{\lightning(\zero,\C^\heart)})=
+ 	(\C_{< 0},\C_{\ge 0})$,
+ 	\item $\tee\tilted\T^\top  = %= (\C_{< (0,1)}^{\lightning(\C^\heart,\zero)},\C_{\ge (0,1)}^{\lightning(\C^\heart,\zero)})=
+ 	(\C_{< 1},\C_{\ge 1})=(\C_{< 0},\C_{\ge 0})[1]$.
+ \end{itemize} 
+\end{remark}
+
+\begin{remark}\label{tilting-as-morphism}
+The construction of Lemma \refbf{verso.il.tilting} gives  a map
+\[
+\tot(\C^\heart)\to \slicings(\mathbb{Z} \times_{\mathrm{lex}} \ordered{1},\C ),%\text{-slicings on }\C,
+\]
+and the explicit description in Remark \refbf{rem.explicit.tilt} show that this is a morphism of posets. Namely, if $\T_1\leq \T_2$ then $\cate{T}_2[n] \subseteq \cate{T}_1[n]$ and so $(\C\tilted\T_2)_{\geq (n,i)} \subseteq (\C\tilted\T_1)_{\geq (n,i)}$ for every $(n,i)$. In particular, tilting defines a morphism of posets
+\[
+(\secondblank \tilted \firstblank) \colon \tot(\C^\heart)\times \ts(\C) \to \ts(\C).
+\]
+This construction can be seen as a byproduct of the functoriality of slicings as follows. The $\mathbb{Z}$-toset $\mathbb{Z} \times_{\mathrm{lex}} \ordered{1}$ has an obvious $\mathbb{Z}$-equivariant morphism of posets  to $\mathbb{Z}$ given by the projection $\pi$ on the first factor. However, and remarkably, there is also another less trivial $\mathbb{Z}$-equivariant morphism 
+\[
+\pi\circ \mathrm{tilt}\colon \mathbb{Z} \times_{\mathrm{lex}} \ordered{1} \to \mathbb{Z}
+\]
+given by the composition of the projection $\pi$ with the  $\mathbb{Z}$-equivariant automorphism of the poset $\mathbb{Z} \times_{\mathrm{lex}} \ordered{1}$ defined by
+\[
+\begin{cases} \mathrm{tilt}(n,0)=(n-1,1) \\ \mathrm{tilt}(n,1)=(n,0) \end{cases}. 
+\]
+Since taking slicings of a fixed stable $\infty$-category with respect to a $\Z$-toset $J$ is functorial in $J$ (Remark \refbf{rem.slicing-functor}), we have a morphism of $\Z$-tosets
+\[
+\slicings(\mathbb{Z} \times_{\mathrm{lex}} \ordered{1},\C ) \xrightarrow{\pi\circ\mathrm{tilt}} \ts(\C).
+\]
+Composing this with the morphism of posets $\tot(\C^\heart)\to \slicings(\mathbb{Z} \times_{\mathrm{lex}} \ordered{1},\C )$ gives the tilting map.
+\end{remark}
+
+The proposition below can be found in \cite{Beligiannisreiten} for $J=\mathbb{Z} \times_{\rm{lex}} \ordered{1}$ and in \cite{Brid} for $J=\mathbb{R}$. 
+\begin{proposition}\label{converse.if.finite}
+Let $J$ be a $\mathbb{Z}$-toset, and let $J^\heart$ be a heart of $J$. Then giving a bounded $J$-slicing on $\C$ is equivalent to giving a bounded $t$-structure $(\C_{< 0},\C_{\ge 0})$ on $\C$ together with an abelian $J^\heart$-slicing on the standard heart $\C^\heart$ of $(\C_{< 0},\C_{\ge 0})$. Moreover the bounded $J$-slicing on $\C$ is discrete if and only if the abelian $J^\heart$-slicing of $\C^\heart$ is discrete.
+\end{proposition}
+\begin{proof}
+In one direction this is the content of \aprop\refbf{J-to-t}. Vice versa, assume we have a bounded $t$-structure $(\C_{< 0},\C_{\ge 0})$ on $\C$ and an abelian $J^\heart$-slicing $\T$ on its standard heart $\C^\heart$. By definition this is a morphism of posets $\mathcal{O}(J^\heart)\to \tot(\C^\heart)$. By Remark \refbf{tilting-as-morphism}, tilting a fixed $t$-structure gives a morphism of posets $\tot(\C^\heart)\to \ts(\C)$, and so by composition we get a morphism of posets 
+\[
+\mathcal{O}(J^\heart)\to\ts(\C)
+\]
+Recalling the identification of $\mathcal{O}(J^\heart)$ with the interval $[U_0,U_1]$ of $\mathcal{O}(J)$ from Remark \refbf{oi.vs.oj}, and that $U_1=U_0+1$ from Lemma \refbf{lemma.plus.one}, this is a morphism of posets $[U_0,U_0+1]\to \ts(\C)$ and so it induces a uniquely determined $\Z$-equivariant morphism of $\Z$-tosets
+\[
+\tee\colon \Z\times_{\mathrm{lex}}[U_0,U_0+1]\to \ts(\C)
+\]
+By Remark \refbf{trivial.tilting}, $\tee_{(1,U_0)}=\tee_{(0,U_0)}[1]=\tee_{(0,U_0+1)}$ and so $\tee$ factors through the natural morphism of $\Z$-tosets 
+\[
+\Z\times_{\mathrm{lex}}[U_0,U_0+1]\to \mathcal{O}(J)
+\]
+given by $(n,U)\mapsto U+n$. In other words, $\tee$ uniquely defines a $J$-slicing on $\C$, 
+which is bounded since the $t$-structure $(\C_{< 0},\C_{\ge 0})$ is, by Remark \refbf{bounded.is.bounded}. Finally, the construction manifestly preserves finite types.
+\end{proof}

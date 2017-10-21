@@ -1,0 +1,4 @@
+latexmk -c
+latexmk -pdf hearts-revised
+latexmk -c
+rm *.synctex.gz

@@ -1,0 +1,84 @@
+\providecommand{\bysame}{\leavevmode\hbox to3em{\hrulefill}\thinspace}
+\providecommand{\MR}{\relax\ifhmode\unskip\space\fi MR }
+% \MRhref is called by the amsart/book/proc definition of \MR.
+\providecommand{\MRhref}[2]{%
+  \href{http://www.ams.org/mathscinet-getitem?mr=#1}{#2}
+}
+\providecommand{\href}[2]{#2}
+\begin{thebibliography}{GKR04}
+
+\bibitem[BBD82]{BBDPervers}
+A.A. Beilinson, J.~Bernstein, and P.~Deligne, \emph{Faisceaux pervers},
+  Analysis and topology on singular spaces, {I} ({L}uminy, 1981), Ast\'erisque,
+  vol. 100, Soc. Math. France, Paris, 1982, pp.~5--171. \MR{751966 (86g:32015)}
+
+\bibitem[Bly05]{blyth2005lattices}
+T.S. Blyth, \emph{Lattices and ordered algebraic structures}, Universitext,
+  Springer-Verlag London, Ltd., London, 2005. \MR{2126425 (2006h:06001)}
+
+\bibitem[BO95]{Bondal1995}
+A.I. {Bondal} and D.O. {Orlov}, \emph{{Semiorthogonal decomposition for
+  algebraic varieties}}, ArXiv e-prints
+  \href{http://arxiv.org/abs/alg-geom/9506012v1}{alg-geom/9506012} (1995), 55
+  pp.
+
+\bibitem[BR07]{Beligiannisreiten}
+A.~Beligiannis and I.~Reiten, \emph{Homological and homotopical aspects of
+  torsion theories}, Mem. Amer. Math. Soc. \textbf{188} (2007), no.~883,
+  viii+207. \MR{2327478 (2009e:18026)}
+
+\bibitem[Bri07]{Brid}
+T.~Bridgeland, \emph{Stability conditions on triangulated categories}, Ann. of
+  Math. (2) \textbf{166} (2007), no.~2, 317--345. \MR{2373143 (2009c:14026)}
+
+\bibitem[CHK85]{CHK}
+C.~Cassidy, M.~H{\'e}bert, and G.M. Kelly, \emph{Reflective subcategories,
+  localizations and factorization systems}, J. Austral. Math. Soc. Ser. A
+  \textbf{38} (1985), no.~3, 287--329. \MR{779198 (86j:18001)}
+
+\bibitem[Dic66]{dickson1966torsion}
+S.E. Dickson, \emph{A torsion theory for abelian categories}, Transactions of
+  the American Mathematical Society \textbf{121} (1966), no.~1, 223--235.
+
+\bibitem[FL14]{Fiorenza2014}
+{D}omenico {F}iorenza and {F}osco {L}oregiàn, \emph{{$t$-structures are normal
+  torsion theories}}, Appl. Categ. Struct. (2014).
+
+\bibitem[Fuc63]{Fuch63}
+L.~Fuchs, \emph{Partially ordered algebraic systems}, Pergamon Press,
+  Oxford-London-New York-Paris; Addison-Wesley Publishing Co., Inc., Reading,
+  Mass.-Palo Alto, Calif.-London, 1963. \MR{0171864 (30 \#2090)}
+
+\bibitem[GKR04]{GKR}
+A.L. Gorodentsev, Sergej~A. Kuleshov, and Aleksei~N. Rudakov,
+  \emph{{$t$}-stabilities and {$t$}-structures on triangulated categories},
+  Izv. R.. Akad. Nauk Ser. Mat. \textbf{68} (2004), 117--150. \MR{2084563
+  (2005j:18008)}
+
+\bibitem[Gla99]{glass1999partially}
+A.M.~W. Glass, \emph{Partially ordered groups}, Series in Algebra, vol.~7,
+  World Scientific Publishing Co., Inc., River Edge, NJ, 1999. \MR{1791008
+  (2001g:06002)}
+
+\bibitem[Joy08]{Joy}
+Andr{\'e} Joyal, \emph{The theory of quasi-categories and its applications},
+  Citeseer, 2008.
+
+\bibitem[KT93]{Korostenski199357}
+M.~Korostenski and W.~Tholen, \emph{Factorization systems as
+  {E}ilenberg-{M}oore algebras}, J. Pure Appl. Algebra \textbf{85} (1993),
+  no.~1, 57--72. \MR{1207068 (94a:18002)}
+
+\bibitem[Kuz11]{Kuz}
+A.~Kuznetsov, \emph{Base change for semiorthogonal decompositions}, Compos.
+  Math. \textbf{147} (2011), no.~3, 852--876. \MR{2801403}
+
+\bibitem[Lur09]{HTT}
+J.~Lurie, \emph{Higher {T}opos {T}heory}, Annals of Mathematics Studies, vol.
+  170, Princeton University Press, Princeton, NJ, 2009. \MR{2522659
+  (2010j:18001)}
+
+\bibitem[Lur11]{LurieHA}
+\bysame, \emph{Higher algebra}, online version May 18, 2011.
+
+\end{thebibliography}

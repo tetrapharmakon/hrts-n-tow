@@ -1,0 +1,114 @@
+\section{Posets with \texorpdfstring{$\Z$}{Z}-actions.}
+\epigraph{\begin{CJK*}{UTF8}{bsmi} 為無為。事無事。味無味。\end{CJK*}}{Laozi \textsc{lxiii}}
+This section introduces the terminology about partially ordered groups and their actions, and then specializes the discussion to $\Z$-actions. We do not aim at a complete generality, but instead at gathering a number of useful results and nomenclature which is useful to have at hand. Among various possible choices, we mention specialized references as \cite{blyth2005lattices, glass1999partially, Fuch63} for an extended discussion of the theory of actions on ordered groups.
+\begin{definition}
+A \emph{partially ordered group} (``po-group'' for short) consists of a group $\cate{G} = (G, \cdot,1)$ endowed with a relation $\preceq$ which is a partial order and a (two-sided) congruence on $G$, namely for any $g\preceq h$ and $a,b\in \cate{G}$ we have 
+\begin{itemize}
+\item[(i)] $a\cdot g\preceq a\cdot h$ and
+\item[(ii)] $g\cdot b\preceq h\cdot b$.
+\end{itemize}
+\end{definition}
+\begin{remark}
+We should draw a distinction between a \emph{left} po-group (satisfying only property \emph{i} above) and a \emph{right} po-group (satisfying only \emph{ii}). At the level of generality we need ignoring this subtlety is absolutely harmless.
+
+A supplementary motivation to choose this slightly looser definition is that it seems more natural for a group to be ordered by a two-sided congruence, since in this case inversion $(-)^{-1}\colon \cate{G} \to \cate{G}$ is an antitone antiautomorphism of groups, \ie we have that
+\begin{itemize}
+\item $g\preceq h \iff h^{-1}\preceq g^{-1}$;
+\item The set $G^+$ of \emph{positive} elements, i.e. the set $\{g\in G\mid 1\preceq g\}$ is closed under conjugation.
+\end{itemize}
+\end{remark}
+\begin{definition}
+A \emph{homomorphism} of po-groups consists of a group morphism $f\colon G\to H$ which is also a monotone mapping. This, with the obvious choices of identities and composition, defines a category $\cate{POGrp}$ of partially ordered groups and their homomorphisms.
+\end{definition}
+\begin{definition}\label{def:g.poset}
+Let $G$ be any group. A $G$-poset is a partially ordered set $(P, \le)$ endowed with a group homomorphism $G\to \text{Aut}_\le (P)$ to the group of order isomorphisms of $P$.
+\end{definition}
+\begin{remark}
+Obviously, the former definition of $G$-poset is equivalent to the following one: a $G$-poset consists of a poset $(P,\le)$ with a map $a\colon G\times P\to P$ satisfying the well-known properties of a group action, and furthemore such that for each $g\in G, p\le q\in P$ one has $a(g,p)\le a(g,q)$.
+\end{remark}
+\begin{lemma}
+The category $\cate{Pos}$ of partially ordered sets and monotone maps is cartesian closed.
+\end{lemma}
+\begin{proof}
+This is a classical result; the product order is the only way to define the cartesian structure on $\cate{Pos}$,\footnote{And yet during \S\refbf{histoire} we will need to introduce the lexicographic order, which has a different universal property, to define ``product slicings'' $I\times J \to \ts(\C)$.} and there is only one way to endow the set of all monotone functions between two posets with a partial order relation to obtain the adjunction
+\[
+\cate{Pos}(P\times Q, R)\cong \cate{Pos}(P, R^Q).\qedhere
+\]
+\end{proof}
+\begin{proposition}\
+When $G$ is a po-group $(G, \preceq)$, the action map $a\colon G\times P\to P$ defining a $G$-poset is a monotone mapping if we endow $G\times P$ with the product order; equivalently, the map $G\to \text{Aut}_\le(P)$ is monotone if we endow the codomain with the order inherithed from the inclusion $\text{Aut}_\le(P)\subseteq  P^P$.
+\end{proposition}
+\begin{proof}
+Straightforward, unwinding the definitions: \adef \refbf{def:g.poset} can be reinterpreted in light of this viewing $G$ endowed with the trivial partial order where $x\preceq y$ if and only if $x=y$.
+\end{proof}
+We now specialize our discussion to the case $G=\Z$
+\begin{definition}\label{zposet}
+A $\Z$-\emph{poset} is a partially ordered set $(P,\leq)$ together with a group action 
+\[
++_P\colon P\times \Z \to P \colon (x,n) \mapsto x+_Pn 
+\]
+ which is a morphism of partially ordered sets, when $\Z$ is regarded with its usual total order.
+\end{definition}
+\begin{remark}\label{trivial.but.useful}
+It is immediate to see that a $\Z$-poset is equivalently the datum of a poset $(P,\leq)$ together with a monotone bijection $\rho\colon P\to P$ such that $x\leq \rho(x)$ for any $x$ in $P$. The function $\rho$ and the action are related by the identity $\rho(x)=x+_P1$.
+\end{remark}
+\begin{notat}
+To avoid a cumbersome accumulation of indices, the action $+_P$ will be often denoted as a simple ``$+$''. This is meant to evoke in the reader the most natural example of a $\Z$-poset, and to simplify our notation for the axioms of an action:
+\[
+\begin{cases}
+(x +_P m) +_P n = x +_P (m+n);\\
+x +_P 0 = x.
+\end{cases}
+\]
+\end{notat}
+\begin{example}The poset $(\Z ,\leq)$ of integers with their usual order is a $\Z$-poset with the action given by the usual sum of integers. The poset $(\R,\leq)$ of real numbers with their usual order is a $\Z$-poset for the action given by the sum of real numbers with integers (seen as a subring of real numbers).
+\end{example}
+\begin{remark}\label{rem.finite}
+ If $(P,\leq)$ is a finite poset, then the only $\Z$-action it carries is the trivial one. Indeed, if $\rho\colon P\to P$ is the monotone bijection associated with the $\Z$-action, one sees that $\rho$ is of finite order by the finiteness of $P$. Therefore there exists an $n\geq 1$ such that $\rho^n=\mathrm{id}_P$. It follows that, for any $x$ in $P$,
+ \[
+ x\leq x+1\leq\cdots\leq x+n=x
+ \]
+and so $x=x+1$.
+\end{remark}
+\begin{notat}
+An obvious terminology: a \emph{$G$-fixed point} for a $G$-poset $P$ is an element $p\in P$ kept fixed by all the elements of $G$ under the action $+_P$. An important observation (since it is an abstraction of what happens in \aprop\refbf{stableare}) is that an element $p$ of a $\Z$-poset $P$ is a $\Z$-fixed point if and only if $p+_P 1 = p$.
+\end{notat}
+\begin{lemma}\label{minmax}
+ If $k\in P$ is a $\le$-maximal or $\le$-minimal element in the $\Z$-poset $(P,\leq)$, then it is a $\Z$-fixed point.
+\end{lemma}
+\begin{remark}
+Given a poset $P$ we can always define a partial order on the set $P^{\bowtie} = P\cup\{-\infty,+\infty\}$ which extends the partial order on $P$ by the rule $-\infty\leq x\leq +\infty$ for any $x\in P$. 
+\end{remark}
+\begin{lemma}
+ If $(P,\leq)$ is a $\Z$-poset, then $(P\cup\{\pm\infty\},\leq)$ carries a natural $\Z$-action extending the $\Z$-action on $P$, by declaring both $-\infty$ and $+\infty$ to be $\Z$-fixed points.
+\end{lemma}
+\begin{proof}
+ Adding a fixed point always gives an extension of an action, so we only need to check that the extended action is compatible with the partial order. This is equivalent to checking that also on $P\cup\{\pm\infty\}$ the map $x\to x+1$ is a monotone bijection such that $x\leq x+1$, which is immediate. 
+\end{proof}
+Posets with $\Z$-actions naturally form a category, whose morphisms are \emph{$\Z$-equivariant} morphisms of posets. More explicitly, if $P$ and $Q$ are $\Z$-posets with actions $+_P$ and $+_Q$, then a morphism of $\Z$-posets between them is a morphism of posets $\varphi\colon P\to Q$ such that
+\[
+\varphi(x+_P n)=\varphi(x)+_Q n,
+\]
+for any $x\in P$ and any $n\in \Z$.
+\begin{lemma}\label{trivial.but.useful2}
+The choice of an element $x$ in a $\Z$-poset $P$ is equivalent to the datum of a $\Z$-equivariant morphism $\varphi\colon(\Z ,\leq)\to (P,\leq)$. Moreover $x$ is a $\Z$-fixed point if and only if the corresponding morphism $\varphi$ factors $\Z$-equivariantly through $(*,\leq)$, where $*$ denotes the terminal object of $\cate{Pos}$. 
+ \end{lemma}
+\begin{proof}
+To the element $x$ one associates the $\Z$-equivariant morphism $\varphi_x$ defined by $\varphi_x(n)=x+n$. To the $\Z$-equivariant morphism $\varphi$ one associates the element $x_\varphi=\varphi(0)$. It is immediate to check that the two constructions are mutually inverse. The proof of the second part of the statement is straightforward.
+\end{proof}
+\begin{lemma}
+Let $\varphi\colon(\Z ,\leq)\to (P,\leq)$ be a $\Z$-equivariant morphism of $\Z$-posets. Then $\varphi$ is either injective or constant.
+\end{lemma}
+\begin{proof}
+Assume $\varphi$ is not injective. then there exist two integers $n$ and $m$ with $n>m$ such that $\varphi(n)=\varphi(m)$. By $\Z$-equivariancy we therefore have
+\[
+x_\varphi+(n-m)=x_\varphi,
+\]
+with $n-m\geq 1$ and $x_\varphi=\varphi(0)$. The conclusion then follows by the same argument used in Remark \refbf{rem.finite}.
+\end{proof}
+\begin{lemma}\label{extends}
+Let $\varphi\colon (P,\leq)\to (Q,\leq)$ be a morphism of $\Z$-posets. Assume $Q$ has a minimum and a maximum. Then $\varphi$ extends to a morphism of $\Z$-posets $(P\cup\{\pm\infty\},\leq)\to (Q,\leq)$ by setting $\varphi(-\infty)=\min(Q)$ and $\varphi(+\infty)=\max(Q)$.
+\end{lemma}
+\begin{proof}
+Since $\min(Q)$ and $\max(Q)$ are $\Z$-fixed points by Lemma \refbf{minmax}, the extended $\varphi$ is a morphism of $\Z$-posets. Moreover, since $\min(Q)$ and $\max(Q)$ are the minimum and the maximum of $Q$, respectively, the extended $\varphi$ is indeed a morphism of posets, and so it is a morphism of $\Z$-posets.
+\end{proof}

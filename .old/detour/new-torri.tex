@@ -1,0 +1,43 @@
+\documentclass{article}
+
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{stmaryrd}
+\usepackage{tikz-cd}
+
+\title{Better towers}
+\def\ts{\mathfrak{ts}}
+\def\C{\mathbf{C}}
+\def\H{\C}
+
+\usepackage[cal=boondoxo]{mathalfa}
+\def\E{\mathcal{E}}
+\def\M{\mathcal{M}}
+\begin{document}
+\maketitle
+Let $J^+$ be (the nerve of) the category $(J^\lhd)^\rhd = (J^\rhd)^\lhd$.
+
+Let $J \to \ts(\C)$ be a slicing considered with its canonical extension ([hearts, 1.15]) $J^+  \to \ts(\C)$.
+
+We define
+\begin{itemize}
+	\item A $J$(-Postnikov) tower to be a functor $(J^+)^\text{op} \to \C: X_{-\infty} \leftarrow \cdots \leftarrow X_i \xrightarrow{i\le j} X_j \leftarrow \cdots \leftarrow X_{+\infty}$ such that 
+	\begin{enumerate}
+		\item $X_{-\infty}\cong 0$ and $X_{+\infty}\cong X$;
+		\item ($X_j = R_j(X_{+\infty})$ for $j\in J$).
+	\end{enumerate}
+	\item A $J$(-Postnikov) pretower to be a functor $J^\text{op}\to \C$ (such that $X_j \cong R_j(X_{j +_J 1})$)\footnote{$J$ is a $\mathbb{Z}$-poset with action $+_J\colon J\times\mathbb Z\to J$; since $j\le j +_J 1$ (contravariant) functoriality gives $X_{j +_J 1} \to X_j$, and the request now is that $X_j \cong R_j(X_{j +_J 1})$. Equivalently --since the associated normal torsion theory $(\E_j,\M_j)$ is firmly $\E$-reflective-- $X_{j +_J 1} \xrightarrow{e_j} X_j$ and $\tau_{\ge j}(X_j)\cong 0$.}
+\end{itemize}
+We denote $\varphi \colon \text{Post}^+(\H) \hookrightarrow \text{Post}(\H)$ the inclusion of Postnikov towers into Postnikov pretowers. We say that \emph{Postnikov towers are convergent} in $\H$ if $\varphi$ is an equivalence, whose inverse is given by taking the limit $\varprojlim (X_0\leftarrow X_1\leftarrow \cdots)$.
+
+Let $\mathbf{W}\subseteq \H \times J^+$ be the category of all pairs $(C,j)$ where $C\in\H_{\le j}$ is a $j$-truncated object (in the obvious sense). Then (since $\mathbf{W}$ is the category of elements of $J\to \text{Cat}_\infty \colon j\mapsto \H_{\le j}$) there exists a cocartesian fibration $p \colon \mathbf{W} \to J^+$ such that $p^\leftarrow(j) = \H_{\le j}$; this fibration classifies a tower of functors
+\[
+\H_{\le -\infty} \leftarrow \cdots\leftarrow \H_{\le j}\leftarrow \cdots \leftarrow \H
+\]
+Postnikov towers are then identified with cocartesian sections of $p$, and Postnikov pretowers with the cocartesian sections of $\tilde p$ in the pullback
+\[
+\begin{tikzcd}
+\mathbf{W}\times_{(J^+)^\text{op}}J^\text{op} \ar[r]\ar[d,"\tilde p"'] &\mathbf{W}\ar[d,"p"] \\
+J^\text{op}   \ar[r]                                     &(J^+)^\text{op}\\
+\end{tikzcd}
+\]
+\end{document}

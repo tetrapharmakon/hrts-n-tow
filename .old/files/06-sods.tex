@@ -1,0 +1,123 @@
+\section{Semiorthogonal decompositions.}
+\setlength{\epigraphwidth}{.75\textwidth}
+\epigraph{La vie c'est ce qui se décompose à tout moment; c'est une perte monotone de lumière, une dissolution insipide dans la nuit, sans sceptres, sans auréoles, sans nimbes.}{E. Cioran, \emph{Pr\'ecis de décomposition}.}
+\setlength{\epigraphwidth}{\DefaultEpigraphWidth}
+At the opposite end of the transitive case studied in the previous section, there is the \emph{finite case}, where $J$ is a finite totally ordered set. As we are going to show, this is another well investigated case in the literature: $J$-familes of $t$-structures with a finite $J$ capture (and slightly generalize) the notion of \emph{semiorthogonal decompositions} for the stable $\infty$-category $\C$ (see \cite{Bondal1995, Kuz} for the notion of semiorthogonal decomposition in the classical triangulated context).
+
+To fix notations for this section, let $J=\Delta^{k-1}$ be the totally ordered set on $k$ elements seen as a poset, \ie, $J=\{i_1,i_2,\dots,i_k\}$ with $i_1\leq i_2\leq\cdots\leq i_k$, and let $\tee\colon \Delta^{k-1}\to \ts(\C)$ be a $\Z $-equivariant $\Delta^{k-1}$-family of $t$-structures on $\C$. We also set, for any $j=1,\dots,k+1$,
+\[
+\cate{A}_j=\C_{[i_{j-i}, i_j)}
+\]
+where, as usual, $i_0=-\infty$ and $i_{k+1}=+\infty$. We have that any morphism $f\colon X\to Y$ in $\C$ has a unique factorization
+\[
+X \xto{f_{k+1}} Z_{i_k} \xto{f_k}Z_{i_{k-1}}\to\dots\to Z_{i_{2}} \xto{f_2} Z_{i_1} \xto{f_1} Y,
+\]
+with $\cofib(f_j)\in \cate{A}_j$, and $\cate{A}_j\subseteq \cate{A}_h^\orth$, for any $1\leq j <h\leq k+1$. 
+
+What we are left to investigate are therefore the special features of the $t$-structures $\tee_{i_j}=(\C_{\geq i_j},\C_{< i_j})$ coming from the finiteness assumption on $J$.
+As we noticed in Remark \refbf{rem.finite}, a $\Z $-action on a finite poset $J$ is necessarily trivial. By $\Z $-equivariancy of the map $\Delta^{k-1}\to \ts(\C)$ we have therefore that all the $t$-structures $\tee_{i_j}$ are $\Z $-fixed points for the natural $\Z $-action on $ \ts(\C)$. 
+
+Now, a rather pleasant fact is that fixed points of the $\Z$-action on $\ts(\C)$ are precisely those $t$-structures $\tee=(\C_{\ge 0}, \C_{<0})$ for which $\C_{\ge 0}$ is a stable sub-$\infty$-category of $\C$. We will make use of the following
+\begin{lemma}\label{magicstable}
+Let $\cB$ be a full sub-$\infty$-category of the stable $\infty$-category $\C$; then, $\cB$ is a stable sub-$\infty$-category of $\C$ if and only if $\cB$ is closed under shifts in both directions and under pushouts in $\C$.
+\end{lemma}
+\begin{proof}
+The ``only if'' part is trivial, so let us prove the ``if'' part.
+
+First of all let us see that under these assumptions $\cB$ is closed under fibers. This is immediate: if $f\colon X\to Y$ is an arrow in $\cB$ (\ie an arrow of $\C$ between objects of $\cB$, by fullness), then $f[-1]$ is again in $\cB$ since $\cB$ is closed with respect to the left shift. Since $\cB$ is closed under pushouts in $\C$, also  $\fib(f)=\cofib(f[-1])$ is in $\cB$. It remains to show how this implies that $\cB$ is actually stable, \ie it is closed under all finite limits and satisfies the pullout axiom. Unwinding the assumptions on $\cB$, this boils down to showing that in the square
+\[
+\xymatrix{
+B \ar[r]\ar[d] \pb &  X\ar[d]^f \\
+Y \ar[r]_g& Z
+}
+\]
+the pullback $B$ of $f,g \in \hom(\cB)$ done in $\C$ is actually an object of $\cB$; indeed, once this is shown, the square above will satisfy the pullout axiom in $\C$, 
+so \emph{a fortiori} it will have the universal property of a pushout in $\cB$. To this aim, let us consider the enlarged diagram of pullout squares in $\C$
+\[
+\xymatrix{
+Z[-1]\ar[r]\ar[d] \ar@{}[dr]|\star & \fib(g)\ar[r]\ar[d] & 0\ar[d] \\
+\fib(f)\ar[r]\ar[d] & B\ar[r]\ar[d] & X \ar[d]^f\\
+0\ar[r] & Y \ar[r]_g & Z.
+}
+\]
+The objects $Z[-1], \fib(f)$ and $\fib(g)$ lie in $\cB$ by the first part of the proof, so the square $(\star)$ is in particular a pushout of morphism in $\cB$; by assumption, this entails that $B\in\cB$.
+\end{proof}
+\begin{remark}\label{oss.shifts.pullback}
+Obviously, a completely dual statement can be proved in a completely dual fashion:  a full sub-$\infty$-category $\cB$ of a stable $\infty$-category $\C$ is a stable sub-$\infty$-category if and only if it is closed under shifts in both directions and under pullbacks in $\C$.
+\end{remark}
+\begin{proposition}\label{stableare}
+Let $\tee=(\C_{\geq 0},\C_{<0})$ be a $t$-structure on a stable $\infty$-category $\C$; then the following conditions are equivalent:
+\begin{enumerate}
+\item $\tee$ is a fixed point for the $\Z $-action on $\ts(\C)$, \ie, $\tee[1]=\tee$ (or equivalently, $\C_{\geq 1}= \C_{\geq 0}$);
+\item $\C_{\geq 0}$ is a stable sub-$\infty$-category of $\C$.
+\end{enumerate}
+\end{proposition}
+\begin{proof}
+`(2) implies (1)' is obvious. Namely, if  $\C_{\ge 0}$ is a stable sub-$\infty$-category of $\C$, then it is closed under shifts in both directions. Therefore $\C_{\ge 1}=\C_{\geq 0}[1]\subseteq \C_{\ge 0}$. Since, by definition of $t$-structure, $\C_{\geq 1}\subseteq \C_{\geq 0}$, we have $\C_{\geq 1}= \C_{\geq 0}$. To prove that `(1) implies (2)', assume $\C_{\geq 1}=\C_{\geq 0}$. This means that not only $\C_{\geq 0}[1]\subseteq \C_{\geq 0}$ as for any $t$-structure, but also $\C_{\geq 0}\subseteq \C_{\geq 0}[1]$, which implies that $\C_{\geq 0}[-1]\subseteq \C_{\geq 0}$. Therefore $\C_{\geq 0}$ is closed under shifts in both directions. By Lemma \refbf{magicstable},  we then have only to show that $\C_{\geq 0}$ is closed under pushouts in $\C$ to conclude that $\C_{\geq 0}$ is a stable $\infty$-subcategory of $\C$. Consider a pushout diagram
+\[
+\xymatrix{
+ A \ar[r]\ar[d]_h \po & B\ar[d]^k \\
+ C \ar[r] & P
+}
+\]
+in $\C$ with $A$, $B$ and $C$ in $\C_{\geq 0}$, and let $\fF=(\E,\M)$ be the normal torsion theory associated to $\tee$. Since $A$ and $C$ are in $\C_{\geq 0} = 0/\E$ we have that both $0\to A$ and $0\to C$ are in $\E$. But $\E$ has the 3-for-2 property, so also $A\to C$ is $\E$. Since $\E$ is closed for pushouts, this implies that also $B\to P$ is in $\E$. But $0\to B$ in in $\E$ since $B$ is in $\C_{\geq 0}$, and therefore also $0\to P$ is in $\E$, \ie, $P$ is in $\C_{\geq 0}$.
+\end{proof}
+\begin{remark}\label{dual.of.the.above}
+The statement of \aprop \refbf{stableare} can easily be dualized: $\Z $-fixed points in $\ts(\C)$ as those $t$-structures $(\C_{\geq 0},\C_{<0})$ for which $\C_{<0}$ is a stable sub-$\infty$-category of $\C$, as well as those such that $\C_{<0} = \C_{<1}$.
+\end{remark}
+Proposition \refbf{stableare} and remark \refbf{dual.of.the.above} characterize $\Z $-fixed points on $\ts(\C)$ as the $t$-structures with stable classes $\C_{\geq 0}$ and $\C_{<0}$. By the correspondence between $t$-structures and normal factorization systems, one should expect that these should be equally characterized as the normal factorization systems  $\fF=(\E,\M)$ for which the classes $\E$ and $\M$ are ``stable on both sides'', \ie, are closed both for pullbacks and for pushouts.
+\begin{theorem}\label{enactedstableare}
+Let $\tee$ be a $t$-structure on a stable $\infty$-category $\C$ and let $\fF=(\E,\M)$ be the corresponding normal factorization system; then the following conditions are equivalent:
+\begin{enumerate}
+\item $\tee[1]=\tee$;
+\item $\C_{\geq 0}$ is a stable $\infty$-category;
+\item $\C_{< 0}$ is a stable $\infty$-category;
+\item $\E$ is closed under pullback;
+\item $\M$ is closed under pushout.
+\end{enumerate}
+\end{theorem}
+\begin{proof}
+In view of the previous results, the only implication we need to prove is that `(1) is equivalent to (4)'. Assume $\E$ is closed under pullbacks. Then for any $X$ in $\C_{\geq 0}$ we have that $0\to X$ is in $\E$, and so $X[-1]\to 0$ is in $\E$. By the Sator lemma this implies that $0\to X[-1]$ is in $\E$, \ie, that $X[-1]$ is in $\C_{\geq 0}$. This shows that $\C_{\geq 0}[-1]\subseteq \C_{\geq 0}$ and therefore that $\tee[1]= \tee$. 
+
+Conversely, assume $\tee[1]=\tee$,
+and consider a morphism $f\colon X\to Y$ in $\E$. For any morphism $B\to Y$ in $\C$
+consider the diagram
+\[
+\xymatrix{
+\mathrm{fib}(f)\ar[r]\ar[d] & A\ar[r]\ar[d] & X\ar[r]\ar[d]^{f} & 0\ar[d]\\
+0 \ar[r] & B\ar[r]  & Y\ar[r]  & \cofib(f)
+}
+\]
+where all the squares are pullouts in $\C$. Since $f$ is in $\E$ and $\E$ is closed for pushouts, also $0\to \cofib(f)$ is in $\E$. This means that $\cofib(f)$ is in $\C_{\geq 0}$ and so, since we are assuming that $\C_{\geq 0}=\C_{\geq 0}[-1]$, also $\mathrm{fib}(f)=\cofib(f)[-1]$ is in $\C_{\geq 0}$, \ie,  $0\to \mathrm{fib}(f)$ is in $\E$. By the Sator lemma, $\mathrm{fib}(f)\to 0$ is in $\E$, which is closed for pushouts, and so $A\to B$ is in $\E$.
+\end{proof}
+\begin{remark}\label{oss.hereditary}
+In the literature, a factorization system $(\E,\M)$ for which the class $\E$ is closed for pullbacks is sometimes called an \emph{exact reflective} factorization, see, \eg, \cite{CHK}. This is equivalent to saying that the associated reflection functor is left exact (this is called a \emph{localization} in the jargon of \cite{CHK}). Dually,  one characterizes \emph{colocalizations} of a category $\C$ with an initial object as \emph{coexact coreflective} factorizations where the right class $\M$ of $\fF$ is closed under pushouts.  Therefore, in the stable $\infty$-case, we see that a $\Z $-fixed point in $\ts(\C)$ is a $t$-structure $(\C_{\geq 0},\C_{<0})$ such that the truncation functors $\tau_{\ge 0}\colon \C\to \C_{\ge 0}$ and $\tau_{<0}\colon \C\to \C_{<0}$ respectively form a colocalizations and a localization of $\C$. In the terminology of \cite{Beligiannisreiten} we therefore find that in the stable $\infty$-case $\Z $-fixed point in $\ts(\C)$ correspond to \emph{hereditary torsion pairs} on $\C$. Since we have seen that for a $\Z $-fixed point in $\ts(\C)$ both $\C_{\geq 0}$ and $\C_{<0}$ are stable $\infty$-categories, this result could be deduced also from \cite[Prop. \textbf{1.1.4.1}]{LurieHA}: a left (resp., right) exact functor between stable $\infty$-categories is also right (resp., left) exact.
+ \end{remark}
+We can now precisely relate semiorthogonal decompositions in a stable $\infty$-category $\C$ to $\Delta^{k-1}$-families of $t$-structures on $\C$. The only thing we still need is the following definition, which is an immediate adaptation to the stable setting of the classical definition given for triangulated categories (see, \eg, \cite{Bondal1995, Kuz} ).
+\begin{definition}
+Let $\C$ be a stable $\infty$-category. A \emph{semiorthogonal decomposition} with $k$ classes on $\C$ is the datum of $k+1$ stable $\infty$-subcategories $\cate{A}_1$, $\cate{A}_2$,\dots, $\cate{A}_{k+1}$ of $\C$ such that
+\begin{enumerate}
+\item one has $\cate{A}_i\subseteq \cate{A}_j^\orth$ for $i<j$ (semiorthogonality);
+\item for any object $Y$ in $\C$ there exists a unique $\{\cate{A}_i\}$-weaved tower, \ie, a factorization of the initial morphism $0\to Y$ as 
+\[
+0 =Y_0\to\cdots \to Y_{j+1} \xto{f_{j}} Y_{j} \xto{f_{j-1}}Y_{j-1}\to \cdots\to Y_{k+1}=Y
+\]
+with $\cofib(f_j)\in \cate{A}_j$ for any $j=1,\dots, k+1$. 
+\end{enumerate} 
+\end{definition}
+\begin{remark}
+Since $\{\cate{A}_i\}$-weaved Postnikow towers are preserved by pullouts, one can equivalently require that any morphism $f\colon X\to Y$ in $\C$ has a unique factorization of the form 
+\[
+X =Z_0\to\cdots \to Z_{j+1} \xto{f_{j}} Z_{j} \xto{f_{j-1}}Z_{j-1}\to \cdots\to Z_{k+1}=Y
+\]
+with $\cofib(f_j)\in \cate{A}_j$ for any $j=1,\dots, k+1$. 
+\end{remark} 
+\begin{theorem}\label{what.s.semiortho}
+Let $\C$ be a stable $\infty$-category. Then the datum of a semiorthogonal decompositions with $k$ classes on $\C$ is equivalent to the datum of a $\Z $-equivariant $\Delta^{k-1}$-family of $t$-structures on $\C$
+\end{theorem}
+\begin{proof}
+Let us start with a $\Z $-equivariant $\Delta^{k-1}$-family of $t$-structures $\tee$, and write $i_1<i_2<\cdots<i_k$ for the elements of $\Delta^{k-1}$ and $\tee_{i_j}=(\C_{\geq i_j},\C_{<i_j})$ for the corresponding $t$-structures on $\C$. Then, setting $\cate{A}_j=\C_{[i_{j-1}, i_j)}$ we have semiorthogonality between the $\cate{A}_j$'s and the existence of $\{\cate{A}_j\}$-weaved Postnikow towers by the general argument recalled at the beginning of this section. So we are only left to prove that the subcategories $\cate{A}_j$ are stable. This is immediate: by Theorem \refbf{enactedstableare} both the sub-$\infty$-categories $\C_{\geq i_{j-1}}$ and $\C_{<i_j}$ are stable, and so also their intersection is stable (see, \cite{LurieHA}). Vice versa, if we start with a semiorthogonal decomposition, then repeating verbatim the argument in the proof of Proposition \refbf{to.be.repeated.verbatim} one defines 
+a $\Z $-equivariant $\Delta^{k-1}$-family of $t$-structures on $\C$.
+\end{proof}
+\begin{remark}By Remark \refbf{oss.hereditary}, we recover in the stable $\infty$-setting the well known fact (see \cite[\textbf{IV.4}]{Beligiannisreiten}) that semiorthogonal decompositions with a single class correspond to \emph{hereditary torsion pairs} on the category.
+\end{remark}

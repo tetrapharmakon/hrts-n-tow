@@ -1,0 +1,22 @@
+
+\msg{Metto qui della roba in attesa di trovargli una sistemazione.}
+
+
+Al momento mancano:
+\begin{itemize}
+	\item Una definizione convincente e sufficientemente bella di FS infinitario; attualmente \ref{k.fold.fact} si comporta male quando $k$ è infinito.
+	\item Una costruzione dei due FS canonici sull'infty-topos degli spazi e degli spettri -- il primo e' quello degli n-connessi/n-troncati, e il secondo e' il morfismo $\Z \to \ts(\cate{Sp})$ che manda 0 nella t-struttura canonica $(T_{\le}, T_{>})$ (gruppi nulli nei negativi/positivi)-- che dimostri o confuti questo fatto:
+	\begin{quote}
+		Il funtore di stabilizzazione che manda spazi in $\cate{Sp}$ manda (n-connessi, n-troncati) in $(T_{\le}, T_{>})$.
+	\end{quote}
+\end{itemize}
+
+Ciò è parte della seguente congettura: 
+\begin{itemize}
+	\item certi FS decenti (tutto da capire cosa significa decente) su spazi generano NTT; esempio: quello che ho scritto sopra.
+	\item Analogamente certi FS esatti (=classe sinistra chiusa per limiti, destra per colimiti) generano SODs (ovvero esattamente t-strutture stabili, con classi chiuse per shift ambolati). \cite[3.2.1]{tstructures}.
+\end{itemize}
+In effetti ogni t-struttura generata mediante \cite[3.2.1]{tstructures} e' segretamente una SOD; ancora, chi puo' essere la categoria non stabile che ha per stabilizzazione complessi di catene? Da lì forse esce un terzo esempio con la $p$-localizzazione: congetturo siano i moduli (con una opportuna teoria della torsione in senso classico; questa teoria della torsione si conserva passando a $\Ch(R)$ e la fa diventare una categoria modello abeliana\footnote{Una \emph{categoria modello abeliana} è una categoria modello $\A$ tale che le cofibrazioni sono tutti e soli i mono con cokernel cofibrante, e dualmente le fibrazioni sono tutte e soli gli epi con nucleo fibrante; data una categoria modello abeliana $\A$, $\A^\opp$ ha due torsion theory: una per cui $0/\E = $oggetti tali che $0\to X$ è una cofibrazione aciclica, e un'altra per cui $0/\E' = $oggetti tali che $0\to X'$ è una cofibrazione. Viceversa, data una categoria abeliana $\A$ con una coppia di teorie della torsione $(\mathcal{X}, \mathcal{Y}),(\mathcal{X}', \mathcal{Y}')$ su $\A^\opp$, esiste una sola struttura modello tale che $\mathcal X$ siano gli oggetti cofibranti aciclici, e $\mathcal{X}'$ siano i cofibranti.}).
+
+Sono motivato in cio' dal seguente fatto: Ch(R) eredita la sua struttura di cat modello stabile da una teoria della torsione su Mod(R)
+quindi teorie della torsione su categorie modello abeliane (=FS abeliani for short) diventano NTT (=t-strutture) nelle loro stabilizzazioni
