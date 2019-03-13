@@ -1,0 +1,83 @@
+%!TEX root=../hearts-revised.tex
+
+
+\section{Introduction.}\label{abs-intro}
+\begin{modifyepigraph}{.5}
+\epigraph{If you're going to read this, don't bother.}{C. Palahniuk}
+\end{modifyepigraph}
+
+An elementary and yet fundamental theorem in algebraic topology asserts that every sufficiently nice connected topological space $X$ fits into a ``tower''
+\[
+%\xymatrix@R=4mm{\vdots \ar[d] \\ X_2 \ar[d]\\ X_1\ar[d] \\ **[l] X=X_0}
+\cdots \to X_2\to X_1\to X_0=X
+\]
+ where each $X_n$ is $n$-connected and each map $X_n\to X_{n-1}$ is a fibration that induces isomorphisms in $\pi_{>n}$, and has an Eilenberg-MacLane space $K(\pi_{n}(X),n-1)$ as its fiber.
+This result admits an immediate generalization to an arbitrary ambient category which is ``good enough'' for homotopy theory. It is indeed a statement
+about the decomposition of an initial morphism $* \to X$ into a tower of fibrations 
+whose fibers have homotopy concentrated in a single degree. It is nevertheless only in the setting of $(\infty,1)$-category theory that this result can be given its cleanest conceptualization: the tower of a pointed object $X$ 
+is the result of the factorization of $* \to X$ with respect to 
+the collection of factorization systems $(n\textsc{-conn}, n\textsc{-trunc})$ whose right classes are given by \emph{$n$-truncated morphisms} \cite[5.2.8.16]{HTT}.
+
+Of course, a similar construction can be exported to \emph{stable} homotopy theory, where the analogue of the factorization system $(n\textsc{-conn}, n\textsc{-trunc})$ is given by the \emph{canonical} $t$-structure $\tee$ on the category of spectra, determined by the objects whose homotopy groups vanish in negative an non-negative degree, respectively,
+\begin{gather*}
+\Sp_{\ge 0} = \{  A_* \in \Sp \mid \pi_i(A_*)=0;\; i< 0 \}\\
+\Sp_{< 0} = \{ B_* \in \Sp \mid \pi_i(B_*)=0;\; i\ge 0 \},
+\end{gather*}
+together with all its \emph{shifts} $\tee_n=\tee[n]$.\footnote{Here and in the rest of the paper we are implicitly using the equivalence between $t$-structures and \emph{normal torsion theories}: if $\C$ is a stable $\infty$-category with a terminal object, there exists an antitone Galois connection between the poset $\text{Rex}(\C)$ of reflective subcategories of $\C$ and the poset $\pf(\C)$ of prefactorization systems on $\C$ such that $r(\fF)$ is a 3-for-2 class. This adjunction induces a bijective correspondence between the class of certain reflective and coreflective factorization systems called \emph{normal torsion theories} and the class of $t$-structures on (the homotopy category of) $\C$: this statement is the central result of \cite{Fiorenza2014} where it is called the \emph{Rosetta stone theorem}, and motivates our choice to state our main results in the setting of stable $(\infty,1)$-categories.} In this context, 
+it becomes natural to consider the whole $\{\tee_n\mid n\in\mathbb{Z}\}$ as a single object, 
+namely the \emph{orbit} of $\tee$ under 
+the canonical action of the group of integers on the class $\ts(\Sp)$ of $t$-structures on the category of spectra.
+A closer look at this example 
+makes it evident that this action is also \emph{monotone} with respect to the natural structure of partially ordered class of $\ts(\Sp)$, and the natural total order of $\mathbb{Z}$: more formally, the group homomorphism $\mathbb{Z}\to \text{Aut}(\ts(\Sp))$ defining the action is also a monotone mapping.
+
+The aim of this paper is to investigate the consequences of taking this point of view further on the classical theory of $t$-structures.  In particular, we describe all the terminology we need about partially ordered groups and their actions in §\refbf{posets}, and then we specialize the discussion to $\Z$\hyp{}actions on partially ordered sets. This is motivated by the fact that the class of $t$-structures on a given stable $\infty$-category carries a natural choice of such an action.
+
+Even if we employ a rather systematic approach, we do not aim at reaching a complete generality, but instead at gathering a number of useful results and nomenclature we can refer to along the present article. Among various possible choices, we mention specialized references as \cite{blyth2005lattices, glass1999partially, Fuch63} for an extended discussion of the theory of actions on ordered groups.
+
+We introduce the definition of a \emph{slicing} of a poset $J$ (\adef\refbf{slicio}) and of a $J$-slicing of a stable $\infty$-category $\C$ (\adef\refbf{J-slicio}) in §\textbf{3}: of course these are not original definitions, as the notion is classical in order theory under different names; our only purpose here is to collect the minimal amount of theory for the sake of clarity. Namely, in the same spirit of Dedekind's construction of real numbers, we consider decompositions of a poset $J$ (more often than not, a totally ordered one) into an \emph{upper} and \emph{lower} set, and associate with each such a decomposition a $t$-structure on an ambient $(\infty,1)$-category $\C$. The totally ordered set $J$ will be assumed to be equipped with a monotone action of $\Z$ and the correspondence
+\[
+\{\text{slicings of $J$}\} \to \{\text{$t$-structures on $\C$}\}.
+\]
+will be monotone and $\mathbb{Z}$-equivariant.
+
+Now, following \cite{BBDPervers}, (bounded) $t$-structures on a triangulated category can be seen as the datum of a set of (co)homological functors indexed by integers;  thus a $J$-slicings can be seen as a generalization to ``fractal'' or `` non-integer'' cohomological dimensions now indexed by $J$ and not by $\Z$. Namely, each $J$-slicing induces local cohomology objects depending on an interval, as discussed in §\refbf{sec:towers}. 
+
+In this framework many homological features appear as a shadow of clear constructions with totally ordered sets with $\Z$-actions. For instance, when the totally ordered set $J$ has a heart $J^\heart$, \ie, when there's a $\Z$-equivariant monotone morphism $J \to \mathbb{Z}$, a $J$-slicing on a stable $\infty$-category $\C$ is precisely the datum of a $t$-structure on $\C$ together with a collection of torsion theories parametrized by $J^\heart$ on the heart of $\C$, which turns out to be an abelian $\infty$-category. This is shown §\refbf{hearts} and §\refbf{tiltings}. 
+
+In §\refbf{sec:sods}, we recover the theory of classical semi-orthogonal decompositions by considering the case when $\mathbb{Z}$ acts trivially on $J$. Semi-orthogonal decompositions and $J$-slicing with hearts are essentially the only two interesting classes, as shown by the structure theorem we prove in section §\refbf{concluding}: under suitable finiteness assumptions, the datum of a $J$-slicing on a stable $\infty$-category $\C$ is equivalent to the datum of a finite type semi-orthogonal decomposition of $\C$, together with bounded $t$-structures on the slices and collections of torsion theories  on the hearts of these $t$-structures (Theorem \ref{conclusion}). It is worth mentioning that, under the finiteness conditions of Theorem \ref{conclusion}, when $J=\mathbb{R}$ the notion of $J$-slicing as discussed in the present paper actually becomes a reinterpretation of Bridgeland's definition of slicing of a triangulated category \cite{Brid}. This can be better appreciated by switching to the general approach to `stability data' introduced by \cite{GKR}. 
+
+Finally, in §\refbf{tiltings} we show how the functoriality of the association $J\mapsto \{\text{$J$-slicings}\}$ gives rise to an elegant and synthetic reformulation of classical tilting theory \cite{happel}.
+{\color{green!40!black}
+\subsection{Notation and conventions}
+We will work within the framework of stable $\infty$-categories in the sense of \cite{LurieHA}. The reader who prefers the more traditional framework of triangulated categories will find no difficulty in translating  each of our statements their proofs to the triangulated setting, and indeed several statements and constructions presented here are actually adaptations of classical triangulated constructions. We report these statements both for completeness and to show how their proofs become extremely natural in the language of stable $\infty$-categories.
+\par
+To make the article more self contained and enjoyable to a reader with no previous exposure to stable $\infty$-categories, we recall here the minimal amount of $\infty$-categorical notions we will make use of. As in \cite{HTT}, we will say `$\infty$-category' for $(\infty,1)$-category, and will mean by this a quasicategory whose $k$-mpophisms are invertible (up to homotopy) for any $k>1$. In colloquial terms, this means that an $\infty$-category has objects, morphisms, homotopies between morphisms, homotopies between homotopies, and so on. As shown in \cite{HTT, Joyal2008}, the entire theory of categories transports to $\infty$-categories. In particular, an $\infty$-category $\C$ can have finite co/limits.
+\par
+An $\infty$-category $\C$ is said to be \emph{stable}  if it has all finite limits and all finite colimits, and if in addition it satisfies the following property called the \emph{pullout axiom}:
+a homotopy commutative diagram
+\[
+\xymatrix{X\ar[r]\ar[d]&Y\ar[d]\\
+Z\ar[r]&T
+}
+\]
+in $\C$ is a pushout if and only if it is a pullback. We will henceforth call these diagrams \emph{pullout diagrams} or simply \emph{pullouts}.
+\par
+The pullout axiom is inherently $\infty$-categorical: the only ordinary category with finite limits and colimits satisfying it is the trivial category (i.e. the terminal additive category with a single zero object $\bf 0$). And it is extremely powerful: if $\C$ is a stable $\infty$-category, then its homotopy category $h\C$ is triangulated. In other words, this single and extremely simple axiom subsumes all of the axiomatic of triangulated categories (the notorious octahedral axiom included). Unfortunately not every triangulated category can be realized as the homotopy category of a stable $\infty$-category, see \cite{???}; stable $\infty$-categories are therefore to be thought as `well behaved' triangulated categories. It should however be remarked that essentially every triangulated categories of common use, e.g., the bounded derived category of coherent sheaves on a projective manifold, is well behaved in this sense. A particularly pleasant consequence of this good behaviour is the fact that in a stable $\infty$-category the notions of $t$-structure and of normal torsion theory are naturally equivalent  \cite{Fiorenza2014}; this remains true in a general triangulated category, although the equivalence is much less transparent in the triangulated setting \cite{tderiv}. In particular, it is shown in \cite{Fiorenza2014} that if $(\E,\M)$ is a factorization system on a stable $\infty$-category $\C$ with the property that both $\E$ and $\M$ are 3-for-2 classes then for every object $A\in\C$ an initial arrow $0\to A$ lies in $\E$ or $\M$ \emph{if and only if} the terminal arrow $A\to 0$ of the same object lies in the class. This initial/terminal symmetry, called the `Sator lemma' in \cite{Fiorenza2014} will be used several times in what follows.
+
+\par
+Not to spoil the reader's fun, and at the same not to hide their meaning, translations of all the quotes at the beginning of each section are provided immediately before the bibliography.
+%Throughout the paper, we take for granted the theory of $(\infty,1)$-categories written in the model of quasicategories (shortly called `$\infty$-categories' in \cite{HTT}); in particular we assume that the reader is comfortable with the following bit of the theory if $\infty $-categories:
+%\begin{itemize}
+% \item the \emph{nerve} functor $N : \mathbf{Cat} \to \mathbf{sSet}$ is fully faithful; there exists a class of maps $\mathcal H$ such that the essential image of $N$ is determined as $\mathcal H^\perp$ (strong orthogonality); the subcategory $\mathbf{QCat}$ of $\infty$-categories is defined to be $\mathcal H^\boxslash$ (weak orthogonality). As shown in \cite{HTT, Joyal2008}, the entire theory of categories transports from $\mathbf{Cat}$ to $\mathbf{QCat}$. In particular, an $\infty$-category $\C$ can have \emph{finite co/limits}.
+% \item An $\infty$-category $\C$ is \emph{stable} if it has all finite limits and all finite colimits, and if in addition it satisfies the following property called the \emph{pullout axiom}:
+% \begin{center}
+%  \begin{minipage}{.75\textwidth}
+%Every commutative square $A : \Delta^1\times\Delta^1\to \C$ is a pullback in $\C$ if and only if it is also a pushout.
+%  \end{minipage}
+% \end{center}
+% \item (the `Sator lemma', see \cite[Lemma 3]{FL0}) Let $\C$ be an $\infty$-category with a zero object, and let $(\E,\M)$ be a factorization system on $\C$ (\cite[Definition 8]{FL0}) with the property that both $\E$ and $\M$ are 3-for-2 classes (\cite[Definition 10]{FL0}); then for every object $A\in\C$ an initial arrow $0\to A$ lies in $\E$ or $\M$ \emph{if and only if} the terminal arrow $A\to 0$ of the same object lies in the class.
+%\end{itemize}
+%We shall say at the outset that although the arguments employed seem to make little use of $(\infty,1)$-categorical techniques, the setting where the theorems hold is entirely higher categorical; indeed, no 1-category can satisfy the pullout axiom without being the trivial category (i.e. the terminal additive category with a single zero object $\bf 0$). All the more, the Rosetta Stone theorem, i.e. the equivalence between $t$-structures and normal torsion theories proved in \cite{Fiorenza2014}, becomes way more cumbersome when stated in the language of triangulated categories. In such a setting, there exists a notion of \emph{triangulated factorization system} and of \emph{triangulated normal torsion theory}, but the first is not a factorization system on the triangulated category, and in the second normality is stated in terms of \emph{triangulated} homotopy co/cartesian squares, a different (and way worse-behaved) notion than the $(\infty,1)$-categorical one. It is then quite unclear if the triangulated notion of normal torsion theory is on any interest outside the proof of \cite[2.11]{tderiv}. There, the second-named author defines \emph{derivator factorization systems} in the 2-category $\sf PDer$, describing them as algebras for a suitable strict 2-monad and prove that the Rosetta stone theorem still holds true: for a stable derivator $\mathbb D$, a suitable class of derivator factorization systems (the \emph{normal derivator torsion theories}) correspond bijectively with $t$-structures on the base $\mathbb D(e)$ of the derivator.
+%
+%The desire to hide under the carpet actual higher categorical arguments is, however, a precise stylistic choice, made in order to make our work more far-reaching even to those people who are more comfortable with triangulated categories than with $\infty$-categories; such readers are warmly invited not to worry, as they will find no difficulty in translating  each of our statements in their preferred language.
+}
