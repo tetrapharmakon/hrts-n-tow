@@ -2,6 +2,7 @@
 
 \input preambolo
 
+\usepackage{todonotes}
 \begin{document}
 
 \input{files/addr-revised}
@@ -13,7 +14,26 @@ We exploit the equivalence between $t$-structures and normal torsion theories on
 \tableofcontents
 
 \newpage 
-
+\todo[inline, caption=0]
+{
+ \begin{itemize}
+  \item By far the biggest flaw in the exposition is the omission of the definition of a “pullout” square.
+  \item Again, as a matter of the reader’s convenience, it would probably be
+  good to isolate the statement of the Sator lemma in a reference-able
+  proposition type format.
+  \item he authors are not very clear on which aspects of
+  the theory actually depend on the stable infty-category itself as opposed
+  to only its triangulated homotopy category. 
+  \item Definition 5.18 appears to be completely unnecessary to me;
+  \item I do not understand the latter half of the proof of lemma 7.8, beginning
+  with “let X be an object of C and consider...”
+  \item The statement and “proof” of theorem 8.2 is clumsy.
+  \item In fact I think the authors do themselves a slight disservice by promoting their paper as part of the theory of stable infty-categories, when really
+  much of what they do is only at the level of triangulated categories,
+  and thus might attact a wider readership (there is basically nowhere in
+  the paper where actual higher categorical arguments are employed).
+ \end{itemize}
+}
 
 \input{files/01-abs-intro-revised}
 \input{files/02-posets-revised}
@@ -26,6 +46,7 @@ We exploit the equivalence between $t$-structures and normal torsion theories on
 
 \hrulefill
 \subsubsection*{Translations of the opening quotes.}
+\footnotesize
 \begin{enumerate}[label=\S\arabic*.)]
  \setcounter{enumi}{1}
  \item These are the first three verses of \emph{Tao te Ching}'s chapter 63: ``Act without action / work without work / taste without taste.''
@@ -33,7 +54,7 @@ We exploit the equivalence between $t$-structures and normal torsion theories on
  \item This is \emph{Genesis 11:7}: ``let us go down, and there confound their language, that they may not understand one another's speech.''
  \setcounter{enumi}{5}
  \item This is a quote from E. Cioran's \emph{Brief history of decay}: ``Life is what decomposes at every moment; it is a monotonous loss of light, an insipid dissolution in the darkness, without scepters, without halos.''
- \item This is a famous line Ramon Rojo says in S. Leone's movie \emph{A fistful of dollars}: ``to kill a man you must aim at his heart, and a Winchester is the best weapon to do so.''
+ \item This is a famous line Ramon Rojo says in S. Leone's movie \emph{A fistful of dollars}: ``to kill a man you must aim at his heart, and a Winchester is the best weapon to do this.''
 \end{enumerate}
 
 \bibliographystyle{amsalpha}
