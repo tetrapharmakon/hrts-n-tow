@@ -83,12 +83,12 @@ Consider the full subcategories
 \C_{(n,0)}=\cate{F}[n];\qquad 
 \C_{(n,1)}=\cate{T}[n].
 \]
-Since the $\Z$-action on $\Z\times_{\mathrm{lex}}\ordered{1}$ is $(n,i)+1=(n+1,i)$, it is immediate to see that $\C_{(n,i)+1}=\C_{(n,i)}[1]$ for every $(n,i)$ in $\Z\times_{\mathrm{lex}}\ordered{1}$. Let now $X\in \C_{(n_1,i_1)}$ and $Y\in \C_{(n_2,i_2)}$ with $(n_1,i_1)>(n_2,i_2)$. Since the order is the lexicographic one, we either have $n_1>n_2$ or $n_1=n_2$ and $i_1=1$ and $i_2=0$. In the first case $X\in \C^\heart[n_1]$ and $Y\in \C^\heart[n_2]$ with $n_1>n_2$ and so $X\orth Y$; in the second case $X\in \cate{T}[n_1]$ and $Y\in \cate{F}[n_1]$ and so again $X\orth Y$. Finally, let $X$ be an object in $\C$ and consider the $\C^\heart$-weaved tower of its initial morphism. Keeping only the nontrivial morphisms in this tower we are reduced to a finite factorization of the form
+Since the $\Z$-action on $\Z\times_{\mathrm{lex}}\ordered{1}$ is $(n,i)+1=(n+1,i)$, it is immediate to see that $\C_{(n,i)+1}=\C_{(n,i)}[1]$ for every $(n,i)$ in $\Z\times_{\mathrm{lex}}\ordered{1}$. Let now $X\in \C_{(n_1,i_1)}$ and $Y\in \C_{(n_2,i_2)}$ with $(n_1,i_1)>(n_2,i_2)$. Since the order is the lexicographic one, we either have $n_1>n_2$ or $n_1=n_2$ and $i_1=1$ and $i_2=0$. In the first case $X\in \C^\heart[n_1]$ and $Y\in \C^\heart[n_2]$ with $n_1>n_2$ and so $X\orth Y$; in the second case $X\in \cate{T}[n_1]$ and $Y\in \cate{F}[n_1]$ and so again $X\orth Y$. Finally, {\color{green!40!black} we have to show that for every object $X$ of $\C$ we have a factorization of the initial morphism $0\to X$ into morphisms whose cofibers are in $\C_{n,i}$ for a decreasing sequence of indices $(n,i)$'s in the lexicographic order on $\mathbb{Z} \times \ordered{1}$. To see this, let} $X$ be an object in $\C$ and consider the $\C^\heart$-weaved tower of its initial morphism. Keeping only the nontrivial morphisms in this tower we are reduced to a finite factorization of the form
 $$0=X_0 \xrightarrow{\alpha_1} \cdots \xrightarrow{\alpha_k} X_k=X$$ 
-with $\cofib(\alpha_l)\in \C^\heart[n_l]$ for a suitable sequence of decreasing integers $n_0>n_1>\cdots > n_k$. Since $\T[n_l]=(\cate{F}[n_l], \cate{T}[n_l])$ is a torsion theory of $\C^\heart[n_l]$, we have a pullout diagram
+with $\cofib(\alpha_l)\in \C^\heart[n_l]$ for a suitable sequence of decreasing integers $n_0>n_1>\cdots > n_k$. Since $\T[n_l]=(\cate{F}[n_l], \cate{T}[n_l])$ is a torsion theory on $\C^\heart[n_l]$,  {\color{green!40!black}for each $l$} we have a pullout diagram
 \[
 \xymatrix{
-\cofib(\alpha_l)_{\cate{T}[n_l]}\ar[d]\ar[r]& \cofib(\alpha_i)\ar[d]\\
+\cofib(\alpha_l)_{\cate{T}[n_l]}\ar[d]\ar[r]& \cofib(\alpha_l)\ar[d]\\
 \zero\ar[r]& \cofib(\alpha_l)_{\cate{F}[n_l]}
 }
 \]
@@ -100,7 +100,10 @@ X_{n_l-1}\ar[r]^{\alpha_{l,+}}\ar[d] & \tilde{X}_{n_l}\ar[d]\ar[r]^{\alpha_{l,-}
 & \zero\ar[r]& \cofib(\alpha_l)_{\cate{F}[n_l]}
 }
 \]
-where each square is a pullout in $\C$. As $l$ ranges from $0$ to $k$ this gives a factorization of $0\to X$ into morphisms whose cofibers are in $\C_{n,i}$ for a decreasing sequence of indices $(n,i)$'s.
+where each square is a pullout in $\C$. As $l$ ranges from $0$ to $k$  {\color{green!40!black} the sequence
+$$0=X_0 \xrightarrow{\alpha_1,+}\tilde{X}_0 \xrightarrow{\alpha_1,-}X_1\xrightarrow{\alpha_2,+} \cdots \xrightarrow{\alpha_k,-} X_k=X$$
+}
+gives a factorization of $0\to X$ into morphisms whose cofibers are in $\C_{n,i}$ for a decreasing sequence of indices $(n,i)$'s.
 \end{proof}
 \begin{remark}\label{rem.explicit.tilt}
 The nontrivial upper sets in $\Z \times_{\mathrm{lex}} \ordered{1}$ are easily described: they are all of the form $[(n,i),+\infty)$ for some $n\in \Z$ and $i\in \ordered{1}$. In the notation of Lemma \refbf{verso.il.tilting}, the $t$-structures on $\C$ corresponding to these upper sets are easily described by means of Remark \refbf{rem:b-is-discrete}. We have

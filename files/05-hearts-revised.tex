@@ -147,18 +147,25 @@ is an abelian $\infty$-category.
 In other words, $\C^\heart$ is homotopy equivalent to its homotopy category $h\C^\heart$, which is an abelian category; this is the higher-categorical counterpart of a classical result, first proved in \cite[\athm\textbf{1.3.6}]{BBDPervers}, 
 which 
 only relies on properties stated in terms of normal torsion theories in a stable $\infty$-category. 
+{\color{green!40!black}
 We begin with the following
 \begin{definition}[Abelian $\infty$-category]\label{df:abelinfty}
-An \emph{abelian $\infty$-category} is a quasicategory $\cate{A}$ such that
+An \emph{abelian $\infty$-category}  is an abelian
+category regarded as an $\infty$-category.
+\end{definition}
+\begin{remark}
+Equivalently, an abelian $\infty$-category is a quasicategory $\cate{A}$
+such that
 \begin{enumerate}[label=$\roman*$)]
 \item the hom space $\cate{A}(X,Y)$ is a homotopically discrete infinite loop space for any $X, Y$, \ie, there exists an infinite sequence of $\infty$-groupoids $Z_0, Z_1,Z_2,\dots$, with $Z_0\cong \C(X,Y)$ and homotopy equivalences $Z_i\cong \Omega Z_{i+1}$ for any $i\geq 0$, such that $\pi_n Z_0=0$ for any $n\geq 1$;
 \item $\cate{A}$ has a zero object, (homotopy) kernels, cokernels and biproducts;
 \item for any morphism $f$ in $\cate{A}$, the natural morphism from the \emph{coimage} of $f$ to the \emph{image} (see \adef\refbf{imcoim}) of $f$ is an equivalence.
 \end{enumerate}
-\end{definition}
-\begin{remark}
-Axiom (i) is the homotopically-correct version of $\cate{A}(X,Y)$ being an abelian group. For instance, if the abelian group is $\Z $, then the corresponding homotopy discrete space is the Eilenberg-Mac Lane spectrum $\Z ,K(\Z ,1), K(\Z ,2),\dots$. The homotopy category of such an $\cate{A}$ is an abelian category in the classical sense (note that $\cate{A}(X,Y)$ being homotopically discrete is necessary in order that kernels and cokernels in $\cate{A}$ induce kernels and cokernels in $h\cate{A}$). Moreover, since the hom spaces $\cate{A}(X,Y)$ are homotopically discrete, the natural morphism $\cate{A}\to h\cate{A}$ is actually an equivalence.
 \end{remark}
+%\begin{remark}
+%Axiom (i) is the homotopically-correct version of $\cate{A}(X,Y)$ being an abelian group. For instance, if the abelian group is $\Z $, then the corresponding homotopy discrete space is the Eilenberg-Mac Lane spectrum $\Z ,K(\Z ,1), K(\Z ,2),\dots$. The homotopy category of such an $\cate{A}$ is an abelian category in the classical sense (note that $\cate{A}(X,Y)$ being homotopically discrete is necessary in order that kernels and cokernels in $\cate{A}$ induce kernels and cokernels in $h\cate{A}$). Moreover, since the hom spaces $\cate{A}(X,Y)$ are homotopically discrete, the natural morphism $\cate{A}\to h\cate{A}$ is actually an equivalence.
+%\end{remark}
+}
 
 The rest of the section is devoted to the proof of the following result:
 \begin{theorem}\label{heart.is.abelian}
