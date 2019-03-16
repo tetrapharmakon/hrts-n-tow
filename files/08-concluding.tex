@@ -31,7 +31,12 @@ where we used that $\C_{I_i}$ is a stable subcategory of $\C$ and so $\C_{I_i}=\
 
 We can now state and prove our main result, summarising and putting together the various pieces constructed so far. To make a self-standing statement, we explicitly recall the definition of the equivalence relation $\sim$ from Lemma \refbf{equivalence} in the statement of the theorem below.
 \begin{theorem}\label{conclusion}
-Let $(J,\leq)$ a $\Z$-toset, and let $\sim$ be the equivalence relation on $J$ defined by $x\sim y$ if and only if there exist integers $n_1$ and $n_2$ with $x+n_1\leq y\leq x+n_2$. Then the datum of a finite type $J$-slicing on a stable $\infty$-category $\C$ is equivalent to the datum of a finite type semi-orthogonal decomposition of $\C$ whose slices $\C_{[x]}$ are stable  $\infty$-subcategories of $\C$ indexed by equivalence classes in $J$ with respect to the equivalence relation $\sim$, together with a bounded $t$-structure $\tee_{[x]}$ on $\C_{[x]}$ and a finite type abelian $[x,x+1)$-slicing on $\C_{[x]}^\heart$ for every $[x]$ in $J/_{\!\sim}$ such that $x$ is not a fixed point of the $\Z$-action on $J$.
+Let $(J,\leq)$ a $\Z$-toset. A finite type $J$-slicing on a stable $\infty$-category $\C$ is equivalent to the following data:
+\begin{itemize}
+\item a finite type semi-orthogonal decomposition of $\C$ whose slices $\C_{[x]}$ are stable  $\infty$-subcategories of $\C$ indexed by equivalence classes in $J$ with respect to the equivalence relation $x\sim y$ if and only if there exist integers $n_1$ and $n_2$ with $x+n_1\leq y\leq x+n_2$;
+\item a bounded $t$-structure $\tee_{[x]}$ on $\C_{[x]}$ for each  $[x]$ in $J/_{\!\sim}$;
+\item a finite type abelian $[x,x+1)$-slicing on $\C_{[x]}^\heart$ for every $[x]$ in $J/_{\!\sim}$ such that $x$ is not a fixed point of the $\Z$-action on $J$.
+\end{itemize}
 \end{theorem}
 \begin{proof}
 By Lemma \refbf{for-the-main-theorem}, a $J$-slicing on a stable $\infty$-category induces semi-orthogonal decomposition of $\C$ whose slices $\C_{I_i}$ are stable  $\infty$-subcategories of $\C$ indexed by equivalence classes $I_i$ in $J$ with respect to the equivalence relation $\sim$, together with $I_i$-slicings of these subcategories.
