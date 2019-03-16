@@ -149,16 +149,39 @@ which
 only relies on properties stated in terms of normal torsion theories in a stable $\infty$-category. 
 {\color{green!40!black}
 We begin with the following
+\begin{definition}[Additive $\infty$-category]\label{df:additive}
+An \emph{additive $\infty$-category}  is an additive
+category regarded as an $\infty$-category.
+\end{definition}
+\begin{remark}
+Equivalently, an additive $\infty$-category is a quasicategory $\cate{A}$
+such that
+\begin{enumerate}[label=$\roman*$)]
+\item the hom space $\cate{A}(X,Y)$ is a homotopically discrete infinite loop space for any $X, Y$, \ie, there exists an infinite sequence of $\infty$-groupoids $\Xi_0, \Xi_1,\Xi_2,\dots$, with $\Xi_0\cong \C(X,Y)$ and homotopy equivalences $\Xi_i\cong \Omega \Xi_{i+1}$ for any $i\geq 0$, such that $\pi_n \Xi_0=0$ for any $n\geq 1$;
+\item $\cate{A}$ has a zero object, and (homotopy) biproducts.
+\end{enumerate}
+\end{remark}
+\begin{remark}\label{orthogonality-of-a}
+If $\cA$ is a full additive $\infty$-subcategory of a stable $\infty$-category $\C$, then $\cA[n_1]\orth\cA[n_2]$ for any $n_1>n_2$. Namely, for an additive $\cA$, let $X\in \cA[n_1]$ and $Y\in\cA[n_2]$. Then $X=Z_1[n_1]$ and $Y=Z_2[n_2]$ for suitable $Z_1,Z_2\in \cA$ and so 
+\begin{align*}
+\C(X,Y)&=\C(Z_1[n_1],Z_2[n_2])\cong  \C(Z_1,Z_2[n_2-n_1])\\
+&\cong \Omega^{n_1-n_2}\C(Z_1,Z_2)=\Omega^{n_1-n_2}\cA(Z_1,Z_2),
+\end{align*}
+where in the last equality we used the fact that $\cA$ is full. Since $n_1-n_2>0$, the space $\Omega^{n_1-n_2}\cA(Z_1,Z_2)$ is contractible by definition of additive $\infty$-category.
+\end{remark}
+\begin{remark}
+In the triangulated setting one has not the compatibility between the looping operation on objects and on spaces of morphisms $\Omega\C(X,Y)=\C(X,\Omega Y)$ and so the othogonality condition $\cA[n_1]\orth\cA[n_2]$ for $n_1>n_2$, when needed, has to be imposed by hands. This is nothing but the usual vanishing of negative Ext's one frequently meets as a property of `good' additive subcategories of a triangulated category.  
+\end{remark}
+
 \begin{definition}[Abelian $\infty$-category]\label{df:abelinfty}
 An \emph{abelian $\infty$-category}  is an abelian
 category regarded as an $\infty$-category.
 \end{definition}
 \begin{remark}
-Equivalently, an abelian $\infty$-category is a quasicategory $\cate{A}$
+Equivalently, an abelian $\infty$-category is an additive $\infty$-category $\cate{A}$
 such that
 \begin{enumerate}[label=$\roman*$)]
-\item the hom space $\cate{A}(X,Y)$ is a homotopically discrete infinite loop space for any $X, Y$, \ie, there exists an infinite sequence of $\infty$-groupoids $Z_0, Z_1,Z_2,\dots$, with $Z_0\cong \C(X,Y)$ and homotopy equivalences $Z_i\cong \Omega Z_{i+1}$ for any $i\geq 0$, such that $\pi_n Z_0=0$ for any $n\geq 1$;
-\item $\cate{A}$ has a zero object, (homotopy) kernels, cokernels and biproducts;
+\item $\cate{A}$ has (homotopy) kernels and cokernels;
 \item for any morphism $f$ in $\cate{A}$, the natural morphism from the \emph{coimage} of $f$ to the \emph{image} (see \adef\refbf{imcoim}) of $f$ is an equivalence.
 \end{enumerate}
 \end{remark}
@@ -384,31 +407,28 @@ respectively, thus giving $\im(f)\cong Z_f\cong \coim(f)$.
 
 \subsection{Abelian subcategories as hearts.}
 By the results in the previous section and by Corollary \refbf{cor.oss.for.Heart.to.t} we see that hearts of bounded $t$-structures are very peculiar subcategories of a stable $\infty$-category $\C$: they are abelian and every morphism in $\C$ admits a unique $\C^\heart$-weaved factorization. As we are going to show, these two properties precisely characterize hearts among full subcategories of $\C$.
+{\color{green!40!black}
 \begin{definition}
-Let $f\colon X\to Y$ be a morphism in $\C$, and let $\cA$ be an abelian $\infty$-subcategory of $\C$. An $\cA$-weaved factorization of $f$ is a factorization
+Let $f\colon X\to Y$ be a morphism in $\C$, and let $\cA$ be an additive $\infty$-subcategory of $\C$. An $\cA$-weaved factorization of $f$ is a factorization
 \[
 X=\lim(Z_j) \to\cdots \to Z_{j+1} \xto{f_{j}} Z_{j} \xto{f_{j-1}}Z_{j-1}\to \cdots\to \mathrm{colim}(Z_j)=Y
 \]
 with $j$ ranging over the integers, $\cofib(f_j)\in \cA[j]$ for any $j\in \Z $ and with $f_m$ being an isomorphism for $|j|\gg 0$.
 \end{definition}
+
 \begin{proposition}
-Let $\cA$ be an abelian full subcategory of a stable $\infty$-category $\C$, such that any morphism $f\colon X\to Y$  in $\C$ has an $\cA$-weaved factorization. Then the collection of subcategories $\{\cA[n]\}_{n\in \Z}$ is a Bridgeland $\Z$-slicing of $\C$.
+Let $\cA$ be an additive full $\infty$-subcategory of a stable $\infty$-category $\C$ such that any morphism $f\colon X\to Y$  in $\C$ has an $\cA$-weaved factorization. Then the collection of subcategories $\{\cA[n]\}_{n\in \Z}$ is a Bridgeland $\Z$-slicing of $\C$.
 \end{proposition}
-\begin{proof} Looking at \adef\refbf{def.bridgeland-slicing}, the only thing we need to prove is that $\cA[n_1]\orth\cA[n_2]$ for $n_1>n_2$. Let $X\in \cA[n_1]$ and $Y\in\cA[n_2]$. Then $X=Z_1[n]$ and $Y=Z_2[n_2]$ for suitable $Z_1,Z_2\in \cA$ and so 
-\begin{align*}
-\C(X,Y)&=\C(Z_1[n_1],Z_2[n_2])\cong  \C(Z_1,Z_2[n_2-n_1])\\
-&\cong \Omega^{n_1-n_2}\C(Z_1,Z_2)=\Omega^{n_1-n_2}\cA(Z_1,Z_2),
-\end{align*}
-where in the last equality we used the fact that $\cA$ is full. Since $n_1-n_2>0$, the space $\Omega^{n_1-n_2}\cA(Z_1,Z_2)$ is contractible by definition of abelian $\infty$-category.
+\begin{proof} Looking at \adef\refbf{def.bridgeland-slicing}, the only thing we need to prove is that $\cA[n_1]\orth\cA[n_2]$ for $n_1>n_2$. This is Remark \refbf{orthogonality-of-a}.
 \end{proof}
 
 
-From proposition \refbf{b-is-discrete} and remark \refbf{rem:b-is-discrete} we then immediately have the following converse of Corollary \refbf{cor.oss.for.Heart.to.t}.
+From Proposition \refbf{b-is-discrete} and Remark \refbf{rem:b-is-discrete} we then immediately have the following converse of Corollary \refbf{cor.oss.for.Heart.to.t}, corresponding to \cite[Lemma 3.2]{Brid}.
 \begin{proposition}\label{to.be.repeated.verbatim}
-Let $\cA$ be an abelian full subcategory of a stable $\infty$-category $\C$, such that any morphism in $\C$ has a $\cA$-weaved factorization, and let
+Let $\cA$ be a full additive $\infty$-subcategory of a stable $\infty$-category $\C$, such that  any morphism in $\C$ has a $\cA$-weaved factorization, and let
 $\mathcal{H}^n_B\colon \C\to \cA[n]$ be the functors given by taking the cofibers of the $n$-th morphism in the $\cA$-weaved factorization of the initial morphisms. 
  Let
-$\C_{\cA,\geq 0}$ be the full subcategory of $\C$ on those objects $X$ such that $\mathcal{H}^j_B(X)=0$ for any $j< 0$, and let $\C_{\cA,< 0}$ be the full subcategory of $\C$ on those objects $X$ such that $\mathcal{H}^j_B(X)=0$ for any $j\geq 0$. Then $\mathfrak{t}_{\cA}=(\C_{\cA,\geq 0}, \C_{\cA,<0})$ is a $t$-structure on $\C$, the stable $\infty$-category $\C$ is bounded with respect to $\mathfrak{t}_{\cA}$, and the standard heart of $\mathfrak{t}_{\cA}$ is (equivalent to) $\cA$.
+$\C_{\cA,\geq 0}$ be the full subcategory of $\C$ on those objects $X$ such that $\mathcal{H}^j_B(X)=0$ for any $j< 0$, and let $\C_{\cA,< 0}$ be the full subcategory of $\C$ on those objects $X$ such that $\mathcal{H}^j_B(X)=0$ for any $j\geq 0$. Then $\mathfrak{t}_{\cA}=(\C_{\cA,\geq 0}, \C_{\cA,<0})$ is a $t$-structure on $\C$, the stable $\infty$-category $\C$ is bounded with respect to $\mathfrak{t}_{\cA}$, and the standard heart of $\mathfrak{t}_{\cA}$ is (equivalent to) $\cA$. In particular $\cA$ is abelian.
 \end{proposition}
 \begin{proof}
 The only thing left to prove is that the standard heart of  $\mathfrak{t}_\cA$ is $\cA$. To see this notice that an object $Y$ lies in $\C^\heart=\C_{\cA,\geq 0}\cap \C_{\cA,<1}$ if and only if the $\cA$-weaved factorization
@@ -420,5 +440,8 @@ of its initial morphism has $\mathrm{cofib}(f_j)=0$ for every $j\neq0$, and so i
 \cdots 0 \to 0\to \cdots \to 0\xrightarrow{f_{0}} Y \xrightarrow{\mathrm{id}_Y}Y\xrightarrow{\mathrm{id}_Y} \cdots\xrightarrow{\mathrm{id}_Y}Y\xrightarrow{\mathrm{id}_Y}\cdots,\] 
 with $Y=\mathrm{cofib}(f_0)\in \cA$.
 \end{proof}
+
+
+}
 
 
