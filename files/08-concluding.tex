@@ -6,13 +6,19 @@
 
 We have explored two classes of $J$-slicings so far: those for which $J$ has a heart, and those for which $\mathbb{Z}$ acts trivially on $J$. In this section, we show how these two cases are fundamental building blocks for all other $J$-slicings. 
 
-More precisely, let $\tee$ be an arbitrary $J$-slicing on a stable $\infty$-category $\C$. Remark \refbf{J.induces.I} shows how $\tee$ induces an $\iota(J)$-semi-orthogonal decomposition of $\C$. For every equivalence class $[i]$ in $\iota(J)$ the corresponding slice in the semi-orthogonal decomposition is the subcategory $\C_{I_i}$ of $\C$ determined by the $J$-slicing $\tee$, where $I_i\subseteq J$ is the equivalence class of $i$ as a subset of $J$. As shown in \refbf{class.is.interval}, this is an interval of $J$ and a sub-$\Z$-toset of $J$, simply by definition of the equivalence relation. Being the slices of a semi-orthogonal decomposition, the subcategories $\C_{I_i}$ are stable (this can also be seen directly from the definition of the $\C_{I_i}$'s).
 
-For every $i$, write $I_i=U_{i;0}\cap L_{i;1}$. By Remark \refbf{oi.vs.oj} every slicing $(\Lambda,\Upsilon)$ of $I_i$ is of the form $\Lambda=I_{i}\cap L$ and $\Upsilon=U\cap I_{i}$ for a unique slicing $(L,U)$ of $J$ with $U_{i;0}\leq U\leq U_{i;1}$. This gives an isomorphism of tosets between $\mathcal{O}(I_i)$ and the interval $[U_{i;0},U_{i;1}]$ in $\mathcal{O}(J)$.
-\begin{lemma}
-In the above notation, for every $i$ in $J$, and every $(\Lambda,\Upsilon)$ in $\mathcal{O}(I_i)$, let $\tee_{i;\Lambda,\Upsilon}=(\C_L\cap \C_{I_i},\C_U\cap \C_{I_i})$. Then $\tee_i\colon (\Lambda,\Upsilon)\to \tee_{i;\Lambda,\Upsilon}$ is a $I_i$-slicing of $\C_{I_i}$.
+
+
+
+{\color{green!40!black}
+\begin{lemma}\label{for-the-main-theorem}
+Let $\tee$ be a $J$-slicing on a stable $\infty$-category $\C$, and let $I_i\subseteq J$ be the equivalence class of $i\in J$ with respect to the equivalence relation $\sim$ of Lemma \refbf{equivalence}. For every $(\Lambda,\Upsilon)=(L\cap I_{i},U\cap I_{i})$ in $\mathcal{O}(I_i)$, let $\tee_{i;\Lambda,\Upsilon}=(\C_L\cap \C_{I_i},\C_U\cap \C_{I_i})$. Then $\tee_i\colon (\Lambda,\Upsilon)\to \tee_{i;\Lambda,\Upsilon}$ is a $I_i$-slicing of $\C_{I_i}$.
 \end{lemma}
-\begin{proof}To show that $\tee_{i;\Lambda,\Upsilon}$ is a $t$-structure on $\C_{I_i}$ one verbatim repeats the proof of Lemma \refbf{to.get.slicings.on.heart} to get orthogonality of the classes and the existence of the relevant fiber sequences. Next, to show that $(\C_U\cap \C_{I_i})[1]\subseteq \C_U\cap \C_{I_i}$ notice that, since $I_i$ is an equivalence class, $I_i+1=I_i$ and so 
+\begin{proof}
+By Remark \refbf{J.induces.I}, the $J$-slicing $\tee$ induces an $\iota(J)$-semi-orthogonal decomposition of $\C$: for every equivalence class $[i]$ in $\iota(J)$ the corresponding slice in this semi-orthogonal decomposition is the subcategory $\C_{I_i}$ of $\C$ determined by the $J$-slicing $\tee$, where $I_i\subseteq J$ is the equivalence class of $i$ with respect to the equivalence reltion $\sim$, as a subset of $J$. As they are the slices of a semi-orthogonal decomposition, the subcategories $\C_{I_i}$ are stable (this can also be seen directly from the definition of the $\C_{I_i}$'s).
+ As shown in Example \refbf{class.is.interval}, $I_i$ is an interval of $J$ and a sub-$\Z$-toset of $J$, simply by definition of the equivalence relation. 
+For every $i$, we can therefore write $I_i=U_{i;0}\cap L_{i;1}$. By Remark \refbf{oi.vs.oj} every slicing $(\Lambda,\Upsilon)$ of $I_i$ is of the form $\Lambda=L\cap I_{i}$ and $\Upsilon=U\cap I_{i}$ for a unique slicing $(L,U)$ of $J$ with $U_{i;0}\leq U\leq U_{i;1}$. This gives an isomorphism of tosets between $\mathcal{O}(I_i)$ and the interval $[U_{i;0},U_{i;1}]$ in $\mathcal{O}(J)$.
+Now, to show that $\tee_{i;\Lambda,\Upsilon}$ is a $t$-structure on $\C_{I_i}$ one verbatim repeats the proof of Lemma \refbf{to.get.slicings.on.heart} to get orthogonality of the classes and the existence of the relevant fiber sequences. Next, to show that $(\C_U\cap \C_{I_i})[1]\subseteq \C_U\cap \C_{I_i}$ notice that, since $I_i$ is an equivalence class, we have $I_i+1=I_i$ and so 
 \[
 (U\cap I_{i})+1=(U+1)\cap (I_i+1)\subseteq U\cap I_i.
 \]
@@ -23,12 +29,18 @@ This shows that $\tee_i$ is a morphism of sets $\mathcal{O}(I_i)\to \ts(\C_{I_i}
 where we used that $\C_{I_i}$ is a stable subcategory of $\C$ and so $\C_{I_i}=\C_{I_i}[1]$.
 \end{proof}
 
-If $i$ is a fixed point for the $\Z$-action on $J$, then $I_i=\{i\}$ and $\mathcal{O}(I_i)=\ordered{1}$ so that a $I_j$-slicing is trivial. On the other hand, by Example \refbf{I.has.a.heart}, precisely when $i$ is not a fixed point of the $\Z$-action the interval $I_i$ has a heart which can be identified with the interval $[i,i+1)$ of $J$, and so by \aprop\refbf{J-to-t} an $I_i$-slicing on $\C_{I_i}$ induces a $t$-structure on $\C_{I_i}$ together with an abelian $[i,i+1)$-slicing on the standard heart $\C_{I_i}^\heart$. Moreover, by \aprop\refbf{converse.if.finite}, in the finite type case an $I_i$-slicing on $\C_{I_i}$ is precisely equivalent to a bounded $t$-structure with the abelian slicing. 
-
-Summing up, we have proven the following
+We can now state and prove our main result, summarising and putting together the various pieces constructed so far. To make a self-standing statement, we explicitly recall the definition of the equivalence relation $\sim$ from Lemma \refbf{equivalence} in the statement of the theorem below.
 \begin{theorem}\label{conclusion}
 Let $(J,\leq)$ a $\Z$-toset, and let $\sim$ be the equivalence relation on $J$ defined by $x\sim y$ if and only if there exist integers $n_1$ and $n_2$ with $x+n_1\leq y\leq x+n_2$. Then the datum of a finite type $J$-slicing on a stable $\infty$-category $\C$ is equivalent to the datum of a finite type semi-orthogonal decomposition of $\C$ whose slices $\C_{[x]}$ are stable  $\infty$-subcategories of $\C$ indexed by equivalence classes in $J$ with respect to the equivalence relation $\sim$, together with a bounded $t$-structure $\tee_{[x]}$ on $\C_{[x]}$ and a finite type abelian $[x,x+1)$-slicing on $\C_{[x]}^\heart$ for every $[x]$ in $J/_{\!\sim}$ such that $x$ is not a fixed point of the $\Z$-action on $J$.
 \end{theorem}
+\begin{proof}
+By Lemma \refbf{for-the-main-theorem}, a $J$-slicing on a stable $\infty$-category induces semi-orthogonal decomposition of $\C$ whose slices $\C_{I_i}$ are stable  $\infty$-subcategories of $\C$ indexed by equivalence classes $I_i$ in $J$ with respect to the equivalence relation $\sim$, together with $I_i$-slicings of these subcategories.
+If $i$ is a fixed point for the $\Z$-action on $J$, then $I_i=\{i\}$ and $\mathcal{O}(I_i)=\ordered{1}$ so that a $I_j$-slicing is trivial. On the other hand, by Example \refbf{I.has.a.heart}, precisely when $i$ is not a fixed point of the $\Z$-action the interval $I_i$ has a heart $I_i^\heart$ which can be identified with the interval $[i,i+1)$ of $J$. Therefore, by \aprop\refbf{J-to-t} an $I_i$-slicing on $\C_{I_i}$ induces a $t$-structure on $\C_{I_i}$ together with an abelian $[i,i+1)$-slicing on the standard heart $\C_{I_i}^\heart$. Moreover, by \aprop\refbf{converse.if.finite}, in the finite type case an $I_i$-slicing on $\C_{I_i}$ is precisely equivalent to this datum of a bounded $t$-structure on $\C_{I_i}$ with an abelian $I_i^\heart$-slicing on $\C_{I_i}^\heart$. 
+\end{proof}
+}
+
+
+
 
 
 
